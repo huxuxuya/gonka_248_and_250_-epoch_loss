@@ -1,0 +1,11 @@
+.DS_Store
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# Keep repo outputs and raw cache versionable, but ignore transient temp files.
+data/processed/*.tmp
+outputs/**/*.tmp

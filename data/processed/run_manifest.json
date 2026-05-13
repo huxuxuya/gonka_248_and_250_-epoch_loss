@@ -1,0 +1,8 @@
+{
+  "epochs": [
+    248,
+    250
+  ],
+  "run_mode": "cache-only",
+  "settings_path": "config/settings.yaml"
+}

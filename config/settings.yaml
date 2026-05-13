@@ -1,0 +1,14 @@
+node_url: "http://node1.gonka.ai:8000"
+epochs:
+  - 248
+  - 250
+timeout_sec: 60
+retries: 3
+use_live_chain: true
+strict_validation: true
+output_precision_gnk: 9
+package_policy:
+  include_epochs:
+    - 248
+    - 250
+  optional_exclude_rules: []

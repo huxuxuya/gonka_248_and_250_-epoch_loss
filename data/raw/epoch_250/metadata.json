@@ -1,0 +1,64 @@
+{
+  "endpoints": [
+    {
+      "file": "confirmation_poc_events_250.json",
+      "status": "ok"
+    },
+    {
+      "file": "epoch_group_data_250.json",
+      "status": "ok"
+    },
+    {
+      "file": "epoch_group_data_full.json",
+      "status": "ok"
+    },
+    {
+      "file": "epoch_performance_summary_250.json",
+      "status": "ok"
+    },
+    {
+      "file": "excluded_participants_250.json",
+      "status": "ok"
+    },
+    {
+      "file": "params.json",
+      "status": "ok"
+    }
+  ],
+  "epoch": 250,
+  "fetched_at_utc": "2026-05-13T18:09:15+00:00",
+  "files": {
+    "confirmation_poc_events_250.json": {
+      "path": "data/raw/epoch_250/confirmation_poc_events_250.json",
+      "sha256": "fb5b0493efeb1fa1a4baf8dc98730b5a721533991e3b8a28a5e7e567691da6da",
+      "size_bytes": 601
+    },
+    "epoch_group_data_250.json": {
+      "path": "data/raw/epoch_250/epoch_group_data_250.json",
+      "sha256": "3793e2fd8473d303db1e699e7d3746060bf0a399ae149508fb8caba36218da6e",
+      "size_bytes": 35893
+    },
+    "epoch_group_data_full.json": {
+      "path": "data/raw/epoch_250/epoch_group_data_full.json",
+      "sha256": "1a0573a48061cccf6eb7b83fb36bbc6e63cf490bf116208fab3ae4403820dda4",
+      "size_bytes": 35603497
+    },
+    "epoch_performance_summary_250.json": {
+      "path": "data/raw/epoch_250/epoch_performance_summary_250.json",
+      "sha256": "dedd714c0b061d1b37231a18f7495f4d1e02af1f80d07938792a847667e729bf",
+      "size_bytes": 25858
+    },
+    "excluded_participants_250.json": {
+      "path": "data/raw/epoch_250/excluded_participants_250.json",
+      "sha256": "d35f9f29af475d0a5ee3bb3df58d81a817b2118e95f17e6c27436e088a67262f",
+      "size_bytes": 3258
+    },
+    "params.json": {
+      "path": "data/raw/epoch_250/params.json",
+      "sha256": "2433168168134978bd15822da9590ebdd37220bbc54bc4b5f097a957959f645c",
+      "size_bytes": 11171
+    }
+  },
+  "mode": "live",
+  "node_url": "http://node1.gonka.ai:8000"
+}

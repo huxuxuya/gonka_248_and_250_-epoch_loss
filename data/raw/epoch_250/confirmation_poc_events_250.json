@@ -1,0 +1,20 @@
+{
+  "events": [
+    {
+      "epoch_index": "250",
+      "event_sequence": "0",
+      "generation_start_height": "3861370",
+      "phase": "CONFIRMATION_POC_COMPLETED",
+      "poc_seed_block_hash": "3b4673b66dfc820a49bbddb948840559383321364837e90815c146947d5800bd",
+      "trigger_height": "3861368"
+    },
+    {
+      "epoch_index": "250",
+      "event_sequence": "1",
+      "generation_start_height": "3870122",
+      "phase": "CONFIRMATION_POC_COMPLETED",
+      "poc_seed_block_hash": "b6c6a6d300d48335a65b0367e103c7f346aecbdc2b8b3561cec4723bacb200fe",
+      "trigger_height": "3870120"
+    }
+  ]
+}
