@@ -32,12 +32,15 @@ def calculate_epoch_compensation(
     fixed_epoch_reward, reward_notes, reward_approx = compute_fixed_epoch_reward(params_payload, epoch)
     validation_weights, total_full_weight, weight_notes, weight_approx = parse_validation_weights(group_payload)
     exclusion_map, exclusion_notes = parse_exclusion_map(excluded_payload)
-    subgroup_voting_power, subgroup_notes, subgroup_complete = load_participant_subgroup_voting_power(base_dir, epoch)
+    subgroup_voting_power, subgroup_confirmation_weight, subgroup_notes, subgroup_complete = (
+        load_participant_subgroup_voting_power(base_dir, epoch)
+    )
 
     expected_effective_weights = {
-        address: min(
+        address: scale_confirmation_to_subgroup_voting_power(
             validation_weights.get(address, {}).get("confirmation_weight", 0),
             subgroup_voting_power.get(address, validation_weights.get(address, {}).get("confirmation_weight", 0)),
+            subgroup_confirmation_weight.get(address),
         )
         for address in validation_weights
     }
@@ -87,9 +90,21 @@ def calculate_epoch_compensation(
         confirmation_weight = validation_weights.get(address, {}).get("confirmation_weight", 0)
         effective_weight = effective_after_downtime.get(address, 0)
         expected_effective_weight = expected_effective_weights.get(address, 0)
-        expected_reward_weight = full_weight if confirmation_weight == 0 else expected_effective_weight
-        actual_reward = int(perf_row.get("rewarded_coins", "0") or 0)
         exclusion_reason = exclusion_map.get(address, "")
+        uses_full_weight_for_confirmation_failure = should_use_full_weight_for_confirmation_failure(
+            full_weight=full_weight,
+            confirmation_weight=confirmation_weight,
+            effective_weight=effective_weight,
+            exclusion_reason=exclusion_reason,
+        )
+        expected_reward_weight = select_expected_reward_weight(
+            full_weight=full_weight,
+            confirmation_weight=confirmation_weight,
+            expected_effective_weight=expected_effective_weight,
+            effective_weight=effective_weight,
+            exclusion_reason=exclusion_reason,
+        )
+        actual_reward = int(perf_row.get("rewarded_coins", "0") or 0)
         full_share = full_share_reward(full_weight, fixed_epoch_reward, total_full_weight)
         effective_share = effective_share_reward(effective_weight, fixed_epoch_reward, total_full_weight)
         expected_share = effective_share_reward(expected_reward_weight, fixed_epoch_reward, total_full_weight)
@@ -102,6 +117,8 @@ def calculate_epoch_compensation(
             notes.append("downtime punishment reduced effective reward to zero")
         if confirmation_weight > effective_weight:
             notes.append("subgroup voting_power capped the confirmation weight")
+        if uses_full_weight_for_confirmation_failure:
+            notes.append("expected reward uses full chain weight because confirmation failure zeroed effective weight")
         notes.append(f"chain_effective_reward_base_units={effective_share}")
         notes.append(f"full_weight_reward_base_units={full_share}")
         notes.append(f"expected_reward_weight={expected_reward_weight}")
@@ -150,6 +167,43 @@ def calculate_epoch_compensation(
     )
 
 
+def select_expected_reward_weight(
+    full_weight: int,
+    confirmation_weight: int,
+    expected_effective_weight: int,
+    effective_weight: int,
+    exclusion_reason: str,
+) -> int:
+    # If CPoC produced some confirmation weight but the final chain state
+    # excluded the participant, the compensation target is the original network
+    # weight. Otherwise we would undercount exactly the participants whose
+    # confirmation path collapsed to zero voting power.
+    if should_use_full_weight_for_confirmation_failure(
+        full_weight=full_weight,
+        confirmation_weight=confirmation_weight,
+        effective_weight=effective_weight,
+        exclusion_reason=exclusion_reason,
+    ):
+        return full_weight
+    if confirmation_weight == 0:
+        return full_weight
+    return expected_effective_weight
+
+
+def should_use_full_weight_for_confirmation_failure(
+    full_weight: int,
+    confirmation_weight: int,
+    effective_weight: int,
+    exclusion_reason: str,
+) -> bool:
+    return (
+        full_weight > 0
+        and confirmation_weight > 0
+        and effective_weight == 0
+        and exclusion_reason == "failed_confirmation_poc"
+    )
+
+
 def determine_loss_reason(
     address: str,
     exclusion_reason: str,
@@ -173,12 +227,13 @@ def determine_loss_reason(
 def load_participant_subgroup_voting_power(
     base_dir: Path,
     epoch: int,
-) -> tuple[dict[str, int], list[str], bool]:
+) -> tuple[dict[str, int], dict[str, int], list[str], bool]:
     participant_voting_power: dict[str, int] = {}
+    participant_confirmation_weight: dict[str, int] = {}
     notes: list[str] = []
     subgroup_files = sorted(base_dir.glob(f"epoch_group_data_{epoch}__*.json"))
     if not subgroup_files:
-        return participant_voting_power, [f"no model-specific subgroup files found for epoch {epoch}"], False
+        return participant_voting_power, participant_confirmation_weight, [f"no model-specific subgroup files found for epoch {epoch}"], False
 
     complete = True
     for path in subgroup_files:
@@ -194,6 +249,9 @@ def load_participant_subgroup_voting_power(
             if not address:
                 continue
             participant_voting_power[address] = participant_voting_power.get(address, 0) + int(item.get("voting_power", "0") or 0)
+            participant_confirmation_weight[address] = participant_confirmation_weight.get(address, 0) + int(
+                item.get("confirmation_weight", "0") or 0
+            )
 
     expected_models = set(
         item
@@ -211,7 +269,24 @@ def load_participant_subgroup_voting_power(
     elif expected_models:
         notes.append(f"loaded all subgroup models {sorted(expected_models)}")
 
-    return participant_voting_power, notes, complete
+    return participant_voting_power, participant_confirmation_weight, notes, complete
+
+
+def scale_confirmation_to_subgroup_voting_power(
+    confirmation_weight: int,
+    subgroup_voting_power: int,
+    subgroup_confirmation_weight: int | None,
+) -> int:
+    if confirmation_weight <= 0 or subgroup_voting_power <= 0:
+        return 0
+    if not subgroup_confirmation_weight or subgroup_confirmation_weight <= 0:
+        return min(confirmation_weight, subgroup_voting_power)
+
+    # Subgroup voting power can be lower than subgroup confirmation weight after
+    # model scaling/root power caps. Chain rewards the same confirmation fraction
+    # over the capped subgroup voting power, e.g. floor(1156 * 896 / 1216) = 851.
+    scaled = (subgroup_voting_power * confirmation_weight) // subgroup_confirmation_weight
+    return min(scaled, subgroup_voting_power)
 
 
 def _legacy_decimal_to_decimal(value: Any) -> Decimal:
