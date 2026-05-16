@@ -251,13 +251,6 @@ th:nth-child(2) {
   text-align: left;
 }
 
-td:nth-child(3),
-th:nth-child(3) {
-  min-width: 86px;
-  max-width: 96px;
-  text-align: right;
-}
-
 .reason-cell {
   color: #5a635c;
 }

@@ -200,7 +200,6 @@ function renderTable(epochs, metrics) {
     <tr>
       <th rowspan="2" class="sticky-col">Address</th>
       <th rowspan="2">Reasons</th>
-      <th rowspan="2">Total lost</th>
       ${epochs.map((epoch) => `<th colspan="${metrics.length}">Epoch ${epoch}</th>`).join("")}
     </tr>
     <tr>
@@ -211,12 +210,10 @@ function renderTable(epochs, metrics) {
   document.getElementById("tableBody").innerHTML = state.filtered.map((participant, index) => {
     const rows = epochs.map((epoch) => participant.byEpoch.get(epoch)).filter(Boolean);
     const hasLoss = rows.some((row) => row.has_loss);
-    const totalLost = sumRows(rows, "compensation_base_units") / 1e9;
     return `
       <tr class="${hasLoss ? "loss-row" : ""}">
         <td class="sticky-col"><button class="link" data-participant-index="${index}">${escapeHtml(participant.address)}</button></td>
         <td class="reason-cell">${escapeHtml([...participant.reasons].filter(Boolean).join(", "))}</td>
-        <td class="${totalLost > 0 ? "loss-strong" : ""}">${formatGnk(totalLost)}</td>
         ${epochs.flatMap((epoch) => metrics.map(([key]) => renderEpochCell(participant.byEpoch.get(epoch), key))).join("")}
       </tr>
     `;
@@ -237,12 +234,13 @@ function renderTable(epochs, metrics) {
 function renderEpochCell(row, key) {
   if (!row) return "<td></td>";
   const value = row[key] ?? "";
-  const displayValue = formatCellValue(key, value);
+  const emptyNeutral = isEmptyNeutralRow(row);
+  const displayValue = emptyNeutral ? formatEmptyNeutralCell(key) : formatCellValue(key, value);
   const classes = [];
   if (key === "compensation_gnk" && Number(row.compensation_base_units) > 0) classes.push("loss-strong");
-  if (key === "reward_delta_after_sources_gnk") classes.push(rewardDeltaClass(row));
-  if (key === "source_weight_delta") classes.push(sourceStateClass(row));
-  if (key === "source_state") classes.push(sourceStateClass(row));
+  if (key === "reward_delta_after_sources_gnk" && !emptyNeutral) classes.push(rewardDeltaClass(row));
+  if (key === "source_weight_delta" && !emptyNeutral) classes.push(sourceStateClass(row));
+  if (key === "source_state" && !emptyNeutral) classes.push(sourceStateClass(row));
   if (key.startsWith("bug_") && row.bug_adjusted_weight !== null) classes.push("bug");
   if (key.startsWith("source_") && Number(row.source_compensation_base_units || 0) > 0) classes.push("source");
   if (key.startsWith("remaining_") && Number(row.remaining_after_sources_base_units || 0) > 0) classes.push("remaining");
@@ -253,6 +251,13 @@ function renderEpochCell(row, key) {
   }
   if (row.has_loss) classes.push("clickable");
   return `<td class="${classes.join(" ")}" data-row-key="${escapeHtml(row.address)}|${row.epoch}" title="${escapeHtml(String(value))}">${escapeHtml(displayValue)}</td>`;
+}
+
+function formatEmptyNeutralCell(key) {
+  if (["reward_delta_after_sources_gnk", "source_weight_delta", "source_state"].includes(key)) {
+    return "";
+  }
+  return formatCellValue(key, "");
 }
 
 function showParticipantDetails(participant, epochs) {
@@ -447,6 +452,12 @@ function rewardDeltaClass(row) {
   if (delta > 0) return "problem-delta";
   if (delta < 0) return "source-exceeds";
   return "collapsed";
+}
+
+function isEmptyNeutralRow(row) {
+  return Number(row.reward_delta_after_sources_base_units || 0) === 0
+    && Number(row.source_compensation_base_units || 0) === 0
+    && row.source_state === "no_source";
 }
 
 function verdictClass(row) {
