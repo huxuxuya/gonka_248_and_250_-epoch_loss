@@ -9,6 +9,8 @@ const state = {
   showRewards: true,
   showBug: false,
   showSources: true,
+  sourceNames: [],
+  enabledSources: new Set(),
 };
 
 const format = new Intl.NumberFormat("en-US", { maximumFractionDigits: 9 });
@@ -17,6 +19,8 @@ loadData().then(({ rows, summary }) => {
   state.rawRows = rows;
   state.summary = summary;
   state.epochs = [...new Set(rows.map((row) => row.epoch))].sort((a, b) => a - b);
+  state.sourceNames = [...new Set(rows.flatMap((row) => (row.sources || []).map((source) => source.source).filter(Boolean)))].sort();
+  state.enabledSources = new Set(state.sourceNames);
   state.participants = pivotRows(rows);
   hydrateFilters();
   render();
@@ -149,7 +153,7 @@ function render() {
   const epochs = selectedEpochs();
 
   state.filtered = state.participants.filter((participant) => {
-    const rows = epochs.map((epoch) => participant.byEpoch.get(epoch)).filter(Boolean);
+    const rows = epochs.map((epoch) => sourceAdjustedRow(participant.byEpoch.get(epoch))).filter(Boolean);
     if (!rows.length) return false;
     const hasVisibleLoss = rows.some((row) => row.has_loss);
     if (!state.showAllRows && !hasVisibleLoss) return false;
@@ -170,7 +174,7 @@ function render() {
 }
 
 function renderTotals(epochs) {
-  const rows = state.filtered.flatMap((participant) => epochs.map((epoch) => participant.byEpoch.get(epoch)).filter(Boolean));
+  const rows = state.filtered.flatMap((participant) => epochs.map((epoch) => sourceAdjustedRow(participant.byEpoch.get(epoch))).filter(Boolean));
   const baseline = sumRows(rows, "compensation_base_units") / 1e9;
   const source = sumRows(rows, "source_compensation_base_units") / 1e9;
   const remaining = sumRows(rows, "remaining_after_sources_base_units") / 1e9;
@@ -188,7 +192,7 @@ function renderTotals(epochs) {
 
 function renderSummary(epochs) {
   document.getElementById("summary").innerHTML = epochs.map((epoch) => {
-    const rows = state.filtered.map((participant) => participant.byEpoch.get(epoch)).filter(Boolean);
+    const rows = state.filtered.map((participant) => sourceAdjustedRow(participant.byEpoch.get(epoch))).filter(Boolean);
     const total = sumRows(rows, "compensation_base_units") / 1e9;
     const remaining = sumRows(rows, "remaining_after_sources_base_units") / 1e9;
     const count = rows.filter((row) => row.has_loss).length;
@@ -209,13 +213,13 @@ function renderTable(epochs, metrics) {
   `;
 
   document.getElementById("tableBody").innerHTML = state.filtered.map((participant, index) => {
-    const rows = epochs.map((epoch) => participant.byEpoch.get(epoch)).filter(Boolean);
+    const rows = epochs.map((epoch) => sourceAdjustedRow(participant.byEpoch.get(epoch))).filter(Boolean);
     const hasLoss = rows.some((row) => row.has_loss);
     return `
       <tr class="${hasLoss ? "loss-row" : ""}">
         <td class="sticky-col"><button class="link" data-participant-index="${index}">${escapeHtml(participant.address)}</button></td>
         <td class="reason-cell">${escapeHtml([...participant.reasons].filter(Boolean).join(", "))}</td>
-        ${epochs.flatMap((epoch) => metrics.map(([key]) => renderEpochCell(participant.byEpoch.get(epoch), key))).join("")}
+        ${epochs.flatMap((epoch) => metrics.map(([key]) => renderEpochCell(sourceAdjustedRow(participant.byEpoch.get(epoch)), key))).join("")}
       </tr>
     `;
   }).join("");
@@ -227,7 +231,7 @@ function renderTable(epochs, metrics) {
     cell.addEventListener("click", () => {
       const [address, epoch] = cell.dataset.rowKey.split("|");
       const participant = state.participants.find((item) => item.address === address);
-      showDetails(participant.byEpoch.get(Number(epoch)));
+      showDetails(sourceAdjustedRow(participant.byEpoch.get(Number(epoch))));
     });
   });
 }
@@ -259,9 +263,6 @@ function renderEpochCell(row, key) {
 }
 
 function renderSourceLegend() {
-  const sources = [...new Set(
-    state.rawRows.flatMap((row) => (row.sources || []).map((source) => source.source).filter(Boolean))
-  )].sort();
   const items = [
     ["source-grc-e247-preserver-audit", "GRC-e247-preserver-audit", "source closed calculated loss"],
     ["source-grc-e254-api-issue", "GRC-e254-api-issue", "source closed calculated loss"],
@@ -269,18 +270,39 @@ function renderSourceLegend() {
     ["source-segovchik-grc-case-1", "SegovChik-grc-case-1", "source closed calculated loss"],
     ["source-mixed", "multiple sources", "closed by more than one source"],
   ];
-  const visibleItems = items.filter(([, source]) => source === "multiple sources" || sources.includes(source));
+  const visibleItems = items.filter(([, source]) => source === "multiple sources" || state.sourceNames.includes(source));
   document.getElementById("sourceLegend").innerHTML = [
-    ...visibleItems.map(([className, label, note]) => `
+    ...visibleItems.map(([className, label, note]) => {
+      const isToggleable = label !== "multiple sources";
+      const checked = !isToggleable || state.enabledSources.has(label);
+      const disabled = !isToggleable ? "disabled" : "";
+      const mutedClass = isToggleable && !checked ? "source-disabled" : "";
+      return `
       <div class="legend-item ${className}">
         <span></span>
-        <strong>${escapeHtml(label)}</strong>
+        <label>
+          <input type="checkbox" data-source-toggle="${escapeAttribute(label)}" ${checked ? "checked" : ""} ${disabled}>
+          <strong class="${mutedClass}">${escapeHtml(label)}</strong>
+        </label>
         <em>${escapeHtml(note)}</em>
       </div>
-    `),
+    `;
+    }),
     `<div class="legend-item legend-remaining"><span></span><strong>remaining</strong><em>calculated loss is still not covered by sources</em></div>`,
     `<div class="legend-item legend-problem"><span></span><strong>problem delta</strong><em>calculated loss is non-zero after source layer</em></div>`,
   ].join("");
+
+  document.querySelectorAll("[data-source-toggle]").forEach((input) => {
+    input.addEventListener("change", (event) => {
+      const source = event.target.dataset.sourceToggle;
+      if (event.target.checked) {
+        state.enabledSources.add(source);
+      } else {
+        state.enabledSources.delete(source);
+      }
+      render();
+    });
+  });
 }
 
 function formatEmptyNeutralCell(key) {
@@ -291,7 +313,7 @@ function formatEmptyNeutralCell(key) {
 }
 
 function showParticipantDetails(participant, epochs) {
-  const rows = epochs.map((epoch) => participant.byEpoch.get(epoch)).filter(Boolean);
+  const rows = epochs.map((epoch) => sourceAdjustedRow(participant.byEpoch.get(epoch))).filter(Boolean);
   const totalLost = sumRows(rows, "compensation_base_units") / 1e9;
   const remaining = sumRows(rows, "remaining_after_sources_base_units") / 1e9;
   document.getElementById("detailContent").innerHTML = `
@@ -426,6 +448,75 @@ function renderTechnicalDetails(row) {
 
 function sumRows(rows, key) {
   return rows.reduce((sum, row) => sum + Number(row[key] || 0), 0);
+}
+
+function sourceAdjustedRow(row) {
+  if (!row) return row;
+  const sources = (row.sources || []).filter((source) => state.enabledSources.has(source.source));
+  const sourceTotal = sources.reduce((sum, source) => sum + Number(source.source_compensation_base_units || 0), 0);
+  const sourceWeight = sources.reduce((sum, source) => sum + Number(source.source_weight || source.weight || 0), 0);
+  const comparableCalculated = comparableCalculatedForActiveSources(row, sources, sourceTotal);
+  const tolerance = sourceMatchTolerance(sources);
+  const rawDelta = Number(row.calculated_layers_base_units || 0) - sourceTotal;
+  const rewardDelta = normalizeTinyDelta(rawDelta, tolerance);
+  const remaining = Math.max(0, rewardDelta);
+  const sourceExcess = Math.max(0, -rewardDelta);
+
+  return {
+    ...row,
+    sources,
+    source_weight: sourceWeight || null,
+    source_weight_delta: sourceWeight ? Number(row.weight || 0) - sourceWeight : null,
+    source_comparable_calculated_base_units: comparableCalculated,
+    source_comparable_calculated_gnk: sources.length ? formatBaseUnitsAsGnk(comparableCalculated) : "",
+    source_compensation_base_units: sourceTotal,
+    source_compensation_gnk: sourceTotal ? formatBaseUnitsAsGnk(sourceTotal) : "",
+    reward_delta_after_sources_base_units: rewardDelta,
+    reward_delta_after_sources_gnk: formatBaseUnitsAsGnk(rewardDelta),
+    remaining_after_sources_base_units: remaining,
+    remaining_after_sources_gnk: remaining ? formatBaseUnitsAsGnk(remaining) : "",
+    source_excess_base_units: sourceExcess,
+    source_excess_gnk: sourceExcess ? formatBaseUnitsAsGnk(sourceExcess) : "",
+    source_state: classifyActiveSourceState(comparableCalculated, sourceTotal, sources.length > 0, tolerance),
+    match_status: activeMatchStatus(row, sourceTotal, comparableCalculated, tolerance),
+  };
+}
+
+function comparableCalculatedForActiveSources(row, sources, sourceTotal) {
+  if (!sources.length) return Number(row.compensation_base_units || 0);
+  const bugSourceTotal = sources
+    .filter((source) => source.source === "GRC-e247-preserver-audit")
+    .reduce((sum, source) => sum + Number(source.source_compensation_base_units || 0), 0);
+  const hasNonBugSource = sources.some((source) => source.source !== "GRC-e247-preserver-audit");
+  let total = 0;
+  if (hasNonBugSource) total += Number(row.compensation_base_units || 0);
+  if (bugSourceTotal) total += Number(row.bug_compensation_base_units || 0);
+  return total || (sourceTotal ? Number(row.compensation_base_units || 0) : 0);
+}
+
+function sourceMatchTolerance(sources) {
+  return Math.max(2400, ...sources.map((source) => Number(source.source_match_tolerance_base_units || 0)));
+}
+
+function normalizeTinyDelta(value, tolerance) {
+  return Math.abs(value) <= tolerance ? 0 : value;
+}
+
+function classifyActiveSourceState(calculated, sourceTotal, hasSource, tolerance) {
+  if (!hasSource) return "no_source";
+  if (Math.abs(calculated - sourceTotal) <= tolerance) return "collapsed_to_zero";
+  if (calculated > sourceTotal) return "remaining_after_source";
+  return "source_exceeds_calculated";
+}
+
+function activeMatchStatus(row, sourceTotal, comparableCalculated, tolerance) {
+  if (sourceTotal <= 0) return "no_source";
+  if (Math.abs(sourceTotal - comparableCalculated) <= tolerance) return "source_matches_calculated_layers";
+  if (Math.abs(sourceTotal - Number(row.compensation_base_units || 0)) <= tolerance) return "source_matches_baseline";
+  if (row.bug_compensation_base_units !== null && Math.abs(sourceTotal - Number(row.bug_compensation_base_units || 0)) <= tolerance) {
+    return "source_matches_bug_adjusted";
+  }
+  return "source_differs";
 }
 
 function formatGnk(value) {

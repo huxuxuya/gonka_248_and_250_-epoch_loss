@@ -418,6 +418,22 @@ td.problem-delta {
   white-space: nowrap;
 }
 
+.legend-item label {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  min-width: 0;
+}
+
+.legend-item input {
+  margin: 0;
+}
+
+.legend-item .source-disabled {
+  color: #8b9089;
+  text-decoration: line-through;
+}
+
 .legend-item em {
   overflow: hidden;
   color: var(--muted);
