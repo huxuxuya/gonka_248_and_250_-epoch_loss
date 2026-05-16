@@ -470,8 +470,8 @@ dialog::backdrop {
 }
 
 .detail-section {
-  margin-top: 12px;
-  padding: 12px;
+  margin-top: 9px;
+  padding: 10px;
   border: 1px solid var(--line);
   border-radius: 16px;
   background: rgba(255, 253, 248, 0.78);
@@ -484,12 +484,12 @@ dialog::backdrop {
 .kv-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 8px;
+  gap: 7px;
 }
 
 .kv-item {
   min-width: 0;
-  padding: 9px;
+  padding: 8px;
   border: 1px solid var(--line);
   border-radius: 12px;
   background: var(--panel-soft);
@@ -497,7 +497,7 @@ dialog::backdrop {
 
 .kv-item strong {
   display: block;
-  margin-top: 4px;
+  margin-top: 3px;
   overflow-wrap: anywhere;
   font-size: 13px;
 }
@@ -585,6 +585,59 @@ dialog::backdrop {
 .empty-state {
   margin: 0;
   color: var(--muted);
+}
+
+.compact-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.help-details {
+  min-width: 160px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel-soft);
+}
+
+.help-details[open] {
+  flex-basis: 100%;
+  border-radius: 12px;
+}
+
+.help-details summary {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  padding: 5px 8px;
+  color: #405047;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 800;
+  list-style: none;
+}
+
+.help-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.help-details summary span {
+  display: inline-grid;
+  width: 18px;
+  height: 18px;
+  place-items: center;
+  border-radius: 999px;
+  background: #d8d0bf;
+  color: #3b3328;
+  font-size: 11px;
+}
+
+.help-details p {
+  margin: 0;
+  padding: 0 10px 9px 32px;
+  color: #3d453f;
+  line-height: 1.45;
+  white-space: pre-line;
 }
 
 .source-table {

@@ -278,11 +278,11 @@ function showDetails(row) {
   document.getElementById("detailContent").innerHTML = `
     <h2>${escapeHtml(row.address)}</h2>
     ${renderVerdict(row)}
-    ${renderChainFacts(row)}
-    ${renderBaseCalculation(row)}
-    ${renderAdjustmentLayers(row)}
+    ${renderWhatHappened(row)}
+    ${renderWeightsSummary(row)}
+    ${renderRewardsSummary(row)}
     ${renderSourceLayers(row)}
-    ${renderFinalFormula(row)}
+    ${renderTechnicalDetails(row)}
   `;
   document.getElementById("detailDialog").showModal();
 }
@@ -304,52 +304,42 @@ function renderVerdict(row) {
   `;
 }
 
-function renderChainFacts(row) {
-  return section("Chain Facts", `
+function renderWhatHappened(row) {
+  return section("What happened", `
     <div class="kv-grid">
       ${kv("Actual received", `${formatGnkValue(row.actual_reward_gnk)} GNK`)}
-      ${kv("Weight", row.weight)}
+      ${kv("Reason", row.reason || "none")}
+      ${kv("Source status", statusLabel(row.source_state))}
+      ${kv("Match", matchLabel(row.match_status))}
+      ${kv("Final Reward Δ", `${formatGnkValue(row.reward_delta_after_sources_gnk)} GNK`, rewardDeltaClass(row))}
+      ${kv("Calculated before sources", `${formatGnkValue(row.calculated_layers_gnk)} GNK`)}
+      ${kv("Source total", `${formatGnkValue(row.source_compensation_gnk)} GNK`)}
+    </div>
+  `);
+}
+
+function renderWeightsSummary(row) {
+  return section("Weights", `
+    <div class="kv-grid">
+      ${kv("Chain weight", row.weight)}
       ${kv("Confirmation weight", row.confirmation_weight)}
       ${kv("Effective weight", row.effective_weight)}
-      ${kv("Fixed epoch reward", `${formatBaseUnitsAsGnk(row.fixed_epoch_reward)} GNK`)}
-      ${kv("Total epoch weight", row.total_epoch_weight)}
-      ${kv("Reason", row.reason || "none")}
+      ${kv("0.35 weight delta", row.bug_weight_delta ?? "0")}
+      ${kv("Weight with 0.35 fix", row.bug_adjusted_weight ?? row.effective_weight)}
+      ${kv("Source weight", row.source_weight ?? "0")}
     </div>
   `);
 }
 
-function renderBaseCalculation(row) {
-  return section("Base Calculation", `
-    <div class="formula-box">
-      base_expected = floor(expected_weight * fixed_epoch_reward / total_epoch_weight)<br>
-      baseline_lost = max(0, base_expected - actual_received)
-    </div>
+function renderRewardsSummary(row) {
+  return section("Rewards", `
     <div class="kv-grid">
-      ${kv("Expected reward", `${formatGnkValue(row.expected_reward_gnk)} GNK`)}
+      ${kv("Expected by base calc", `${formatGnkValue(row.expected_reward_gnk)} GNK`)}
       ${kv("Actual received", `${formatGnkValue(row.actual_reward_gnk)} GNK`)}
       ${kv("Baseline lost", `${formatGnkValue(row.compensation_gnk)} GNK`)}
-    </div>
-    ${textBlock("Base notes", row.notes)}
-  `);
-}
-
-function renderAdjustmentLayers(row) {
-  if (!row.bug_weight_delta && !row.bug_reward_delta_gnk && !row.bug_adjusted_weight) {
-    return section("Adjustment Layers", `<p class="empty-state">No adjustment layers.</p>`);
-  }
-  return section("Adjustment Layers", `
-    <div class="layer-card bug-layer">
-      <div class="layer-title">
-        <strong>0.35 stuck weight bug</strong>
-        ${pill(`${formatGnkValue(row.bug_reward_delta_gnk || row.bug_compensation_gnk)} GNK`, "bug-pill")}
-      </div>
-      <div class="kv-grid">
-        ${kv("Weight delta", row.bug_weight_delta ?? "")}
-        ${kv("Adjusted weight", row.bug_adjusted_weight ?? "")}
-        ${kv("Expected with fix", `${formatGnkValue(row.bug_expected_reward_gnk)} GNK`)}
-        ${kv("Reward delta", `${formatGnkValue(row.bug_reward_delta_gnk || row.bug_compensation_gnk)} GNK`)}
-      </div>
-      ${textBlock("Bug details", row.bug_details)}
+      ${kv("Expected with 0.35 fix", `${formatGnkValue(row.bug_expected_reward_gnk || row.expected_reward_gnk)} GNK`)}
+      ${kv("0.35 reward delta", `${formatGnkValue(row.bug_reward_delta_gnk || row.bug_compensation_gnk)} GNK`)}
+      ${kv("Final Reward Δ", `${formatGnkValue(row.reward_delta_after_sources_gnk)} GNK`, rewardDeltaClass(row))}
     </div>
   `);
 }
@@ -357,9 +347,9 @@ function renderAdjustmentLayers(row) {
 function renderSourceLayers(row) {
   const sources = row.sources || [];
   if (!sources.length) {
-    return section("Source Compensation Layers", `<p class="empty-state">No external sources for this epoch.</p>`);
+    return "";
   }
-  return section("Source Compensation Layers", `
+  return section("Sources", `
     <table class="source-table">
       <thead>
         <tr>
@@ -378,7 +368,9 @@ function renderSourceLayers(row) {
             <td>${escapeHtml(source.status || "")}</td>
           </tr>
           <tr>
-            <td colspan="4" class="source-details">${escapeHtml(source.details || "")}</td>
+            <td colspan="4" class="source-details">
+              ${helpDetails("details", source.details || "")}
+            </td>
           </tr>
         `).join("")}
       </tbody>
@@ -386,20 +378,18 @@ function renderSourceLayers(row) {
   `);
 }
 
-function renderFinalFormula(row) {
-  return section("Final Calculation", `
-    <div class="formula-box">
-      calculated_layers_total = baseline_lost + adjustment_layers<br>
-      source_total = sum(source compensation)<br>
-      final_reward_delta = calculated_layers_total - source_total
-    </div>
-    <div class="kv-grid">
-      ${kv("Calculated layers total", `${formatGnkValue(row.calculated_layers_gnk)} GNK`)}
-      ${kv("Source total", `${formatGnkValue(row.source_compensation_gnk)} GNK`)}
-      ${kv("Final Reward Δ", `${formatGnkValue(row.reward_delta_after_sources_gnk)} GNK`, rewardDeltaClass(row))}
-      ${kv("Remaining after sources", `${formatGnkValue(row.remaining_after_sources_gnk)} GNK`)}
-      ${kv("Source excess", `${formatGnkValue(row.source_excess_gnk)} GNK`)}
-      ${kv("Comparable calculated layer", `${formatGnkValue(row.source_comparable_calculated_gnk)} GNK`)}
+function renderTechnicalDetails(row) {
+  return section("Technical details", `
+    <div class="compact-details">
+      ${helpDetails("formula", `
+        base_expected = floor(expected_weight * fixed_epoch_reward / total_epoch_weight)
+        baseline_lost = max(0, base_expected - actual_received)
+        calculated_layers_total = baseline_lost + adjustment_layers
+        final_reward_delta = calculated_layers_total - source_total
+      `)}
+      ${helpDetails("base notes", row.notes || "No base notes.")}
+      ${helpDetails("0.35 bug details", row.bug_details || "No 0.35 bug adjustment for this row.")}
+      ${helpDetails("epoch constants", `fixed_epoch_reward=${formatBaseUnitsAsGnk(row.fixed_epoch_reward)} GNK; total_epoch_weight=${row.total_epoch_weight}`)}
     </div>
   `);
 }
@@ -515,6 +505,15 @@ function textBlock(label, value) {
       <span>${escapeHtml(label)}</span>
       <p>${escapeHtml(value)}</p>
     </div>
+  `;
+}
+
+function helpDetails(label, value) {
+  return `
+    <details class="help-details">
+      <summary><span>?</span>${escapeHtml(label)}</summary>
+      <p>${escapeHtml(value)}</p>
+    </details>
   `;
 }
 
