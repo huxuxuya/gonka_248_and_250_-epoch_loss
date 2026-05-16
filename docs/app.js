@@ -73,6 +73,7 @@ document.getElementById("showSources").addEventListener("change", (event) => {
   state.showSources = event.target.checked;
   render();
 });
+document.getElementById("exportSources").addEventListener("click", showSourceExport);
 
 function pivotRows(rows) {
   const byAddress = new Map();
@@ -268,6 +269,8 @@ function renderSourceLegend() {
     ["source-grc-e254-api-issue", "GRC-e254-api-issue", "source closed calculated loss"],
     ["source-consensus-failure-restriction", "consensus_failure_restriction", "source closed calculated loss"],
     ["source-segovchik-grc-case-1", "SegovChik-grc-case-1", "source closed calculated loss"],
+    ["source-epoch-248-full-compensation", "epoch-248-full-compensation", "full package coverage"],
+    ["source-epoch-250-full-compensation", "epoch-250-full-compensation", "full package coverage"],
     ["source-mixed", "multiple sources", "closed by more than one source"],
   ];
   const visibleItems = items.filter(([, source]) => source === "multiple sources" || state.sourceNames.includes(source));
@@ -519,6 +522,38 @@ function activeMatchStatus(row, sourceTotal, comparableCalculated, tolerance) {
   return "source_differs";
 }
 
+function showSourceExport() {
+  const rows = [];
+  for (const row of state.rawRows) {
+    for (const source of row.sources || []) {
+      if (!state.enabledSources.has(source.source)) continue;
+      const baseUnits = Number(source.source_compensation_base_units || 0);
+      if (baseUnits <= 0) continue;
+      rows.push({
+        epoch: row.epoch,
+        address: row.address,
+        source: source.source,
+        amount_ngnk: baseUnits,
+        amount_gnk: formatBaseUnitsAsGnk(baseUnits),
+      });
+    }
+  }
+  rows.sort((a, b) => a.epoch - b.epoch || a.address.localeCompare(b.address) || a.source.localeCompare(b.source));
+
+  const csvRows = [
+    ["epoch", "address", "source", "amount_ngnk", "amount_gnk"],
+    ...rows.map((row) => [row.epoch, row.address, row.source, row.amount_ngnk, row.amount_gnk]),
+  ];
+  document.getElementById("exportCsv").value = csvRows.map((row) => row.map(csvCell).join(",")).join("\n");
+  document.getElementById("exportDialog").showModal();
+}
+
+function csvCell(value) {
+  const text = String(value ?? "");
+  if (!/[",\n]/.test(text)) return text;
+  return `"${text.replace(/"/g, '""')}"`;
+}
+
 function formatGnk(value) {
   return Number(value || 0).toFixed(9);
 }
@@ -572,6 +607,8 @@ function sourceColorClass(sourceName) {
     "GRC-e254-api-issue": "source-grc-e254-api-issue",
     "consensus_failure_restriction": "source-consensus-failure-restriction",
     "SegovChik-grc-case-1": "source-segovchik-grc-case-1",
+    "epoch-248-full-compensation": "source-epoch-248-full-compensation",
+    "epoch-250-full-compensation": "source-epoch-250-full-compensation",
   }[sourceName] || "";
 }
 

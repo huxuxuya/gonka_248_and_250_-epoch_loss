@@ -70,7 +70,10 @@
       </section>
 
       <section class="bottom-stats" aria-label="Totals">
-        <h2>Legend</h2>
+        <div class="section-row">
+          <h2>Legend</h2>
+          <button id="exportSources" class="small-action" type="button">Export active sources CSV</button>
+        </div>
         <div class="source-legend" id="sourceLegend"></div>
         <h2>Totals</h2>
         <div class="totals" id="totals"></div>
@@ -83,6 +86,17 @@
         <button class="close" aria-label="Close">x</button>
       </form>
       <div id="detailContent"></div>
+    </dialog>
+
+    <dialog id="exportDialog">
+      <form method="dialog">
+        <button class="close" aria-label="Close">x</button>
+      </form>
+      <div class="export-dialog-content">
+        <h2>Active Sources Export</h2>
+        <p>CSV includes only currently enabled compensation sources.</p>
+        <textarea id="exportCsv" readonly></textarea>
+      </div>
     </dialog>
 
     <script src="data.js"></script>

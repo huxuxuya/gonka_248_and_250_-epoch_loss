@@ -286,7 +286,7 @@ def scale_confirmation_to_subgroup_voting_power(
     # model scaling/root power caps. Chain rewards the same confirmation fraction
     # over the capped subgroup voting power, e.g. floor(1156 * 896 / 1216) = 851.
     scaled = (subgroup_voting_power * confirmation_weight) // subgroup_confirmation_weight
-    return min(scaled, subgroup_voting_power)
+    return min(confirmation_weight, scaled, subgroup_voting_power)
 
 
 def _legacy_decimal_to_decimal(value: Any) -> Decimal:

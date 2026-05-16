@@ -20,14 +20,14 @@
 | epoch | fixed_epoch_reward | total_epoch_weight | actual_rewarded_coins | expected_reward_base_units | compensation_base_units | approximation_used |
 | --- | ---: | ---: | ---: | ---: | ---: | --- |
 | 247 | 287379121027086 | 881604 | 253848231982387 | 38519580189638 | 17527243477224 | False |
-| 248 | 287242648359423 | 858277 | 129460782401156 | 253436264594311 | 124085589805628 | False |
+| 248 | 287242648359423 | 858277 | 129460782401156 | 247554710850860 | 118204036062177 | False |
 | 249 | 287106240500883 | 740094 | 190086354894340 | 281108421866478 | 91177239823425 | False |
 | 250 | 286969897420690 | 792073 | 252497917148785 | 282542562886487 | 30160582484914 | False |
 | 251 | 286833619088082 | 709500 | 275283461938874 | 268990506174638 | 5499362537635 | False |
 | 252 | 286697405472310 | 674940 | 273630912317725 | 261223244652675 | 1912335495651 | False |
-| 253 | 286561256542641 | 823500 | 275402940510685 | 311312006383670 | 45211954315502 | False |
-| 254 | 286425172268357 | 1028204 | 219006319815693 | 297666522624589 | 83869710986839 | False |
-| 255 | 286289152618754 | 1185640 | 245807020349245 | 281780298879944 | 39921936228462 | False |
+| 253 | 286561256542641 | 823500 | 275402940510685 | 267040293130922 | 940241062754 | False |
+| 254 | 286425172268357 | 1028204 | 219006319815693 | 273599881828645 | 59803070190895 | False |
+| 255 | 286289152618754 | 1185640 | 245807020349245 | 243872412297235 | 2014049645753 | False |
 
 ## Totals By Address
 
@@ -48,7 +48,7 @@
 | gonka12av9up884t9lcsf70rs0l7jfmkmc8k9sxfuknt | 37180808983932 | 87515706411789 | 87515706411789 |
 | gonka12fazh3etpdx947ldwen4wudnds7wu4kjp5vd76 | 790810553958 | 1602728693346 | 811918139388 |
 | gonka12gc47yq8m7rnsa3aucq8mlzm7men8jaac7qkkz | 0 | 2069805851711 | 2069805851711 |
-| gonka12pcu9mcrpa4w4sjd9y3dsksnvu495ss6f9r4ra | 35404944417560 | 32028573627045 | 1583006100292 |
+| gonka12pcu9mcrpa4w4sjd9y3dsksnvu495ss6f9r4ra | 35404944417560 | 30445567526753 | 0 |
 | gonka12tfc6ccmadjqv6yaa3axxsuhy6zv6tupu78p8u | 2570308707308 | 3394873497838 | 916316115955 |
 | gonka1369ax8kr4ma8zu708jr3x2r902lfs8tcguyxl8 | 0 | 554480112235 | 554480112235 |
 | gonka13jelpte0qx5f0up3pzmmgnnqj5877rwfs08n7q | 0 | 797004041396 | 797004041396 |
@@ -61,14 +61,14 @@
 | gonka15rvksn9gxgpszyr8270cd4wj2x3d460r394uv4 | 537855488058 | 1090066918392 | 552211430334 |
 | gonka15sptlamre9vq4m5t7pa7je5r2pc34kmlwvj0jz | 0 | 172229679607 | 172229679607 |
 | gonka163ug8zucqeag9v5ey4au34jqt7vejkmxsg74eu | 1328732234015 | 5818832801196 | 4598418104141 |
-| gonka168rtjfkszuhcggg4dfyse4yh7xn9zwfglnkns2 | 28184702989581 | 22870951917774 | 262501633924 |
+| gonka168rtjfkszuhcggg4dfyse4yh7xn9zwfglnkns2 | 28184702989581 | 22727711619482 | 119261335632 |
 | gonka168yvlgt9jg86frg2z90cc8w4pz9hnd7f8lshux | 0 | 985024106256 | 985024106256 |
-| gonka16k03ze5ynkprsd4n6e5uzhthvu9jjk553rauqy | 49228568676985 | 49924180033183 | 695611356198 |
+| gonka16k03ze5ynkprsd4n6e5uzhthvu9jjk553rauqy | 49228568676985 | 49228568676985 | 0 |
 | gonka16q0zaetd6hq6d8zj48ur0v967xrrwh566kcazc | 804175447903 | 735826287119 | 735826287119 |
 | gonka175dvjafzhfxwgvrj83cm9ekmgh2a4u7nqv4azu | 4126037937157 | 709099602368 | 0 |
 | gonka17ef5hl0588tmjm9ypw7t2kge78wrkcpvyspc0p | 751041845144 | 1522129806047 | 771087960903 |
 | gonka17fcahf38xh8ghzyyrc55tarz9nd0vw6xd29nsk | 553828166189 | 1122438602636 | 568610436447 |
-| gonka17gpuntq09zsaqtmpe544gc32tk4424dwv5t34f | 332877388065662 | 299986151662597 | 279452451109 |
+| gonka17gpuntq09zsaqtmpe544gc32tk4424dwv5t34f | 332877388065662 | 299706699211488 | 0 |
 | gonka17pw6099q758qwzewtrqmqpf5c2lrhr97fwqexu | 62175364100343 | 56830442149404 | 1876180168760 |
 | gonka17tlh09e32xpv2uj433ytjnwwd8fh24jclpzm5s | 626846123355 | 1270423444890 | 643577321535 |
 | gonka1830lqug50lse998x2lakk4pj5ypfumz5pasz0y | 2513968906038 | 3420772313907 | 1099048585561 |
@@ -84,7 +84,7 @@
 | gonka1c6y9p4w87equy52va4us3qzycz9w28ua9693gl | 0 | 0 | 0 |
 | gonka1ccdm8j6sjyhq4qask049dwgaczs7f3pxte6zmp | 5156214864831 | 5804557120670 | 711516061145 |
 | gonka1cckj93kp9kegry64scpn4ew9965g3qrswyshl9 | 584143657334 | 1183878738036 | 599735080702 |
-| gonka1d694r00czmq75txghwjcuk07lxvc8d4ekgsha0 | 49602545755613 | 69239072987464 | 20163420113840 |
+| gonka1d694r00czmq75txghwjcuk07lxvc8d4ekgsha0 | 49602545755613 | 50518917172629 | 1443264299005 |
 | gonka1d7ghexkrnm00fh695zcd00xgfgwxe2vvamcsdt | 0 | 1806188771282 | 1806188771282 |
 | gonka1d7p03cu2y2yt3vytq9wlfm6tlz0lfhlgv9h82p | 1534460043256 | 1725604526569 | 209840343527 |
 | gonka1dkl4mah5erqggvhqkpc8j3qs5tyuetgdy552cp | 1334160013060 | 2098592646647 | 801063781434 |
@@ -95,7 +95,7 @@
 | gonka1eazh84v0e60s9m7exxp3nsadcfgvnsthgypjvl | 303480884474 | 615062000620 | 311581116146 |
 | gonka1elw9xd79mpsrt7jqwkweg6yv02nvda49xhcej2 | 0 | 825363694403 | 825363694403 |
 | gonka1f0u3y2wneer8zhz3ypw4x54h38cpa0qsy8ts3e | 2609348757132 | 3917255794209 | 1416649348691 |
-| gonka1famtxh54kad6ylwtm60j6d7h6unpc08d4vdqnk | 229898414457384 | 228252387380438 | 30976049179407 |
+| gonka1famtxh54kad6ylwtm60j6d7h6unpc08d4vdqnk | 229898414457384 | 227444819997774 | 30168481796743 |
 | gonka1fc9tzt83dgrqswlgay4668cuqjrk7zsqks2vm2 | 1244403735582 | 1199114284851 | 688423583150 |
 | gonka1fkrsesmn2hdj30fhwyam6h4f2e77un36xalhvl | 9509853826313 | 7508002924233 | 0 |
 | gonka1fp8zl07qccdzuekns2q55jgmcag40kjrm8z0z9 | 722030246091 | 1463332257115 | 741302011024 |
@@ -105,7 +105,7 @@
 | gonka1gyydhl9lp0udz3409ps0c0lk0y4ft8qcyv8tfq | 547634678750 | 1109886316908 | 562251638158 |
 | gonka1h2m79scgaq6ultrwge03wjk0ys4whgcejphmql | 894756318982 | 1087738297732 | 474959170278 |
 | gonka1h3s37p0l23mg6ak9h9nmayh6r9f2vm6umj3qet | 1998931408014 | 1998931408014 | 0 |
-| gonka1hwvel7n3zuk6wruefuzc356l9myske9stckwnz | 53481103346260 | 48549118583027 | 609105941338 |
+| gonka1hwvel7n3zuk6wruefuzc356l9myske9stckwnz | 53481103346260 | 47940012641689 | 0 |
 | gonka1hytku6t3cfd7wppyrjvu357jjqpsgsw6wcprcy | 0 | 827971478587 | 827971478587 |
 | gonka1jcelp2ad2x0jf2vnyhkhd6wquug0zpd09sxxw4 | 10105163715 | 0 | 0 |
 | gonka1jltjehxsnum94nt8c00ts7khmpy4lafv6gryzk | 38828318402657 | 32657649076018 | 0 |
@@ -127,10 +127,10 @@
 | gonka1nkzdygk3g2p2usnueuqxyep3462350hgzxs86s | 10105163715 | 558904902217 | 558904902217 |
 | gonka1p2lhgng7tcqju7emk989s5fpdr7k2c3ek6h26m | 1530679929714 | 1721731935281 | 209840343527 |
 | gonka1p60lruhxmwcsa9taa28cp4k4f6kv2kvyu5h5ep | 343249593288 | 616394556339 | 273144963051 |
-| gonka1pllyukkeymx3hfd9mts3pryr9y6efs9eshty87 | 18549594986569 | 15634445109071 | 560578270188 |
+| gonka1pllyukkeymx3hfd9mts3pryr9y6efs9eshty87 | 18549594986569 | 15073866838883 | 0 |
 | gonka1psgzz288a434dv6863ldd73xma70zw7387muj2 | 534595757828 | 1083460452220 | 548864694392 |
 | gonka1pvkv59e72vju2h7s9j3ex62c5xneqey350vpwn | 1614427038906 | 3503388820331 | 2119318256914 |
-| gonka1q5xt54wncgzk7dxv9x64uln68455g83wu9tugg | 241030474095372 | 301178738599821 | 75557987223848 |
+| gonka1q5xt54wncgzk7dxv9x64uln68455g83wu9tugg | 241030474095372 | 277261766617216 | 51641015241243 |
 | gonka1qa90tgczc0k5dvk4l5nvlf5y6phgm6mg22sfjv | 41323955270549 | 38979110225030 | 0 |
 | gonka1ql9asemklpkpr2d4mh33xw5gj0g5tm0v98c5q3 | 534595757828 | 1083460452220 | 548864694392 |
 | gonka1qnj39ysxpzknvrr5dw9rdl7cx5q7dpkwerryrs | 89649904318 | 15080934933 | 0 |
@@ -138,7 +138,7 @@
 | gonka1qwfrtz9c7kcrfkrrlne2pkcye74mj6ce33xdkl | 1509991447166 | 1612212804904 | 220215224945 |
 | gonka1qx4f2vzhccv0ndhssfgafvf55xf4smuzjmkvky | 0 | 508191942959 | 508191942959 |
 | gonka1r5hdy9q5v783ef7td98k4c68cxl6a58h5sytfq | 2085901374599 | 5119333666284 | 3033432291685 |
-| gonka1rcpc45n6zch9qlkn4m3cwngekad89xu8mcr09v | 12970588921804 | 11189627187892 | 763390468238 |
+| gonka1rcpc45n6zch9qlkn4m3cwngekad89xu8mcr09v | 12970588921804 | 10426236719654 | 0 |
 | gonka1sa32xmpxvv7nepfc22004rgdl4ddjvne42guce | 0 | 766688550251 | 766688550251 |
 | gonka1slndy4rsmld579628302rj5gz8z9qf4v6ppmc4 | 4294153001303 | 3899186011473 | 0 |
 | gonka1t8p0tjqls358gmzvd3rnnjulraq2k3m772vnt8 | 0 | 1377181839894 | 1377181839894 |
@@ -154,7 +154,7 @@
 | gonka1ujnc662v6g69jm6fgxnr79a2m7ehzeut059239 | 4760475260316 | 4207235332109 | 419181175522 |
 | gonka1umvyh0rz5fdmk9qhxurshhchennajced6f4s89 | 32927319269841 | 35904144733689 | 19372942551045 |
 | gonka1usmu5mfu8vsafvsrsvdutl50vy8kumdhv0j2x9 | 10105163715 | 552211430334 | 552211430334 |
-| gonka1uzk2scggfzghr9a5j92l00gzw4jx4adc66977y | 8196062970947 | 4827666595498 | 923364446238 |
+| gonka1uzk2scggfzghr9a5j92l00gzw4jx4adc66977y | 8196062970947 | 3904302149260 | 0 |
 | gonka1vcawx5jc2hahydd9sqw30hlxyd9ppupm9ez0yz | 10105163715 | 542171222510 | 542171222510 |
 | gonka1vcvn2p5gczr5pynqq0ca0933tdrf5w64sjgtdg | 8160245160632 | 8303980040337 | 2481939374157 |
 | gonka1vjz8csqsr0ph0lv0yylc4auypnzrld7y6l2feu | 1786317577649 | 2749710579098 | 985117113872 |
@@ -166,10 +166,10 @@
 | gonka1wvv656pt2d8x2khcvytqeessck5uzjnxzsa8f6 | 19870489928245 | 17168498679347 | 0 |
 | gonka1x7zh2277spp7jfqjhv0g5mnezg290xdr4kpfnk | 2296211856545 | 2097086587933 | 252678563577 |
 | gonka1xwkesaxvdadh9wt9yyladu0r260s7whklcktds | 9354857850947 | 10748717204967 | 1937570912091 |
-| gonka1y2a9p56kv044327uycmqdexl7zs82fs5ryv5le | 6335339937157 | 68341523899036 | 63246167030340 |
+| gonka1y2a9p56kv044327uycmqdexl7zs82fs5ryv5le | 6335339937157 | 5428022421273 | 332665552577 |
 | gonka1y4kyhqy022gt4kklxxflgqkutnx96ssww66zg6 | 700878180326 | 1554551563624 | 942026511485 |
 | gonka1yal0ysgzc860zt3y8cds8656tnueusgymftvkw | 697479983088 | 1317927698458 | 705402646319 |
-| gonka1ym3np7guxart483yfdxnlztuazx22cjt0e4a2p | 23613749145270 | 19963822721421 | 211848385092 |
+| gonka1ym3np7guxart483yfdxnlztuazx22cjt0e4a2p | 23613749145270 | 19751974336329 | 0 |
 | gonka1ym8g5f34h5zu4p4d4ldjnycfkty9qxpmyx5a3m | 0 | 517971133651 | 517971133651 |
 | gonka1yt2s5u5k06rm2au8dsqm4kzwmw7klqsrd6xd95 | 0 | 489937453668 | 489937453668 |
 | gonka1zktn8j65wlys8a8e38hqhf4y3x6m4x04zskkrx | 9247234238483 | 8257401056317 | 0 |
@@ -272,27 +272,35 @@
 | gonka1zktn8j65wlys8a8e38hqhf4y3x6m4x04zskkrx | 247 | confirmation_weight_reduction | 857635023686 | 0 | 0 |
 | gonka1zpw8tml8xl4fm6zm8zpf2u4pq4tehmd9e2vgq7 | 247 | confirmation_weight_reduction | 858286969732 | 0 | 0 |
 | gonka1zsvl7ujlc8z3a35v2q6e3nml7ftyk23v76jqgl | 247 | confirmation_weight_reduction | 1129822497946 | 0 | 0 |
+| gonka12pcu9mcrpa4w4sjd9y3dsksnvu495ss6f9r4ra | 248 | confirmation_weight_reduction | 2384214684667 | 2384214684667 | 0 |
 | gonka14ljarev2nlzu4ej50vx7ylj2rvg4n20fnq2ysc | 248 | confirmation_weight_reduction | 3349078656579 | 3349078656579 | 0 |
 | gonka14tqh62mangwzrma2lgg2dm375rcjzn2ydy8ttm | 248 | confirmation_weight_reduction | 1604425210316 | 1604425210316 | 0 |
 | gonka15munkmx6x7k6rqqeexjet4556p7at39ks9qgr5 | 248 |  | 6410338022196 | 6410338022196 | 0 |
+| gonka168rtjfkszuhcggg4dfyse4yh7xn9zwfglnkns2 | 248 | confirmation_weight_reduction | 4089041973227 | 4089041973227 | 0 |
 | gonka16k03ze5ynkprsd4n6e5uzhthvu9jjk553rauqy | 248 | confirmation_weight_reduction | 322625344752 | 322625344752 | 0 |
+| gonka17gpuntq09zsaqtmpe544gc32tk4424dwv5t34f | 248 | confirmation_weight_reduction | 35625334749228 | 35625334749228 | 0 |
 | gonka187tn9y92ur6tu0zf69u94hwl0q77m47y0k36hv | 248 | confirmation_weight_reduction | 3348074635796 | 3348074635796 | 0 |
 | gonka19f9hkpmjaldncsfly4j63sy932y8hughn4l3d8 | 248 | confirmation_weight_reduction | 219211204163 | 219211204163 | 0 |
 | gonka1amlmhjym02shahjv8ldmupg4cx0qc66q6f85rj | 248 |  | 299198193162 | 299198193162 | 0 |
 | gonka1d694r00czmq75txghwjcuk07lxvc8d4ekgsha0 | 248 | confirmation_weight_reduction | 210844364309 | 210844364309 | 0 |
 | gonka1fkrsesmn2hdj30fhwyam6h4f2e77un36xalhvl | 248 | confirmation_weight_reduction | 972896138170 | 972896138170 | 0 |
 | gonka1h3s37p0l23mg6ak9h9nmayh6r9f2vm6umj3qet | 248 | confirmation_weight_reduction | 335677614924 | 335677614924 | 0 |
+| gonka1hwvel7n3zuk6wruefuzc356l9myske9stckwnz | 248 | confirmation_weight_reduction | 3045864380286 | 3045864380286 | 0 |
 | gonka1jltjehxsnum94nt8c00ts7khmpy4lafv6gryzk | 248 | confirmation_weight_reduction | 5805917511175 | 5805917511175 | 0 |
 | gonka1myu058axjs62mc3e7na9krwvqpfl9z3gtcw9es | 248 | confirmation_weight_reduction | 6417700841267 | 6417700841267 | 0 |
+| gonka1pllyukkeymx3hfd9mts3pryr9y6efs9eshty87 | 248 | confirmation_weight_reduction | 1744318772668 | 1744318772668 | 0 |
 | gonka1q5xt54wncgzk7dxv9x64uln68455g83wu9tugg | 248 | confirmation_weight_reduction | 16025845055490 | 16025845055490 | 0 |
 | gonka1qu9mna5xlvlnw9455ygtjq92wuzkzm237w8l08 | 248 | subgroup_voting_power_reduction | 137550847192 | 27443234719 | 0 |
+| gonka1rcpc45n6zch9qlkn4m3cwngekad89xu8mcr09v | 248 | confirmation_weight_reduction | 766737204179 | 766737204179 | 0 |
 | gonka1slndy4rsmld579628302rj5gz8z9qf4v6ppmc4 | 248 | confirmation_weight_reduction | 260376056242 | 260376056242 | 0 |
 | gonka1tja3g2da45efhe2p83gk3whtussmgmtsdlgprt | 248 | confirmation_weight_reduction | 6588384374279 | 6588384374279 | 0 |
 | gonka1u4zxypjgcr8khlzefwjr0vwdaj2uzruw2cehj3 | 248 | confirmation_weight_reduction | 250670522012 | 250670522012 | 0 |
 | gonka1u9a7r4w76gult5n9ysadnual9fghkc6yda60wj | 248 | confirmation_weight_reduction | 181393088024 | 181393088024 | 0 |
 | gonka1ujnc662v6g69jm6fgxnr79a2m7ehzeut059239 | 248 | confirmation_weight_reduction | 231594127146 | 231594127146 | 0 |
 | gonka1umvyh0rz5fdmk9qhxurshhchennajced6f4s89 | 248 | confirmation_weight_reduction | 16531202182644 | 16531202182644 | 0 |
+| gonka1uzk2scggfzghr9a5j92l00gzw4jx4adc66977y | 248 | confirmation_weight_reduction | 3904302149260 | 3904302149260 | 0 |
 | gonka1wvv656pt2d8x2khcvytqeessck5uzjnxzsa8f6 | 248 | confirmation_weight_reduction | 2091375289793 | 2091375289793 | 0 |
+| gonka1ym3np7guxart483yfdxnlztuazx22cjt0e4a2p | 248 | confirmation_weight_reduction | 2988969869282 | 2988969869282 | 0 |
 | gonka1zktn8j65wlys8a8e38hqhf4y3x6m4x04zskkrx | 248 | confirmation_weight_reduction | 858437768974 | 858437768974 | 0 |
 | gonka1zpw8tml8xl4fm6zm8zpf2u4pq4tehmd9e2vgq7 | 248 | confirmation_weight_reduction | 312919810522 | 312919810522 | 0 |
 | gonka1zsvl7ujlc8z3a35v2q6e3nml7ftyk23v76jqgl | 248 | confirmation_weight_reduction | 2146261759232 | 2146261759232 | 0 |
@@ -534,6 +542,7 @@
 | gonka14tqh62mangwzrma2lgg2dm375rcjzn2ydy8ttm | 253 | subgroup_voting_power_reduction | 2449080902910 | 2275787028280 | 0 |
 | gonka15munkmx6x7k6rqqeexjet4556p7at39ks9qgr5 | 253 |  | 9896889735676 | 9896889735676 | 0 |
 | gonka168rtjfkszuhcggg4dfyse4yh7xn9zwfglnkns2 | 253 | subgroup_voting_power_reduction | 154502972562 | 146847419867 | 0 |
+| gonka16k03ze5ynkprsd4n6e5uzhthvu9jjk553rauqy | 253 | confirmation_weight_reduction | 6385426906566 | 6385426906566 | 0 |
 | gonka17gpuntq09zsaqtmpe544gc32tk4424dwv5t34f | 253 | confirmation_weight_reduction | 36684364573141 | 36684364573141 | 0 |
 | gonka17pw6099q758qwzewtrqmqpf5c2lrhr97fwqexu | 253 | subgroup_voting_power_reduction | 14466558734969 | 12534575618606 | 0 |
 | gonka1830lqug50lse998x2lakk4pj5ypfumz5pasz0y | 253 | subgroup_voting_power_reduction | 403656414802 | 345195830589 | 0 |
@@ -542,6 +551,7 @@
 | gonka19ghzvgfr065s3fr5awuvs3nhy9fq4n7wrr9kel | 253 | subgroup_voting_power_reduction | 2770962095748 | 2355126392569 | 0 |
 | gonka1amlmhjym02shahjv8ldmupg4cx0qc66q6f85rj | 253 | subgroup_voting_power_reduction | 264464547628 | 224794865484 | 0 |
 | gonka1ccdm8j6sjyhq4qask049dwgaczs7f3pxte6zmp | 253 | subgroup_voting_power_reduction | 684476006823 | 650721979034 | 0 |
+| gonka1d694r00czmq75txghwjcuk07lxvc8d4ekgsha0 | 253 | confirmation_weight_reduction | 4816038604189 | 4816038604189 | 0 |
 | gonka1d7p03cu2y2yt3vytq9wlfm6tlz0lfhlgv9h82p | 253 | subgroup_voting_power_reduction | 204264065076 | 194520634374 | 0 |
 | gonka1dkl4mah5erqggvhqkpc8j3qs5tyuetgdy552cp | 253 | subgroup_voting_power_reduction | 381037736386 | 362942793653 | 0 |
 | gonka1duuaqdx06sx8v2dzggltwwmqyuw8lvjkjq7xll | 253 | subgroup_voting_power_reduction | 40095609257886 | 38090898390925 | 0 |
@@ -558,6 +568,7 @@
 | gonka1myu058axjs62mc3e7na9krwvqpfl9z3gtcw9es | 253 | subgroup_voting_power_reduction | 6026311889259 | 5212735425632 | 0 |
 | gonka1p2lhgng7tcqju7emk989s5fpdr7k2c3ek6h26m | 253 | subgroup_voting_power_reduction | 204264065076 | 194520634374 | 0 |
 | gonka1pllyukkeymx3hfd9mts3pryr9y6efs9eshty87 | 253 | subgroup_voting_power_reduction | 2260127943223 | 1920847766988 | 0 |
+| gonka1q5xt54wncgzk7dxv9x64uln68455g83wu9tugg | 253 | confirmation_weight_reduction | 41989314610776 | 41989314610776 | 0 |
 | gonka1qa90tgczc0k5dvk4l5nvlf5y6phgm6mg22sfjv | 253 | subgroup_voting_power_reduction | 11794770844581 | 11587374962493 | 0 |
 | gonka1qu9mna5xlvlnw9455ygtjq92wuzkzm237w8l08 | 253 | subgroup_voting_power_reduction | 118313087097 | 19834841072 | 0 |
 | gonka1qwfrtz9c7kcrfkrrlne2pkcye74mj6ce33xdkl | 253 | subgroup_voting_power_reduction | 175033772970 | 148935297875 | 0 |
@@ -575,6 +586,7 @@
 | gonka1wthc28t25pg63hzvl07rl8e8r6km6hesl6jhsz | 253 | subgroup_voting_power_reduction | 1742334197339 | 1630632723932 | 0 |
 | gonka1wvv656pt2d8x2khcvytqeessck5uzjnxzsa8f6 | 253 | subgroup_voting_power_reduction | 1828981134654 | 1737462481988 | 0 |
 | gonka1x7zh2277spp7jfqjhv0g5mnezg290xdr4kpfnk | 253 | subgroup_voting_power_reduction | 288127165048 | 244977686224 | 0 |
+| gonka1y2a9p56kv044327uycmqdexl7zs82fs5ryv5le | 253 | confirmation_weight_reduction | 1493180755099 | 1493180755099 | 0 |
 | gonka1ym3np7guxart483yfdxnlztuazx22cjt0e4a2p | 253 | subgroup_voting_power_reduction | 2313020852749 | 2198535541999 | 0 |
 | gonka1zktn8j65wlys8a8e38hqhf4y3x6m4x04zskkrx | 253 | confirmation_weight_reduction | 729713363655 | 729713363655 | 0 |
 | gonka1zpw8tml8xl4fm6zm8zpf2u4pq4tehmd9e2vgq7 | 253 | subgroup_voting_power_reduction | 921798140353 | 875516844518 | 0 |
@@ -592,6 +604,7 @@
 | gonka19ghzvgfr065s3fr5awuvs3nhy9fq4n7wrr9kel | 254 | subgroup_voting_power_reduction | 1059952869742 | 900890297174 | 0 |
 | gonka1amlmhjym02shahjv8ldmupg4cx0qc66q6f85rj | 254 | subgroup_voting_power_reduction | 208926321237 | 184133731116 | 0 |
 | gonka1ccdm8j6sjyhq4qask049dwgaczs7f3pxte6zmp | 254 | subgroup_voting_power_reduction | 531508561227 | 520922960951 | 0 |
+| gonka1d694r00czmq75txghwjcuk07lxvc8d4ekgsha0 | 254 | confirmation_weight_reduction | 22326423824252 | 22326423824252 | 0 |
 | gonka1d7p03cu2y2yt3vytq9wlfm6tlz0lfhlgv9h82p | 254 | subgroup_voting_power_reduction | 160455414710 | 158505435711 | 0 |
 | gonka1dkl4mah5erqggvhqkpc8j3qs5tyuetgdy552cp | 254 | subgroup_voting_power_reduction | 298903923583 | 293889691873 | 0 |
 | gonka1duuaqdx06sx8v2dzggltwwmqyuw8lvjkjq7xll | 254 | subgroup_voting_power_reduction | 34434957697869 | 33479746557173 | 0 |
@@ -621,6 +634,7 @@
 | gonka1w29nvdy6caqtrw30whz9h6ghl0xszwh3egndah | 254 | subgroup_voting_power_reduction | 64349306941 | 62120759514 | 0 |
 | gonka1wvv656pt2d8x2khcvytqeessck5uzjnxzsa8f6 | 254 | subgroup_voting_power_reduction | 1412341931562 | 1390892162582 | 0 |
 | gonka1x7zh2277spp7jfqjhv0g5mnezg290xdr4kpfnk | 254 | subgroup_voting_power_reduction | 227868974362 | 196112173534 | 0 |
+| gonka1y2a9p56kv044327uycmqdexl7zs82fs5ryv5le | 254 | confirmation_weight_reduction | 1168315988357 | 1168315988357 | 0 |
 | gonka1ym3np7guxart483yfdxnlztuazx22cjt0e4a2p | 254 | subgroup_voting_power_reduction | 1797880636352 | 1737431287407 | 0 |
 | gonka1zktn8j65wlys8a8e38hqhf4y3x6m4x04zskkrx | 254 | confirmation_weight_reduction | 1486441133494 | 1486441133494 | 0 |
 | gonka1zpw8tml8xl4fm6zm8zpf2u4pq4tehmd9e2vgq7 | 254 | subgroup_voting_power_reduction | 703385281498 | 685278333657 | 0 |
@@ -640,6 +654,7 @@
 | gonka19ghzvgfr065s3fr5awuvs3nhy9fq4n7wrr9kel | 255 | subgroup_voting_power_reduction | 1627949012310 | 1383829099607 | 0 |
 | gonka1amlmhjym02shahjv8ldmupg4cx0qc66q6f85rj | 255 | subgroup_voting_power_reduction | 184719815250 | 159607578928 | 0 |
 | gonka1ccdm8j6sjyhq4qask049dwgaczs7f3pxte6zmp | 255 | subgroup_voting_power_reduction | 470371503408 | 451537326167 | 0 |
+| gonka1d694r00czmq75txghwjcuk07lxvc8d4ekgsha0 | 255 | confirmation_weight_reduction | 19947808336544 | 19947808336544 | 0 |
 | gonka1d7p03cu2y2yt3vytq9wlfm6tlz0lfhlgv9h82p | 255 | subgroup_voting_power_reduction | 141980720741 | 134978270228 | 0 |
 | gonka1dkl4mah5erqggvhqkpc8j3qs5tyuetgdy552cp | 255 | subgroup_voting_power_reduction | 268266293781 | 254744320377 | 0 |
 | gonka1duuaqdx06sx8v2dzggltwwmqyuw8lvjkjq7xll | 255 | subgroup_voting_power_reduction | 30721440646135 | 29483455688242 | 0 |
@@ -655,6 +670,7 @@
 | gonka1p2lhgng7tcqju7emk989s5fpdr7k2c3ek6h26m | 255 | subgroup_voting_power_reduction | 139566082633 | 134978270228 | 0 |
 | gonka1pllyukkeymx3hfd9mts3pryr9y6efs9eshty87 | 255 | confirmation_weight_reduction | 897520984686 | 897520984686 | 0 |
 | gonka1pvkv59e72vju2h7s9j3ex62c5xneqey350vpwn | 255 | subgroup_voting_power_reduction | 1614427038906 | 1384070563417 | 0 |
+| gonka1q5xt54wncgzk7dxv9x64uln68455g83wu9tugg | 255 | confirmation_weight_reduction | 36819850651313 | 36819850651313 | 0 |
 | gonka1qa90tgczc0k5dvk4l5nvlf5y6phgm6mg22sfjv | 255 | subgroup_voting_power_reduction | 7128736085796 | 7051226202534 | 0 |
 | gonka1qnj39ysxpzknvrr5dw9rdl7cx5q7dpkwerryrs | 255 | subgroup_voting_power_reduction | 42014703076 | 7002450512 | 0 |
 | gonka1qu9mna5xlvlnw9455ygtjq92wuzkzm237w8l08 | 255 | subgroup_voting_power_reduction | 264161408998 | 144153895038 | 0 |
@@ -672,6 +688,7 @@
 | gonka1wthc28t25pg63hzvl07rl8e8r6km6hesl6jhsz | 255 | confirmation_weight_reduction | 658471812009 | 658471812009 | 0 |
 | gonka1wvv656pt2d8x2khcvytqeessck5uzjnxzsa8f6 | 255 | subgroup_voting_power_reduction | 1223980056867 | 1202972705329 | 0 |
 | gonka1x7zh2277spp7jfqjhv0g5mnezg290xdr4kpfnk | 255 | subgroup_voting_power_reduction | 199932035329 | 169990522792 | 0 |
+| gonka1y2a9p56kv044327uycmqdexl7zs82fs5ryv5le | 255 | confirmation_weight_reduction | 1013906541484 | 1013906541484 | 0 |
 | gonka1ym3np7guxart483yfdxnlztuazx22cjt0e4a2p | 255 | subgroup_voting_power_reduction | 1558165970993 | 1480173160110 | 0 |
 | gonka1zktn8j65wlys8a8e38hqhf4y3x6m4x04zskkrx | 255 | confirmation_weight_reduction | 1331914380288 | 1331914380288 | 0 |
 | gonka1zpw8tml8xl4fm6zm8zpf2u4pq4tehmd9e2vgq7 | 255 | confirmation_weight_reduction | 593035119287 | 593035119287 | 0 |

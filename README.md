@@ -14,10 +14,10 @@ The package is reproducible: raw chain snapshots are stored under `data/raw`, ca
 
 | epoch | rows with calculated loss | calculated loss GNK | already covered by sources GNK | payout from this package GNK | epoch report |
 |---|---:|---:|---:|---:|---|
-| 248 | 71 | 124085.589805628 | 0.000000000 | 124085.589805628 | [epoch 248](outputs/epoch_248/README.md) |
-| 250 | 34 | 36889.261451234 | 25469.854153328 | 11419.407298061 | [epoch 250](outputs/epoch_250/README.md) |
+| 248 | 63 | 118204.036062177 | 118204.036062177 | 0.000000000 | [epoch 248](outputs/epoch_248/README.md) |
+| 250 | 34 | 36889.261451234 | 36889.261451234 | 0.000000000 | [epoch 250](outputs/epoch_250/README.md) |
 
-`payout from this package` is the remaining amount after subtracting non-zero compensation amounts that were already calculated by external sources. If a row is already fully covered by a source, the epoch README keeps the row for transparency but sets `payout here GNK` to `0.000000000`.
+`payout from this package` is the remaining amount after subtracting non-zero compensation amounts that were already calculated by external sources. After adding the full epoch compensation sources, epochs `248` and `250` are fully covered and the remaining payout is `0.000000000`.
 
 ## Rule used for the package
 
@@ -45,6 +45,8 @@ Current sources used by the review table include:
 - `GRC-e254-api-issue`
 - `consensus_failure_restriction`
 - `SegovChik-grc-case-1`
+- `epoch-248-full-compensation`
+- `epoch-250-full-compensation`
 
 ## Important files
 
@@ -59,6 +61,7 @@ Current sources used by the review table include:
 ```bash
 python3 scripts/calculate_compensation.py --epochs 247 248 249 250 251 252 253 254 255 --cache-only
 python3 scripts/build_reports.py
+python3 scripts/import_source_full_epoch_compensation.py --epochs 248 250
 python3 scripts/build_pages_data.py
 python3 scripts/validate_consistency.py --epochs 247 248 249 250 251 252 253 254 255
 ```

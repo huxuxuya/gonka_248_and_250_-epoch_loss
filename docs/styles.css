@@ -17,6 +17,8 @@
   --source-e254: #d9eafb;
   --source-consensus: #efe4ff;
   --source-segovchik: #ffe8c7;
+  --source-full-248: #cfeeea;
+  --source-full-250: #f4dfc8;
   --source-mixed: #e6ead5;
   --shadow: 0 10px 28px rgba(23, 33, 27, 0.10);
 }
@@ -326,6 +328,16 @@ td.collapsed.source-segovchik-grc-case-1,
   background: var(--source-segovchik) !important;
 }
 
+td.collapsed.source-epoch-248-full-compensation,
+.legend-item.source-epoch-248-full-compensation span {
+  background: var(--source-full-248) !important;
+}
+
+td.collapsed.source-epoch-250-full-compensation,
+.legend-item.source-epoch-250-full-compensation span {
+  background: var(--source-full-250) !important;
+}
+
 td.collapsed.source-mixed,
 .legend-item.source-mixed span {
   background: var(--source-mixed) !important;
@@ -335,6 +347,8 @@ td.collapsed.source-grc-e247-preserver-audit,
 td.collapsed.source-grc-e254-api-issue,
 td.collapsed.source-consensus-failure-restriction,
 td.collapsed.source-segovchik-grc-case-1,
+td.collapsed.source-epoch-248-full-compensation,
+td.collapsed.source-epoch-250-full-compensation,
 td.collapsed.source-mixed {
   color: #173528;
   box-shadow: inset 0 0 0 1px rgba(23, 53, 40, 0.10);
@@ -378,6 +392,34 @@ td.problem-delta {
 .bottom-stats h2 {
   margin: 0 0 10px;
   font-size: 15px;
+}
+
+.section-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.section-row h2 {
+  margin: 0;
+}
+
+.small-action {
+  border: 1px solid #b9af9f;
+  border-radius: 10px;
+  background: #f4efe3;
+  color: #26332b;
+  cursor: pointer;
+  padding: 6px 10px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.small-action:hover {
+  background: #ece4d4;
 }
 
 .bottom-stats h2 + h2 {
@@ -775,6 +817,29 @@ dialog::backdrop {
   color: #465049;
   background: #fbfaf5;
   line-height: 1.45;
+}
+
+.export-dialog-content {
+  min-width: min(900px, calc(100vw - 64px));
+}
+
+.export-dialog-content p {
+  margin: 4px 0 10px;
+  color: var(--muted);
+}
+
+#exportCsv {
+  width: 100%;
+  min-height: 420px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px;
+  background: #fbfaf5;
+  color: #1f2a22;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 12px;
+  line-height: 1.45;
+  white-space: pre;
 }
 
 @media (max-width: 1100px) {
