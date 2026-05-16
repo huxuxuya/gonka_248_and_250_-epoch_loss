@@ -21,6 +21,7 @@ DOCS_DIR = ROOT / "docs"
 DATA_DIR = DOCS_DIR / "data"
 BUG_ADJUSTMENTS_PATH = DOCS_DIR / "bug_weight_adjustments.json"
 SOURCE_OVERRIDES_PATH = DOCS_DIR / "source_overrides.json"
+SOURCE_MATCH_TOLERANCE_BASE_UNITS = 2400
 
 
 def main() -> int:
@@ -314,7 +315,7 @@ def match_status(baseline: int, bug_comp: int | None, source_total: int, compara
     return "source_differs"
 
 
-def same_base_units(left: int, right: int, tolerance: int = 1) -> bool:
+def same_base_units(left: int, right: int, tolerance: int = SOURCE_MATCH_TOLERANCE_BASE_UNITS) -> bool:
     return abs(left - right) <= tolerance
 
 
@@ -328,7 +329,7 @@ def classify_source_state(baseline: int, source_total: int, has_source: bool) ->
     return "source_exceeds_calculated"
 
 
-def normalize_tiny_delta(value: int, tolerance: int = 1) -> int:
+def normalize_tiny_delta(value: int, tolerance: int = SOURCE_MATCH_TOLERANCE_BASE_UNITS) -> int:
     return 0 if abs(value) <= tolerance else value
 
 

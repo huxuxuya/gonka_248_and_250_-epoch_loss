@@ -39,13 +39,13 @@
     "compensation_gnk": "73073.223263778",
     "epoch": 249,
     "expected_reward_base_units": 263159578158118,
-    "remaining_after_sources_base_units": 9681622125598,
-    "remaining_after_sources_gnk": "9681.622125598",
+    "remaining_after_sources_base_units": 9681622123909,
+    "remaining_after_sources_gnk": "9681.622123909",
     "rows_with_loss": 41,
     "source_compensation_base_units": 80670098131411,
     "source_compensation_gnk": "80670.098131411",
-    "source_excess_base_units": 2443,
-    "source_excess_gnk": "0.000002443"
+    "source_excess_base_units": 0,
+    "source_excess_gnk": "0.000000000"
   },
   {
     "actual_rewarded_coins": 252497917148785,
@@ -55,13 +55,13 @@
     "compensation_gnk": "29681.618797993",
     "epoch": 250,
     "expected_reward_base_units": 282179535946778,
-    "remaining_after_sources_base_units": 10940443613340,
-    "remaining_after_sources_gnk": "10940.443613340",
+    "remaining_after_sources_base_units": 10940443611140,
+    "remaining_after_sources_gnk": "10940.443611140",
     "rows_with_loss": 34,
     "source_compensation_base_units": 25469854153328,
     "source_compensation_gnk": "25469.854153328",
-    "source_excess_base_units": 2355,
-    "source_excess_gnk": "0.000002355"
+    "source_excess_base_units": 0,
+    "source_excess_gnk": "0.000000000"
   },
   {
     "actual_rewarded_coins": 275283461938874,
@@ -71,13 +71,13 @@
     "compensation_gnk": "7717.219104678",
     "epoch": 251,
     "expected_reward_base_units": 283000681043552,
-    "remaining_after_sources_base_units": 7717219104881,
-    "remaining_after_sources_gnk": "7717.219104881",
+    "remaining_after_sources_base_units": 7717219103862,
+    "remaining_after_sources_gnk": "7717.219103862",
     "rows_with_loss": 30,
     "source_compensation_base_units": 4064183753156,
     "source_compensation_gnk": "4064.183753156",
-    "source_excess_base_units": 451,
-    "source_excess_gnk": "0.000000451"
+    "source_excess_base_units": 0,
+    "source_excess_gnk": "0.000000000"
   },
   {
     "actual_rewarded_coins": 273630912317725,
@@ -87,8 +87,8 @@
     "compensation_gnk": "8109.372933698",
     "epoch": 252,
     "expected_reward_base_units": 281740285251423,
-    "remaining_after_sources_base_units": 8109372934648,
-    "remaining_after_sources_gnk": "8109.372934648",
+    "remaining_after_sources_base_units": 8109372934170,
+    "remaining_after_sources_gnk": "8109.372934170",
     "rows_with_loss": 33,
     "source_compensation_base_units": 1631559447917,
     "source_compensation_gnk": "1631.559447917",
