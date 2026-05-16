@@ -1,0 +1,28 @@
+{
+  "events": [
+    {
+      "epoch_index": "252",
+      "event_sequence": "0",
+      "generation_start_height": "3893243",
+      "phase": "CONFIRMATION_POC_COMPLETED",
+      "poc_seed_block_hash": "a92d544a6bc2f26002fc3a6abb7bcf5d2dbd99957f67604654c280cb69b29143",
+      "trigger_height": "3893241"
+    },
+    {
+      "epoch_index": "252",
+      "event_sequence": "1",
+      "generation_start_height": "3900049",
+      "phase": "CONFIRMATION_POC_COMPLETED",
+      "poc_seed_block_hash": "b165e294f6e40afde2f222a7d2b96eb90e89aa356bc101cb66cb8e03f61bf3d2",
+      "trigger_height": "3900047"
+    },
+    {
+      "epoch_index": "252",
+      "event_sequence": "2",
+      "generation_start_height": "3901622",
+      "phase": "CONFIRMATION_POC_COMPLETED",
+      "poc_seed_block_hash": "e219cc22753e6df583c2dc884561e0c6ecbf7d10ecf63455a3dd65f07c7ef7eb",
+      "trigger_height": "3901620"
+    }
+  ]
+}

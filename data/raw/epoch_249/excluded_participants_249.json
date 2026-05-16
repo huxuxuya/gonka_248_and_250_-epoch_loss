@@ -1,0 +1,88 @@
+{
+  "items": [
+    {
+      "address": "gonka1p60lruhxmwcsa9taa28cp4k4f6kv2kvyu5h5ep",
+      "epoch_index": "249",
+      "exclusion_block_height": "3846314",
+      "reason": "failed_confirmation_poc"
+    },
+    {
+      "address": "gonka1r5hdy9q5v783ef7td98k4c68cxl6a58h5sytfq",
+      "epoch_index": "249",
+      "exclusion_block_height": "3853865",
+      "reason": "failed_confirmation_poc"
+    },
+    {
+      "address": "gonka188c86f9mrlt4nlcg89f82nnfm9jzq9gtjafj50",
+      "epoch_index": "249",
+      "exclusion_block_height": "3855565",
+      "reason": "consecutive_failures"
+    },
+    {
+      "address": "gonka1ge9amk4ymld27d35akj3ky9uph4gyz6rdpepjj",
+      "epoch_index": "249",
+      "exclusion_block_height": "3846314",
+      "reason": "failed_confirmation_poc"
+    },
+    {
+      "address": "gonka125n6kr5gvdup0lndfkps7t6rd6592panhrg3np",
+      "epoch_index": "249",
+      "exclusion_block_height": "3858018",
+      "reason": "failed_confirmation_poc"
+    },
+    {
+      "address": "gonka12av9up884t9lcsf70rs0l7jfmkmc8k9sxfuknt",
+      "epoch_index": "249",
+      "exclusion_block_height": "3844117",
+      "reason": "consecutive_failures"
+    },
+    {
+      "address": "gonka1dpt9zx2dqcky6yjjwrd8xz2w7lq6vffy9mhvgs",
+      "epoch_index": "249",
+      "exclusion_block_height": "3846314",
+      "reason": "failed_confirmation_poc"
+    },
+    {
+      "address": "gonka1dzdmx5ljrwkelrmgd7suv2q43epn293qacpgqn",
+      "epoch_index": "249",
+      "exclusion_block_height": "3855397",
+      "reason": "consecutive_failures"
+    },
+    {
+      "address": "gonka1043d00lu0v3fz53cut34twtcanalqg9u8vehp2",
+      "epoch_index": "249",
+      "exclusion_block_height": "3846314",
+      "reason": "failed_confirmation_poc"
+    },
+    {
+      "address": "gonka145666cll76ptcyy9ceymtalr8gnvv73ne99p32",
+      "epoch_index": "249",
+      "exclusion_block_height": "3846314",
+      "reason": "failed_confirmation_poc"
+    },
+    {
+      "address": "gonka16q0zaetd6hq6d8zj48ur0v967xrrwh566kcazc",
+      "epoch_index": "249",
+      "exclusion_block_height": "3846314",
+      "reason": "failed_confirmation_poc"
+    },
+    {
+      "address": "gonka1umvyh0rz5fdmk9qhxurshhchennajced6f4s89",
+      "epoch_index": "249",
+      "exclusion_block_height": "3853865",
+      "reason": "failed_confirmation_poc"
+    },
+    {
+      "address": "gonka1lswsj2x7u4606wqpunmm07skgf76r3dyz4v0d8",
+      "epoch_index": "249",
+      "exclusion_block_height": "3846314",
+      "reason": "failed_confirmation_poc"
+    },
+    {
+      "address": "gonka1llgg3kvg9sc6xz09jtkcrucrppxgn78xe4xlv0",
+      "epoch_index": "249",
+      "exclusion_block_height": "3846314",
+      "reason": "failed_confirmation_poc"
+    }
+  ]
+}

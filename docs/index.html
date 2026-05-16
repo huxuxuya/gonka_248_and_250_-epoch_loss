@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gonka Compensation Table</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="kicker">Epochs 247-255</p>
+        <h1>Calculated vs Source Compensation</h1>
+        <p class="subtitle">Main view: calculated reward minus source reward, calculated weight minus source weight.</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="controls" aria-label="Table controls">
+        <label class="search">
+          <span>Search</span>
+          <input id="searchInput" type="search" placeholder="address, reason, source">
+        </label>
+
+        <label>
+          <span>Epoch</span>
+          <select id="epochFilter">
+            <option value="all">All epochs</option>
+          </select>
+        </label>
+
+        <label>
+          <span>Reason</span>
+          <select id="reasonFilter">
+            <option value="all">All reasons</option>
+          </select>
+        </label>
+
+        <label class="switch">
+          <input id="showAllRows" type="checkbox">
+          <span>Show all rows</span>
+        </label>
+
+        <label class="switch">
+          <input id="showWeights" type="checkbox">
+          <span>Raw values</span>
+        </label>
+
+        <label class="switch">
+          <input id="showRewards" type="checkbox" checked>
+          <span>Deltas</span>
+        </label>
+
+        <label class="switch">
+          <input id="showBug" type="checkbox">
+          <span>Bug-adjusted</span>
+        </label>
+
+        <label class="switch">
+          <input id="showSources" type="checkbox" checked>
+          <span>Source status</span>
+        </label>
+      </section>
+
+      <section class="table-wrap" aria-label="Compensation table">
+        <table id="dataTable">
+          <thead id="tableHead"></thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </section>
+
+      <section class="bottom-stats" aria-label="Totals">
+        <h2>Totals</h2>
+        <div class="totals" id="totals"></div>
+        <div class="summary" id="summary"></div>
+      </section>
+    </main>
+
+    <dialog id="detailDialog">
+      <form method="dialog">
+        <button class="close" aria-label="Close">x</button>
+      </form>
+      <div id="detailContent"></div>
+    </dialog>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

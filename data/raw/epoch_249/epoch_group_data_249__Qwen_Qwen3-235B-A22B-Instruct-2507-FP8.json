@@ -1,0 +1,3796 @@
+{
+  "epoch_group_data": {
+    "effective_block_height": "0",
+    "epoch_group_id": "986",
+    "epoch_index": "249",
+    "epoch_policy": "gonka18qn52lutv80upys6ekvg25yp2n906asyyj00phv7dxnqjeqjkvyqh36avk",
+    "last_block_height": "0",
+    "member_seed_signatures": [
+      {
+        "member_address": "gonka1043d00lu0v3fz53cut34twtcanalqg9u8vehp2",
+        "signature": "3bfcbcd45c699d849f0af4f9c06da96626f42f25bd638ed211c9f488b28a67df291b9c61637e02ad36b827b2e2959493eefdc5ca70a57d6e9cdd7d6cdc1a2770"
+      },
+      {
+        "member_address": "gonka10mmdjau4dnj8krs7sh7t7635ttnmq9u3vqgz09",
+        "signature": "47ef5547f3a07fba0ab1b65e29ff5ae324a1f5fc8071584494e2307e2d48c1a30c9e0368a1262f68ccb5293a5603eb2263cb0a61faf2271c3b73a158d2c09fee"
+      },
+      {
+        "member_address": "gonka12av9up884t9lcsf70rs0l7jfmkmc8k9sxfuknt",
+        "signature": "62ae3ac39699841a761a95a137899c5cf05598002312c267f554cb1ed65c8bfb0e2a172ec213a07ea3a3c26f390453d09f0c2058a4cdba0373a6bdad0f7e3ff5"
+      },
+      {
+        "member_address": "gonka12pcu9mcrpa4w4sjd9y3dsksnvu495ss6f9r4ra",
+        "signature": "7429e47a02f5bc5434e16c04ee134629956879369fa37fcf39c2b6460e3836ee600215c0733997545ae98eee8520d2adaa19546d04acbd6f3fcc2fffc4975209"
+      },
+      {
+        "member_address": "gonka145666cll76ptcyy9ceymtalr8gnvv73ne99p32",
+        "signature": "3f6c3499a9785dd4b4cc1b512b5551c5fb585d239fdb8950c392c816bdb719b40551d4d75e76417746a01cd67ece125a7307a1ad11f63a96c71de28d50114467"
+      },
+      {
+        "member_address": "gonka14tqh62mangwzrma2lgg2dm375rcjzn2ydy8ttm",
+        "signature": "8c5bba4ef19f31da826124d30ba2b28a2c7c95237f71cb663a260b318ba4ddcf17722ee86a23ab9f9d3c03d760c4b9e9edde3995e83aa71e2b904f41fef6bb04"
+      },
+      {
+        "member_address": "gonka168rtjfkszuhcggg4dfyse4yh7xn9zwfglnkns2",
+        "signature": "b06986cc92f1d1a167da0dcb501dd0a3818a3759d9c80b4cd366991fb5cc9e4f7ae9234bfa8a77ac425710ed4420dd8b38961e43b22e3de2c0860056f1e2a262"
+      },
+      {
+        "member_address": "gonka16k03ze5ynkprsd4n6e5uzhthvu9jjk553rauqy",
+        "signature": "f2f9f7df64c4e05ce969b77dbcd236c1981a3e7b5e5973192710f93f1e94ad88298427de82bc665a130c2c5e9922ac55141e8699630e311a45fa8263cf4cf151"
+      },
+      {
+        "member_address": "gonka16q0zaetd6hq6d8zj48ur0v967xrrwh566kcazc",
+        "signature": "cc728ba6c4a164b91e2e868153cd4ffd8e29a16c235ecfbfe437725a62e350982a0e9aca74253ae29a2f19c733031e491dd7fb60fb0423c6204123f7f3e295a2"
+      },
+      {
+        "member_address": "gonka17pw6099q758qwzewtrqmqpf5c2lrhr97fwqexu",
+        "signature": "212af806866025b578e21de83365c291cd4853472429a317432b4824325d235127b83a1bc7c6706d13980dc945a123f7eb0c7e8b203df942fac144419b3b169a"
+      },
+      {
+        "member_address": "gonka187tn9y92ur6tu0zf69u94hwl0q77m47y0k36hv",
+        "signature": "11519c9b42aba52ae9ddbf16782b320c90c450bb84e83737213e855931b0016a60ba153486b7763fc76ee447150ad9e6304fdb2249c159fb826ae963c897754b"
+      },
+      {
+        "member_address": "gonka188c86f9mrlt4nlcg89f82nnfm9jzq9gtjafj50",
+        "signature": "7abe1ebe779e556c92a376ea7f868bdba1d83c66099efe40387cf657520bac3417c2028a3efd40341e7930f5b2b9fab08b25d75554776ef1e704c8b5ba4d255f"
+      },
+      {
+        "member_address": "gonka1ccdm8j6sjyhq4qask049dwgaczs7f3pxte6zmp",
+        "signature": "d3e68f61440816aacc6aa0a0342c39d7c80291ba1a8263fa2eb997ffce1bafdd6b96778e3cd8cfed4b3ec64772c47868edb23ca75c96100114f1cc1d6a26f016"
+      },
+      {
+        "member_address": "gonka1d694r00czmq75txghwjcuk07lxvc8d4ekgsha0",
+        "signature": "7f4657a5c395589bcdc3f2b02654358e053a6a00ace9af772830e3f05133b3cf4a4b507aff7868d2b95eec5186e3d20ae32f111879be4b3899f01de3ae50be94"
+      },
+      {
+        "member_address": "gonka1d7p03cu2y2yt3vytq9wlfm6tlz0lfhlgv9h82p",
+        "signature": "8ac7277a3f6078f20774bb25ffae5d65fe3d3df91685f376f449e673c87693025fb63efb79262873f8189eafa8307ee76ef006354d89f3c9d1e56ade2fef6ad1"
+      },
+      {
+        "member_address": "gonka1dpt9zx2dqcky6yjjwrd8xz2w7lq6vffy9mhvgs",
+        "signature": "283610c2faf23f86a2d65e09624fa02b429a7b6215819e918fcc78e7080b9e8e581db441a8e721bd7aec33a8d7afd562594c056deeeb31ad8796de8af2614272"
+      },
+      {
+        "member_address": "gonka1famtxh54kad6ylwtm60j6d7h6unpc08d4vdqnk",
+        "signature": "00fcaf48bd0006c27e0b9fe47af129d58aec3d18f7c4570d068468ee5af7e1466650db06f71f716d4ffb47c4b204cc0a733d5ff808b500ffcb8edf4ed67a1903"
+      },
+      {
+        "member_address": "gonka1ge9amk4ymld27d35akj3ky9uph4gyz6rdpepjj",
+        "signature": "72b2bc56bc401fd58c1511e0ebcccb4d92412e6a4a7d6053698c49b7c3b83638222cd8673a7e7fb560fa7423dd9d5c68d966d88e6abf838c119db5ddb89b30ed"
+      },
+      {
+        "member_address": "gonka1h3s37p0l23mg6ak9h9nmayh6r9f2vm6umj3qet",
+        "signature": "f964016c52603f12fd1ad9f96650db712103d0338d62a158ddd9e1d89584ac9576dc02e8312f50badb9115ee47674903f41d9a291938f97bea162b90c3cbe7f8"
+      },
+      {
+        "member_address": "gonka1jltjehxsnum94nt8c00ts7khmpy4lafv6gryzk",
+        "signature": "2962df74a92ea70f466e49d849a2bb11cf7853c9cd7986e1e23e2b68c5d1d2f6792476f0ee71c2a18a3d58dba302f799d101e40b07faa23654b4c2911d41eb03"
+      },
+      {
+        "member_address": "gonka1llgg3kvg9sc6xz09jtkcrucrppxgn78xe4xlv0",
+        "signature": "4ad42ca05273e50c8723a331fbdd20d88e5f9ea1ab1e2df9a58009f11efe00716cc42884fc2fdff2dd976cf869a75ac2a487eb9b78301f565b2c25e6847b57be"
+      },
+      {
+        "member_address": "gonka1lswsj2x7u4606wqpunmm07skgf76r3dyz4v0d8",
+        "signature": "07fe670e82bd559998e491837489a7c77ca00de65b4701c01a3c11498b6715b627db2778c301b76cd0c6da9c15f3cd26dc49e25577222f8e7e9b23313fb58298"
+      },
+      {
+        "member_address": "gonka1p2lhgng7tcqju7emk989s5fpdr7k2c3ek6h26m",
+        "signature": "66ac0a11d7f48226f56bacedab7b0bb8776330563833acc65f693330fabe4fa044c8f892fef850de943ff9565038c6c3ba2e898fbd530b2de92f0a33f84674ec"
+      },
+      {
+        "member_address": "gonka1p60lruhxmwcsa9taa28cp4k4f6kv2kvyu5h5ep",
+        "signature": "ccd5d5add4ecb1b8621ff38d68a320ce6caf3d564d6bff316dd0c6f7dd520dbc0281074b279050150d975e22a1b17dbe9a0985343207dd38099c5ab1949b22c6"
+      },
+      {
+        "member_address": "gonka1pllyukkeymx3hfd9mts3pryr9y6efs9eshty87",
+        "signature": "862aa42829dc3a70dd9a4e636425fb472fc48726cd2a21082fad6a378bf376596b397402b1a4d422736841a86177288431fa78b8bf07b5edb51ee9320e4552d4"
+      },
+      {
+        "member_address": "gonka1q5xt54wncgzk7dxv9x64uln68455g83wu9tugg",
+        "signature": "6b3ba034e17b1fd03ca15dc7ec66bafa9a29082ee1f289f28f4dbc6540f44cf95668d2ee078edc8a0fc56d70c1df10f2e8335c4e667449ee8d0928041da07c2b"
+      },
+      {
+        "member_address": "gonka1r5hdy9q5v783ef7td98k4c68cxl6a58h5sytfq",
+        "signature": "a23937aefa3c632773e219cac8d379146f5bb00478b88c8b30027e24a5df889566db96a4c8c936a35ecae7c333a8ebee0558ba2473328b36eb2a4e7c45809095"
+      },
+      {
+        "member_address": "gonka1slndy4rsmld579628302rj5gz8z9qf4v6ppmc4",
+        "signature": "9473baad282f2b534d263cddc5e7350a71c82dcfac541a70e847ae250172ee7515449ac956c5cc87460240e7f5895f005077c517a67b7a67a8de154240f34778"
+      },
+      {
+        "member_address": "gonka1u9a7r4w76gult5n9ysadnual9fghkc6yda60wj",
+        "signature": "1694c94137392d74dc787ddda1d0fa25a5984c785b45d607a84d7b2e43275a222020c131247c4e7ba5a3a902767c83f54c6ef942976763c590331664e42a6c64"
+      },
+      {
+        "member_address": "gonka1umvyh0rz5fdmk9qhxurshhchennajced6f4s89",
+        "signature": "bfa7b83c7d12d29d46f1c0f841b9b634ffd6be413ce3712110416d8704f8e1b64e40125d4b17f981ed58157f78830d429f75972352641ac1f1d3134659031d7a"
+      },
+      {
+        "member_address": "gonka1wthc28t25pg63hzvl07rl8e8r6km6hesl6jhsz",
+        "signature": "6c3f26e9df77d167005d57b2e39b851ccdc642204a89df991e58a98bb157ea9810cdcd543fe35a2eaf608fecd4a6c33aa600e481ebcdebbf216ca808f6384f9c"
+      },
+      {
+        "member_address": "gonka1y2a9p56kv044327uycmqdexl7zs82fs5ryv5le",
+        "signature": "bee4f6d07ff2a1f804a17ae85aeb9e5789d3027ce0e78c9db6a2bf8f7ffcb82c533c1edfdd2a76d70f6ae0602122c033721bda6abb77e77bba1648b05da18a8f"
+      },
+      {
+        "member_address": "gonka1zktn8j65wlys8a8e38hqhf4y3x6m4x04zskkrx",
+        "signature": "b45a668d74489b94d36c2f5fab6789c8565851e68d51a2ca9e7fcbc902ba7ab24888beacbe644b48f7cd6e3cc5b2758ec02ac8b417460457aa3b98c6c74acc9a"
+      },
+      {
+        "member_address": "gonka1zpw8tml8xl4fm6zm8zpf2u4pq4tehmd9e2vgq7",
+        "signature": "2742e225036063ee265f3580c9c721bd632c05579d07dfef2db08942733408864b0c7a5fbb88513cce954de7fc5007f9c43bd4c5861f6d3c9bbb6d329c3f490e"
+      },
+      {
+        "member_address": "gonka1zsvl7ujlc8z3a35v2q6e3nml7ftyk23v76jqgl",
+        "signature": "21bfe3edc2ac4a315d54161b3833a267fd0e050c95dd319dd0c467439646939b7bb96304ee7d22d4d28c07c79b7378c27f54f6c5d7e853f6f62b14d46294ccbd"
+      },
+      {
+        "member_address": "gonka125n6kr5gvdup0lndfkps7t6rd6592panhrg3np",
+        "signature": "7997d331598b250a46bf13cf7fd20e48980e1fe05d21d2cf4808e8b9896e8d341719e143904ba752421cacab601ae26d161c408e73545adb0c0025e83882db35"
+      },
+      {
+        "member_address": "gonka14ljarev2nlzu4ej50vx7ylj2rvg4n20fnq2ysc",
+        "signature": "fdf4368ab9a894cc193f62cf5681f07cd353d0d669545f8ab52ec7d14fd456ef48e98a22b8981172c1a12f0a5c45665d039486decdff8fabbbe043b47f5a8d34"
+      },
+      {
+        "member_address": "gonka15munkmx6x7k6rqqeexjet4556p7at39ks9qgr5",
+        "signature": "875cdcb4dea7c3d3d909d335a998e329f4e4c37df6946bda7201d957f9c3e30e08cf77e19c9679f0b5295ddbca690b4842a18a164567d8ce178dd84219deb5db"
+      },
+      {
+        "member_address": "gonka163ug8zucqeag9v5ey4au34jqt7vejkmxsg74eu",
+        "signature": "659e5b62ae2db17428f036bfb2f4004031bf83891bfa63b878f60fe1f24ca0974255e76d4c214bb3ba2fb4520323e2421880e3aa944ab0daea5540b359c4292b"
+      },
+      {
+        "member_address": "gonka17gpuntq09zsaqtmpe544gc32tk4424dwv5t34f",
+        "signature": "48757baa2176ce7a535c0587eb5859da9b4fe23c109c50b4e2a59c0787a035314ac50f8025b699907dd9d9949d04721a959118e128d56f9db9ef4e13d918464b"
+      },
+      {
+        "member_address": "gonka1830lqug50lse998x2lakk4pj5ypfumz5pasz0y",
+        "signature": "d3a478027cf8647daf7f61713df4afc5d227c8b8730946840fa34487fbace27000b26e8f5f8ec5aec8d4f2f0805bf3d6b4a72fd372fd95391c4f23d46128a39d"
+      },
+      {
+        "member_address": "gonka18xeqnspxpg2vncufnjne485rkaagwvz7whyn0d",
+        "signature": "3765af5a6774bbe79f36a2c095067c373e68611c5e04c5a9e306d7f400bb74fd39bfca231d0b9a4714c3e5ca09127b13fefed0c8bef4c56e744a5cc6d9f34904"
+      },
+      {
+        "member_address": "gonka19f9hkpmjaldncsfly4j63sy932y8hughn4l3d8",
+        "signature": "716d1d88b36dc2a59b5b00dfe5be94695cc1c6e1f7a982ebbeada6dfcfec68302d7a410607c848de16644fdcc4fdd59dc6aa2e362cbb1caa0437d1dc7cbb8502"
+      },
+      {
+        "member_address": "gonka19ghzvgfr065s3fr5awuvs3nhy9fq4n7wrr9kel",
+        "signature": "d34449ae0fb0f4d4d270b77115480da13190ec1703cd4510c1ead80809eccde86cad89d704ad343b813bd08f1a44d632ccc073c1f61313c00334f94578c7bb8a"
+      },
+      {
+        "member_address": "gonka1amlmhjym02shahjv8ldmupg4cx0qc66q6f85rj",
+        "signature": "7f47e80a76a85669b8ff3f9769f03d6470d31a4ecab15d7d28c7060dadbb09195455933463105206ca1c0cf0aed45471862c24e7233f920bac5aedf819bd8261"
+      },
+      {
+        "member_address": "gonka1dzdmx5ljrwkelrmgd7suv2q43epn293qacpgqn",
+        "signature": "a83fffd1877b6ac3d1ec73ce1de2821d86a0a35cc1e33353918812be420a90756082f9b0f6678c13455a1462a9faa1325d2e19bc5d3b51945a01d3c44fee26be"
+      },
+      {
+        "member_address": "gonka1fc9tzt83dgrqswlgay4668cuqjrk7zsqks2vm2",
+        "signature": "d86fa24c6345036638b2cd15eb209d9279c8797adaae13bc5c26bc7a80569fd1175fed20a3e48f9a1f8e7b1c324edc179f9288084b9690ff0ebf18f934370dec"
+      },
+      {
+        "member_address": "gonka1fkrsesmn2hdj30fhwyam6h4f2e77un36xalhvl",
+        "signature": "56cdc90634d3bce625d5a01ddf985fc0d167a98e575bb57229fb51cf4e1ba2bd658a26cd81cfc968f0747417cf8384af7a5a9500c61e8d136708aadda5eee748"
+      },
+      {
+        "member_address": "gonka1hwvel7n3zuk6wruefuzc356l9myske9stckwnz",
+        "signature": "c6f37fff21d29fb6ec505094d24a8ffcbef908a708462b05631db71cad2e070d66005ed8328b51f010a8436c50fc82b0a65dacf94b37fb74fecdbb6b709f629a"
+      },
+      {
+        "member_address": "gonka1kx9mca3xm8u8ypzfuhmxey66u0ufxhs7nm6wc5",
+        "signature": "c577ea8eb51cd4b520c499e2c21e2091dd61b8266d3825b17b8bde3cfe15faf24f41071ef899516bc15584205103f9d117aaa992775afb6e6957f3cb283f6a63"
+      },
+      {
+        "member_address": "gonka1lr9mj6dgkv0h76c8y8w0l3esztyg9v2q8d6d8d",
+        "signature": "90ad6818046b18451d30f7011f5256224595e299196a75f45bf0b44fbeb151b8554cfe30eb2d22a0b6c299f32a330721a052399a46bb9416e0bd3f7ddf0b91de"
+      },
+      {
+        "member_address": "gonka1myu058axjs62mc3e7na9krwvqpfl9z3gtcw9es",
+        "signature": "6d804ae3fc98519095a52a677bfb6a5e16ec77a62e86b648fdcf1209856d81c67f3a5c8b63617da81d3707b33411973fb348c6bf21e4bf08c524b7a486317379"
+      },
+      {
+        "member_address": "gonka1qu9mna5xlvlnw9455ygtjq92wuzkzm237w8l08",
+        "signature": "baa47f88c4e79facc2714db0101bb40bacae178c90b46ee7543973624c9ef22c315fdac31562b60b09b8e9c6ba49c5645fcdaa9a97f183beaaaf2019fe68c980"
+      },
+      {
+        "member_address": "gonka1qwfrtz9c7kcrfkrrlne2pkcye74mj6ce33xdkl",
+        "signature": "e82ec3b844c80656cf1dd8e04997ab8a301ee8db81cb315a114b77f70fa0510879c8236b486b5c5cfab937e535ad6f85d8ae22cc73c5c7f31f035198bd7d0046"
+      },
+      {
+        "member_address": "gonka1rcpc45n6zch9qlkn4m3cwngekad89xu8mcr09v",
+        "signature": "d2574a02c1d610bf2ed6787a7a729b5b2c1b68ad2cc650ee13589f8588c4bfba749a98bdf7d5fa0cfb357a54d01712f9ac104b1e5e6ab019e33ab0f53fd2f11e"
+      },
+      {
+        "member_address": "gonka1tja3g2da45efhe2p83gk3whtussmgmtsdlgprt",
+        "signature": "743d235725b12a56b0bf17203f24f81d01b67e5097b266b182d37b95707c922c3c3d839aab66dc423bff5281ae3cc6ac7782228bc9abb08e444422b364b6d8aa"
+      },
+      {
+        "member_address": "gonka1tlvg4kjx7ljd5thgd5fkgh39q6lu8cmxupktgg",
+        "signature": "d5e88e489d98b080afc5154f1113172caf1b07c42226d145d14a386e15b92ae76d3972b66dafeb35ddc803c7e51790c499dc1a8ac4823e1cac4b919bf8b49717"
+      },
+      {
+        "member_address": "gonka1tmk2tzdneht6smu34pkmqdvu7p34qavvmwtwq2",
+        "signature": "5ebe3e12fdefd47d89d8544d5cc6f441c30004db405c5296678b5b2000fc8eff331c970881202b57b234499f614b9d70122674b8d494432d96602274c3e4604a"
+      },
+      {
+        "member_address": "gonka1u4zxypjgcr8khlzefwjr0vwdaj2uzruw2cehj3",
+        "signature": "2d3e8f4dc98790cc0963eeef9a80e86385bb03e070a2f626f0af77675dc7d59a3f9ae842ea001d0cc8af90230e2628bbcf07afb8a8308e24799d9d1e1ac6be70"
+      },
+      {
+        "member_address": "gonka1uf5cg7ef0ns6877nl27y0s6rt06cdmn40k5a88",
+        "signature": "56a7ba410c75e02d273ce7b8032800b2cd2ba694f51d2b3987e789b6c7e4efc17c4b18c79f09bb51cacec9c7d3becd23242de8e0ffa2d670b83a6e880ed3e79b"
+      },
+      {
+        "member_address": "gonka1ujnc662v6g69jm6fgxnr79a2m7ehzeut059239",
+        "signature": "21fc75b4f37db03fdbb074ae3990b1c14ef82535a76b153950e815eb5756ae47722ad25e0ffb6bf6d274f18b23dc998f99f12513abe41e423e274797340af1cb"
+      },
+      {
+        "member_address": "gonka1vcvn2p5gczr5pynqq0ca0933tdrf5w64sjgtdg",
+        "signature": "f27efee9b495a8673eaf7bd722aa392d16689239030a0fbf797c189edbb151d377c12fda0e1fcbc6d1e0de1f6356cfb947403deb1d28edddd24c5c724c002540"
+      },
+      {
+        "member_address": "gonka1vjz8csqsr0ph0lv0yylc4auypnzrld7y6l2feu",
+        "signature": "8292144fed489ba0af9cb1c87ff5f34c325b2bce63c345613512a55d7364d9cf1494fff455efeb00437f06f174d47395c02dde990ef7fb7ee73649aa90214246"
+      },
+      {
+        "member_address": "gonka1w29nvdy6caqtrw30whz9h6ghl0xszwh3egndah",
+        "signature": "06d208fdda68406d7570b95a3fd1339ed5999f0ca92ab21764692e77ef37b56a75b68a023d3741dcd68bef04e0fab175e12077e1a2b4aed85f948f1ffb57a6cd"
+      },
+      {
+        "member_address": "gonka1wkgawwdzj623ss8eywayzdj6qcgr2llygactje",
+        "signature": "5fed3867611e81cc4b575865352ce7ea1315e485b22b8ee2f36e64170493c023157e019b2fa0bfc2b216a994ae8f3a9fee1ceb3b16d00409517de63706e00d9b"
+      },
+      {
+        "member_address": "gonka1wvv656pt2d8x2khcvytqeessck5uzjnxzsa8f6",
+        "signature": "8d59a2ac2dd9f82cc9400d3edfd33e8b2a2220f73d99abcd4a22cae87c0d9673793db0a2724cc5088c780e3868dd1df0f9ce297c491b32945f025e8df8f119e3"
+      },
+      {
+        "member_address": "gonka1x7zh2277spp7jfqjhv0g5mnezg290xdr4kpfnk",
+        "signature": "987d3aa89fbdc74c94bd64f2398631c39c31f8ae9b8538a9d7035f6a22828193034000fdcdd76d8d37cf7fc2fdf83b37f1eb604a7871bf82e6db3bb997fba546"
+      },
+      {
+        "member_address": "gonka1xwkesaxvdadh9wt9yyladu0r260s7whklcktds",
+        "signature": "6bb121704b32c59a8e92ed467e564e2cda90f680722c4ef6c28430caf5b978dd32eb85f783a4a7158f88f73dfaaddc7374df52daca26ac9a22d033ae5209dcc3"
+      },
+      {
+        "member_address": "gonka1ym3np7guxart483yfdxnlztuazx22cjt0e4a2p",
+        "signature": "7c43716302a22b3993abc8bf405df5d5de9b333d47d44574a5b57661d2fb732d49df4b3695f5cf39521787f2fbb598d70d88a7a111d42d77a61cf388abbeb696"
+      }
+    ],
+    "model_id": "Qwen/Qwen3-235B-A22B-Instruct-2507-FP8",
+    "model_snapshot": {
+      "coins_per_input_token": "0",
+      "coins_per_output_token": "0",
+      "context_window": "0",
+      "hf_commit": "c0eb82898e3da8fb6dd017e3e6698a5e37b3a3e6",
+      "hf_repo": "Qwen/Qwen3-235B-A22B-Instruct-2507-FP8",
+      "id": "Qwen/Qwen3-235B-A22B-Instruct-2507-FP8",
+      "model_args": [
+        "--max-model-len",
+        "240000",
+        "--enable-auto-tool-choice",
+        "--tool-call-parser",
+        "hermes"
+      ],
+      "proposed_by": "gonka1kx9mca3xm8u8ypzfuhmxey66u0ufxhs7nm6wc5",
+      "quantization": "",
+      "throughput_per_nonce": "1500",
+      "units_of_compute_per_token": "10000",
+      "v_ram": "320",
+      "validation_threshold": {
+        "exponent": -3,
+        "value": "958"
+      }
+    },
+    "number_of_requests": "0",
+    "poc_start_block_height": "3843714",
+    "previous_epoch_requests": "0",
+    "sub_group_models": [],
+    "total_throughput": "0",
+    "total_weight": "2066410",
+    "unit_of_compute_price": "0",
+    "validation_params": null,
+    "validation_weights": [
+      {
+        "confirmation_weight": "735",
+        "member_address": "gonka1043d00lu0v3fz53cut34twtcanalqg9u8vehp2",
+        "ml_nodes": [
+          {
+            "node_id": "node1",
+            "poc_weight": "2046",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 0,
+        "voting_power": "735",
+        "weight": "2046"
+      },
+      {
+        "confirmation_weight": "5115",
+        "member_address": "gonka10mmdjau4dnj8krs7sh7t7635ttnmq9u3vqgz09",
+        "ml_nodes": [
+          {
+            "node_id": "node1",
+            "poc_weight": "11130",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node7",
+            "poc_weight": "3108",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 100,
+        "voting_power": "5115",
+        "weight": "14238"
+      },
+      {
+        "confirmation_weight": "126217",
+        "member_address": "gonka12av9up884t9lcsf70rs0l7jfmkmc8k9sxfuknt",
+        "ml_nodes": [
+          {
+            "node_id": "FT-1",
+            "poc_weight": "9352",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "FT-10",
+            "poc_weight": "9377",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "FT-11",
+            "poc_weight": "9402",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "FT-112",
+            "poc_weight": "9326",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "FT-13",
+            "poc_weight": "9377",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "FT-14",
+            "poc_weight": "9377",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "FT-15",
+            "poc_weight": "9427",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "FT-16",
+            "poc_weight": "9326",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "FT-17",
+            "poc_weight": "9377",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "FT-18",
+            "poc_weight": "9377",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "FT-19",
+            "poc_weight": "9377",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "FT-2",
+            "poc_weight": "9377",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "FT-20",
+            "poc_weight": "9402",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "FT-21",
+            "poc_weight": "9377",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "FT-22",
+            "poc_weight": "9326",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "FT-23",
+            "poc_weight": "4689",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "FT-24",
+            "poc_weight": "9376",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "FT-25",
+            "poc_weight": "9376",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "FT-26",
+            "poc_weight": "9401",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "FT-27",
+            "poc_weight": "9351",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "FT-28",
+            "poc_weight": "9351",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "FT-29",
+            "poc_weight": "9376",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "FT-3",
+            "poc_weight": "9351",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "FT-30",
+            "poc_weight": "9376",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "FT-31",
+            "poc_weight": "9401",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "FT-32",
+            "poc_weight": "9376",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "FT-33",
+            "poc_weight": "9351",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "FT-34",
+            "poc_weight": "9351",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "FT-35",
+            "poc_weight": "9351",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "FT-36",
+            "poc_weight": "9376",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "FT-37",
+            "poc_weight": "9401",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "FT-38",
+            "poc_weight": "9351",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "FT-4",
+            "poc_weight": "9351",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "FT-5",
+            "poc_weight": "9376",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "FT-6",
+            "poc_weight": "9326",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "FT-7",
+            "poc_weight": "9326",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "FT-8",
+            "poc_weight": "9351",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "FT-9",
+            "poc_weight": "9376",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 100,
+        "voting_power": "126217",
+        "weight": "351288"
+      },
+      {
+        "confirmation_weight": "10663",
+        "member_address": "gonka12pcu9mcrpa4w4sjd9y3dsksnvu495ss6f9r4ra",
+        "ml_nodes": [
+          {
+            "node_id": "node1",
+            "poc_weight": "6819",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node2",
+            "poc_weight": "2403",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node3",
+            "poc_weight": "6819",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node4",
+            "poc_weight": "6819",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node5",
+            "poc_weight": "6819",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 100,
+        "voting_power": "10663",
+        "weight": "29679"
+      },
+      {
+        "confirmation_weight": "839",
+        "member_address": "gonka145666cll76ptcyy9ceymtalr8gnvv73ne99p32",
+        "ml_nodes": [
+          {
+            "node_id": "inference-prod",
+            "poc_weight": "2337",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 74,
+        "voting_power": "839",
+        "weight": "2337"
+      },
+      {
+        "confirmation_weight": "5475",
+        "member_address": "gonka14tqh62mangwzrma2lgg2dm375rcjzn2ydy8ttm",
+        "ml_nodes": [
+          {
+            "node_id": "252-17",
+            "poc_weight": "7482",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "252-5",
+            "poc_weight": "2004",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "main",
+            "poc_weight": "5753",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 100,
+        "voting_power": "5475",
+        "weight": "15239"
+      },
+      {
+        "confirmation_weight": "8381",
+        "member_address": "gonka168rtjfkszuhcggg4dfyse4yh7xn9zwfglnkns2",
+        "ml_nodes": [
+          {
+            "node_id": "mlnode-000",
+            "poc_weight": "1271",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "mlnode-001",
+            "poc_weight": "448",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "mlnode-002",
+            "poc_weight": "1271",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "mlnode-003",
+            "poc_weight": "1271",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "mlnode-004",
+            "poc_weight": "1271",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "mlnode-005",
+            "poc_weight": "1271",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "mlnode-006",
+            "poc_weight": "1271",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "mlnode-007",
+            "poc_weight": "1271",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "mlnode-008",
+            "poc_weight": "1271",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "mlnode-009",
+            "poc_weight": "1271",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "mlnode-010",
+            "poc_weight": "1271",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "mlnode-011",
+            "poc_weight": "1271",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "mlnode-012",
+            "poc_weight": "1271",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "mlnode-013",
+            "poc_weight": "1271",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "mlnode-014",
+            "poc_weight": "1271",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "mlnode-015",
+            "poc_weight": "1271",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "mlnode-016",
+            "poc_weight": "1271",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "mlnode-017",
+            "poc_weight": "1271",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "mlnode-018",
+            "poc_weight": "1271",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 100,
+        "voting_power": "8381",
+        "weight": "23326"
+      },
+      {
+        "confirmation_weight": "964",
+        "member_address": "gonka16k03ze5ynkprsd4n6e5uzhthvu9jjk553rauqy",
+        "ml_nodes": [
+          {
+            "node_id": "node1",
+            "poc_weight": "2685",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 0,
+        "voting_power": "964",
+        "weight": "2685"
+      },
+      {
+        "confirmation_weight": "557",
+        "member_address": "gonka16q0zaetd6hq6d8zj48ur0v967xrrwh566kcazc",
+        "ml_nodes": [
+          {
+            "node_id": "ml-node-c087b09b",
+            "poc_weight": "1553",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 100,
+        "voting_power": "557",
+        "weight": "1553"
+      },
+      {
+        "confirmation_weight": "2449",
+        "member_address": "gonka17pw6099q758qwzewtrqmqpf5c2lrhr97fwqexu",
+        "ml_nodes": [
+          {
+            "node_id": "A100-telecom",
+            "poc_weight": "2437",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "france-rtx-1",
+            "poc_weight": "1294",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "france-rtx-2",
+            "poc_weight": "449",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "rtx-pro-6000-2",
+            "poc_weight": "1319",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "us-rtx-1",
+            "poc_weight": "1319",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 70,
+        "voting_power": "2449",
+        "weight": "6818"
+      },
+      {
+        "confirmation_weight": "11611",
+        "member_address": "gonka187tn9y92ur6tu0zf69u94hwl0q77m47y0k36hv",
+        "ml_nodes": [
+          {
+            "node_id": "ice-1",
+            "poc_weight": "2127",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "ice-2",
+            "poc_weight": "6008",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "ice-3",
+            "poc_weight": "6059",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "ice-4",
+            "poc_weight": "6033",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "ice-5",
+            "poc_weight": "6033",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "ice-6",
+            "poc_weight": "6058",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 100,
+        "voting_power": "11611",
+        "weight": "32318"
+      },
+      {
+        "confirmation_weight": "24278",
+        "member_address": "gonka188c86f9mrlt4nlcg89f82nnfm9jzq9gtjafj50",
+        "ml_nodes": [
+          {
+            "node_id": "node1",
+            "poc_weight": "13904",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node2",
+            "poc_weight": "13930",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node3",
+            "poc_weight": "21820",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node4",
+            "poc_weight": "14030",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node5",
+            "poc_weight": "3887",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 32,
+        "voting_power": "24278",
+        "weight": "67571"
+      },
+      {
+        "confirmation_weight": "763",
+        "member_address": "gonka1ccdm8j6sjyhq4qask049dwgaczs7f3pxte6zmp",
+        "ml_nodes": [
+          {
+            "node_id": "main",
+            "poc_weight": "2126",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 64,
+        "voting_power": "763",
+        "weight": "2126"
+      },
+      {
+        "confirmation_weight": "639",
+        "member_address": "gonka1d694r00czmq75txghwjcuk07lxvc8d4ekgsha0",
+        "ml_nodes": [
+          {
+            "node_id": "mlnode-039",
+            "poc_weight": "1326",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "mlnode-060",
+            "poc_weight": "455",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 100,
+        "voting_power": "639",
+        "weight": "1781"
+      },
+      {
+        "confirmation_weight": "225",
+        "member_address": "gonka1d7p03cu2y2yt3vytq9wlfm6tlz0lfhlgv9h82p",
+        "ml_nodes": [
+          {
+            "node_id": "node1",
+            "poc_weight": "627",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 100,
+        "voting_power": "225",
+        "weight": "627"
+      },
+      {
+        "confirmation_weight": "915",
+        "member_address": "gonka1dpt9zx2dqcky6yjjwrd8xz2w7lq6vffy9mhvgs",
+        "ml_nodes": [
+          {
+            "node_id": "worker_gpu_alpha",
+            "poc_weight": "2549",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 74,
+        "voting_power": "915",
+        "weight": "2549"
+      },
+      {
+        "confirmation_weight": "70311",
+        "member_address": "gonka1famtxh54kad6ylwtm60j6d7h6unpc08d4vdqnk",
+        "ml_nodes": [
+          {
+            "node_id": "G6",
+            "poc_weight": "4481",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "I18",
+            "poc_weight": "8866",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "I19",
+            "poc_weight": "3006",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "I20",
+            "poc_weight": "8866",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "I21",
+            "poc_weight": "8890",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "I22",
+            "poc_weight": "8866",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "I23",
+            "poc_weight": "8866",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "I24",
+            "poc_weight": "8794",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "I25",
+            "poc_weight": "8866",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "I26",
+            "poc_weight": "8962",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "I27",
+            "poc_weight": "8866",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "I28",
+            "poc_weight": "8890",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "K12",
+            "poc_weight": "9058",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "K13",
+            "poc_weight": "9058",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "K14",
+            "poc_weight": "9034",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "K15",
+            "poc_weight": "9034",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "K16",
+            "poc_weight": "9034",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "K17",
+            "poc_weight": "9058",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "K18",
+            "poc_weight": "9058",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "K19",
+            "poc_weight": "9034",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "K20",
+            "poc_weight": "9058",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "K21",
+            "poc_weight": "9058",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "K22",
+            "poc_weight": "8986",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 96,
+        "voting_power": "70311",
+        "weight": "195689"
+      },
+      {
+        "confirmation_weight": "881",
+        "member_address": "gonka1ge9amk4ymld27d35akj3ky9uph4gyz6rdpepjj",
+        "ml_nodes": [
+          {
+            "node_id": "EdgeTPU-3",
+            "poc_weight": "2452",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 67,
+        "voting_power": "881",
+        "weight": "2452"
+      },
+      {
+        "confirmation_weight": "1003",
+        "member_address": "gonka1h3s37p0l23mg6ak9h9nmayh6r9f2vm6umj3qet",
+        "ml_nodes": [
+          {
+            "node_id": "node",
+            "poc_weight": "2794",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 100,
+        "voting_power": "1003",
+        "weight": "2794"
+      },
+      {
+        "confirmation_weight": "17276",
+        "member_address": "gonka1jltjehxsnum94nt8c00ts7khmpy4lafv6gryzk",
+        "ml_nodes": [
+          {
+            "node_id": "AD2",
+            "poc_weight": "9335",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "AD3",
+            "poc_weight": "9233",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "D1",
+            "poc_weight": "9257",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "D4",
+            "poc_weight": "9283",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "D5",
+            "poc_weight": "9257",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "U7",
+            "poc_weight": "1720",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 100,
+        "voting_power": "17276",
+        "weight": "48085"
+      },
+      {
+        "confirmation_weight": "859",
+        "member_address": "gonka1llgg3kvg9sc6xz09jtkcrucrppxgn78xe4xlv0",
+        "ml_nodes": [
+          {
+            "node_id": "inference",
+            "poc_weight": "2391",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 78,
+        "voting_power": "859",
+        "weight": "2391"
+      },
+      {
+        "confirmation_weight": "908",
+        "member_address": "gonka1lswsj2x7u4606wqpunmm07skgf76r3dyz4v0d8",
+        "ml_nodes": [
+          {
+            "node_id": "nv-compute-east",
+            "poc_weight": "2529",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 46,
+        "voting_power": "908",
+        "weight": "2529"
+      },
+      {
+        "confirmation_weight": "225",
+        "member_address": "gonka1p2lhgng7tcqju7emk989s5fpdr7k2c3ek6h26m",
+        "ml_nodes": [
+          {
+            "node_id": "node2",
+            "poc_weight": "627",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 0,
+        "voting_power": "225",
+        "weight": "627"
+      },
+      {
+        "confirmation_weight": "378",
+        "member_address": "gonka1p60lruhxmwcsa9taa28cp4k4f6kv2kvyu5h5ep",
+        "ml_nodes": [
+          {
+            "node_id": "inference-prod",
+            "poc_weight": "1053",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 29,
+        "voting_power": "378",
+        "weight": "1053"
+      },
+      {
+        "confirmation_weight": "5117",
+        "member_address": "gonka1pllyukkeymx3hfd9mts3pryr9y6efs9eshty87",
+        "ml_nodes": [
+          {
+            "node_id": "malay-an-2",
+            "poc_weight": "6059",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "malay-an-3",
+            "poc_weight": "2125",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "malay-an-4",
+            "poc_weight": "6059",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 100,
+        "voting_power": "5117",
+        "weight": "14243"
+      },
+      {
+        "confirmation_weight": "58684",
+        "member_address": "gonka1q5xt54wncgzk7dxv9x64uln68455g83wu9tugg",
+        "ml_nodes": [
+          {
+            "node_id": "x101",
+            "poc_weight": "7900",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "x104",
+            "poc_weight": "2805",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "x105",
+            "poc_weight": "7974",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "x106",
+            "poc_weight": "7999",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "x107",
+            "poc_weight": "7950",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "x108",
+            "poc_weight": "7974",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "x111",
+            "poc_weight": "7974",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "x201",
+            "poc_weight": "22760",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "x202",
+            "poc_weight": "22436",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "x203",
+            "poc_weight": "22486",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "x204",
+            "poc_weight": "22387",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "x206",
+            "poc_weight": "22684",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 0,
+        "voting_power": "58684",
+        "weight": "163329"
+      },
+      {
+        "confirmation_weight": "2299",
+        "member_address": "gonka1r5hdy9q5v783ef7td98k4c68cxl6a58h5sytfq",
+        "ml_nodes": [
+          {
+            "node_id": "node2",
+            "poc_weight": "6399",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 73,
+        "voting_power": "2299",
+        "weight": "6399"
+      },
+      {
+        "confirmation_weight": "778",
+        "member_address": "gonka1slndy4rsmld579628302rj5gz8z9qf4v6ppmc4",
+        "ml_nodes": [
+          {
+            "node_id": "host01",
+            "poc_weight": "2166",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 73,
+        "voting_power": "778",
+        "weight": "2166"
+      },
+      {
+        "confirmation_weight": "542",
+        "member_address": "gonka1u9a7r4w76gult5n9ysadnual9fghkc6yda60wj",
+        "ml_nodes": [
+          {
+            "node_id": "node1",
+            "poc_weight": "1511",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 6,
+        "voting_power": "542",
+        "weight": "1511"
+      },
+      {
+        "confirmation_weight": "49939",
+        "member_address": "gonka1umvyh0rz5fdmk9qhxurshhchennajced6f4s89",
+        "ml_nodes": [
+          {
+            "node_id": "node-1",
+            "poc_weight": "7227",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-10",
+            "poc_weight": "7251",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-11",
+            "poc_weight": "7227",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-12",
+            "poc_weight": "7227",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-13",
+            "poc_weight": "7203",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-14",
+            "poc_weight": "7226",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-15",
+            "poc_weight": "7226",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-16",
+            "poc_weight": "7226",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-17",
+            "poc_weight": "7226",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-18",
+            "poc_weight": "7226",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-19",
+            "poc_weight": "7250",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-2",
+            "poc_weight": "7226",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-20",
+            "poc_weight": "6985",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-3",
+            "poc_weight": "7250",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-4",
+            "poc_weight": "7178",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-5",
+            "poc_weight": "7226",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-6",
+            "poc_weight": "1933",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-7",
+            "poc_weight": "7226",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-8",
+            "poc_weight": "7226",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-9",
+            "poc_weight": "7226",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 100,
+        "voting_power": "49939",
+        "weight": "138991"
+      },
+      {
+        "confirmation_weight": "5413",
+        "member_address": "gonka1wthc28t25pg63hzvl07rl8e8r6km6hesl6jhsz",
+        "ml_nodes": [
+          {
+            "node_id": "ml-meet-01",
+            "poc_weight": "8130",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "ml-tango-01",
+            "poc_weight": "4077",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "ml-tango-02",
+            "poc_weight": "2407",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "rtx-test-1",
+            "poc_weight": "452",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 100,
+        "voting_power": "5413",
+        "weight": "15066"
+      },
+      {
+        "confirmation_weight": "357",
+        "member_address": "gonka1y2a9p56kv044327uycmqdexl7zs82fs5ryv5le",
+        "ml_nodes": [
+          {
+            "node_id": "node-235b",
+            "poc_weight": "994",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 100,
+        "voting_power": "357",
+        "weight": "994"
+      },
+      {
+        "confirmation_weight": "2588",
+        "member_address": "gonka1zktn8j65wlys8a8e38hqhf4y3x6m4x04zskkrx",
+        "ml_nodes": [
+          {
+            "node_id": "node_ovh",
+            "poc_weight": "366",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "nvh100_5",
+            "poc_weight": "6839",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 100,
+        "voting_power": "2588",
+        "weight": "7205"
+      },
+      {
+        "confirmation_weight": "935",
+        "member_address": "gonka1zpw8tml8xl4fm6zm8zpf2u4pq4tehmd9e2vgq7",
+        "ml_nodes": [
+          {
+            "node_id": "rock",
+            "poc_weight": "2604",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 69,
+        "voting_power": "935",
+        "weight": "2604"
+      },
+      {
+        "confirmation_weight": "6447",
+        "member_address": "gonka1zsvl7ujlc8z3a35v2q6e3nml7ftyk23v76jqgl",
+        "ml_nodes": [
+          {
+            "node_id": "node-1",
+            "poc_weight": "2760",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-2",
+            "poc_weight": "7593",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-3",
+            "poc_weight": "7593",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 63,
+        "voting_power": "6447",
+        "weight": "17946"
+      },
+      {
+        "confirmation_weight": "1382",
+        "member_address": "gonka125n6kr5gvdup0lndfkps7t6rd6592panhrg3np",
+        "ml_nodes": [
+          {
+            "node_id": "node481",
+            "poc_weight": "3848",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 0,
+        "voting_power": "1382",
+        "weight": "3848"
+      },
+      {
+        "confirmation_weight": "13743",
+        "member_address": "gonka14ljarev2nlzu4ej50vx7ylj2rvg4n20fnq2ysc",
+        "ml_nodes": [
+          {
+            "node_id": "am4g1r8bm2",
+            "poc_weight": "7651",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "dimwitted-edelweiss-frog",
+            "poc_weight": "7751",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "some-linden-hare",
+            "poc_weight": "7750",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "submodel-mouse",
+            "poc_weight": "7550",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "submodel-whh100-58-15",
+            "poc_weight": "7550",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 100,
+        "voting_power": "13743",
+        "weight": "38252"
+      },
+      {
+        "confirmation_weight": "22536",
+        "member_address": "gonka15munkmx6x7k6rqqeexjet4556p7at39ks9qgr5",
+        "ml_nodes": [
+          {
+            "node_id": "ml1",
+            "poc_weight": "16738",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "ml2",
+            "poc_weight": "8357",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "ml3",
+            "poc_weight": "4203",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "ml4",
+            "poc_weight": "8331",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "ml5",
+            "poc_weight": "16737",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "ml6",
+            "poc_weight": "8356",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 12,
+        "voting_power": "22536",
+        "weight": "62722"
+      },
+      {
+        "confirmation_weight": "3073",
+        "member_address": "gonka163ug8zucqeag9v5ey4au34jqt7vejkmxsg74eu",
+        "ml_nodes": [
+          {
+            "node_id": "node431",
+            "poc_weight": "4253",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node432",
+            "poc_weight": "4302",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 0,
+        "voting_power": "3073",
+        "weight": "8555"
+      },
+      {
+        "confirmation_weight": "110631",
+        "member_address": "gonka17gpuntq09zsaqtmpe544gc32tk4424dwv5t34f",
+        "ml_nodes": [
+          {
+            "node_id": "I1",
+            "poc_weight": "9287",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "I10",
+            "poc_weight": "9337",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "I11",
+            "poc_weight": "9337",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "I12",
+            "poc_weight": "9337",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "I13",
+            "poc_weight": "9312",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "I14",
+            "poc_weight": "9287",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "I15",
+            "poc_weight": "9312",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "I16",
+            "poc_weight": "9362",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "I17",
+            "poc_weight": "9337",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "I2",
+            "poc_weight": "9362",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "I3",
+            "poc_weight": "9362",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "I4",
+            "poc_weight": "9261",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "I5",
+            "poc_weight": "9362",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "I6",
+            "poc_weight": "9287",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "I7",
+            "poc_weight": "9337",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "I8",
+            "poc_weight": "9362",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "I9",
+            "poc_weight": "9312",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "K1",
+            "poc_weight": "9565",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "K10",
+            "poc_weight": "9540",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "K11",
+            "poc_weight": "9540",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "K2",
+            "poc_weight": "9515",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "K3",
+            "poc_weight": "9539",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "K4",
+            "poc_weight": "9539",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "K5",
+            "poc_weight": "9539",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "K6",
+            "poc_weight": "9539",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "K7",
+            "poc_weight": "9565",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "K8",
+            "poc_weight": "9539",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "K9",
+            "poc_weight": "9539",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "U10",
+            "poc_weight": "7611",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "U20",
+            "poc_weight": "7636",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "U2a",
+            "poc_weight": "2435",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "U2b",
+            "poc_weight": "2612",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "U3",
+            "poc_weight": "7839",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "U48",
+            "poc_weight": "8119",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node57",
+            "poc_weight": "8144",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 100,
+        "voting_power": "110631",
+        "weight": "307908"
+      },
+      {
+        "confirmation_weight": "1597",
+        "member_address": "gonka1830lqug50lse998x2lakk4pj5ypfumz5pasz0y",
+        "ml_nodes": [
+          {
+            "node_id": "node802",
+            "poc_weight": "4446",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 54,
+        "voting_power": "1597",
+        "weight": "4446"
+      },
+      {
+        "confirmation_weight": "1597",
+        "member_address": "gonka18xeqnspxpg2vncufnjne485rkaagwvz7whyn0d",
+        "ml_nodes": [
+          {
+            "node_id": "node803",
+            "poc_weight": "4446",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 0,
+        "voting_power": "1597",
+        "weight": "4446"
+      },
+      {
+        "confirmation_weight": "1830",
+        "member_address": "gonka19f9hkpmjaldncsfly4j63sy932y8hughn4l3d8",
+        "ml_nodes": [
+          {
+            "node_id": "node1",
+            "poc_weight": "2573",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node2",
+            "poc_weight": "2523",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 73,
+        "voting_power": "1830",
+        "weight": "5096"
+      },
+      {
+        "confirmation_weight": "9341",
+        "member_address": "gonka19ghzvgfr065s3fr5awuvs3nhy9fq4n7wrr9kel",
+        "ml_nodes": [
+          {
+            "node_id": "node1",
+            "poc_weight": "3250",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node2",
+            "poc_weight": "3250",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node3",
+            "poc_weight": "3250",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node4",
+            "poc_weight": "3250",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node5",
+            "poc_weight": "3250",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node6",
+            "poc_weight": "3250",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node7",
+            "poc_weight": "3250",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node8",
+            "poc_weight": "3250",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 100,
+        "voting_power": "9341",
+        "weight": "26000"
+      },
+      {
+        "confirmation_weight": "915",
+        "member_address": "gonka1amlmhjym02shahjv8ldmupg4cx0qc66q6f85rj",
+        "ml_nodes": [
+          {
+            "node_id": "node-1",
+            "poc_weight": "2548",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 100,
+        "voting_power": "915",
+        "weight": "2548"
+      },
+      {
+        "confirmation_weight": "15678",
+        "member_address": "gonka1dzdmx5ljrwkelrmgd7suv2q43epn293qacpgqn",
+        "ml_nodes": [
+          {
+            "node_id": "node1",
+            "poc_weight": "21856",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node2",
+            "poc_weight": "21780",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 10,
+        "voting_power": "15678",
+        "weight": "43636"
+      },
+      {
+        "confirmation_weight": "270",
+        "member_address": "gonka1fc9tzt83dgrqswlgay4668cuqjrk7zsqks2vm2",
+        "ml_nodes": [
+          {
+            "node_id": "node01s",
+            "poc_weight": "754",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 100,
+        "voting_power": "270",
+        "weight": "754"
+      },
+      {
+        "confirmation_weight": "3316",
+        "member_address": "gonka1fkrsesmn2hdj30fhwyam6h4f2e77un36xalhvl",
+        "ml_nodes": [
+          {
+            "node_id": "malay-az-1",
+            "poc_weight": "6188",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "malay-az-2",
+            "poc_weight": "3043",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 100,
+        "voting_power": "3316",
+        "weight": "9231"
+      },
+      {
+        "confirmation_weight": "19190",
+        "member_address": "gonka1hwvel7n3zuk6wruefuzc356l9myske9stckwnz",
+        "ml_nodes": [
+          {
+            "node_id": "fp001",
+            "poc_weight": "7627",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "fp002",
+            "poc_weight": "7627",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "fp003",
+            "poc_weight": "7627",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "fp004",
+            "poc_weight": "7626",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "fp005",
+            "poc_weight": "7626",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "fp006",
+            "poc_weight": "7626",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "fp007",
+            "poc_weight": "7651",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 46,
+        "voting_power": "19190",
+        "weight": "53410"
+      },
+      {
+        "confirmation_weight": "2111",
+        "member_address": "gonka1kx9mca3xm8u8ypzfuhmxey66u0ufxhs7nm6wc5",
+        "ml_nodes": [
+          {
+            "node_id": "node1",
+            "poc_weight": "5877",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 0,
+        "voting_power": "2111",
+        "weight": "5877"
+      },
+      {
+        "confirmation_weight": "2429",
+        "member_address": "gonka1lr9mj6dgkv0h76c8y8w0l3esztyg9v2q8d6d8d",
+        "ml_nodes": [
+          {
+            "node_id": "mnode-143",
+            "poc_weight": "6761",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 100,
+        "voting_power": "2429",
+        "weight": "6761"
+      },
+      {
+        "confirmation_weight": "21084",
+        "member_address": "gonka1myu058axjs62mc3e7na9krwvqpfl9z3gtcw9es",
+        "ml_nodes": [
+          {
+            "node_id": "node-1",
+            "poc_weight": "2808",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-10",
+            "poc_weight": "2808",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-11",
+            "poc_weight": "2808",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-12",
+            "poc_weight": "2808",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-13",
+            "poc_weight": "2808",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-14",
+            "poc_weight": "2808",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-15",
+            "poc_weight": "2808",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-16",
+            "poc_weight": "2808",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-17",
+            "poc_weight": "2808",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-18",
+            "poc_weight": "2808",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-19",
+            "poc_weight": "2808",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-2",
+            "poc_weight": "2808",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-20",
+            "poc_weight": "2808",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-21",
+            "poc_weight": "2323",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-22",
+            "poc_weight": "2807",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-4",
+            "poc_weight": "2807",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-5",
+            "poc_weight": "2807",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-6",
+            "poc_weight": "2807",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-7",
+            "poc_weight": "2807",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-8",
+            "poc_weight": "3012",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-9",
+            "poc_weight": "2807",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 100,
+        "voting_power": "21084",
+        "weight": "58681"
+      },
+      {
+        "confirmation_weight": "1999",
+        "member_address": "gonka1qu9mna5xlvlnw9455ygtjq92wuzkzm237w8l08",
+        "ml_nodes": [
+          {
+            "node_id": "node1",
+            "poc_weight": "5565",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 32,
+        "voting_power": "399",
+        "weight": "5565"
+      },
+      {
+        "confirmation_weight": "607",
+        "member_address": "gonka1qwfrtz9c7kcrfkrrlne2pkcye74mj6ce33xdkl",
+        "ml_nodes": [
+          {
+            "node_id": "node1",
+            "poc_weight": "1690",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 100,
+        "voting_power": "607",
+        "weight": "1690"
+      },
+      {
+        "confirmation_weight": "4895",
+        "member_address": "gonka1rcpc45n6zch9qlkn4m3cwngekad89xu8mcr09v",
+        "ml_nodes": [
+          {
+            "node_id": "node-1",
+            "poc_weight": "6813",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node-101",
+            "poc_weight": "6813",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 100,
+        "voting_power": "4895",
+        "weight": "13626"
+      },
+      {
+        "confirmation_weight": "21965",
+        "member_address": "gonka1tja3g2da45efhe2p83gk3whtussmgmtsdlgprt",
+        "ml_nodes": [
+          {
+            "node_id": "at001",
+            "poc_weight": "7645",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "at003",
+            "poc_weight": "7620",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "at004",
+            "poc_weight": "7671",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "at009",
+            "poc_weight": "7645",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "at010",
+            "poc_weight": "7671",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "at012",
+            "poc_weight": "7619",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "at013",
+            "poc_weight": "7644",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "at014",
+            "poc_weight": "7619",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 57,
+        "voting_power": "21965",
+        "weight": "61134"
+      },
+      {
+        "confirmation_weight": "2083",
+        "member_address": "gonka1tlvg4kjx7ljd5thgd5fkgh39q6lu8cmxupktgg",
+        "ml_nodes": [
+          {
+            "node_id": "node1",
+            "poc_weight": "5799",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 100,
+        "voting_power": "2083",
+        "weight": "5799"
+      },
+      {
+        "confirmation_weight": "1064",
+        "member_address": "gonka1tmk2tzdneht6smu34pkmqdvu7p34qavvmwtwq2",
+        "ml_nodes": [
+          {
+            "node_id": "node1",
+            "poc_weight": "2964",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 6,
+        "voting_power": "1064",
+        "weight": "2964"
+      },
+      {
+        "confirmation_weight": "2111",
+        "member_address": "gonka1u4zxypjgcr8khlzefwjr0vwdaj2uzruw2cehj3",
+        "ml_nodes": [
+          {
+            "node_id": "node1",
+            "poc_weight": "5877",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 100,
+        "voting_power": "2111",
+        "weight": "5877"
+      },
+      {
+        "confirmation_weight": "915",
+        "member_address": "gonka1uf5cg7ef0ns6877nl27y0s6rt06cdmn40k5a88",
+        "ml_nodes": [
+          {
+            "node_id": "node1",
+            "poc_weight": "2548",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 10,
+        "voting_power": "183",
+        "weight": "2548"
+      },
+      {
+        "confirmation_weight": "1962",
+        "member_address": "gonka1ujnc662v6g69jm6fgxnr79a2m7ehzeut059239",
+        "ml_nodes": [
+          {
+            "node_id": "node127",
+            "poc_weight": "5461",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 100,
+        "voting_power": "1962",
+        "weight": "5461"
+      },
+      {
+        "confirmation_weight": "7624",
+        "member_address": "gonka1vcvn2p5gczr5pynqq0ca0933tdrf5w64sjgtdg",
+        "ml_nodes": [
+          {
+            "node_id": "node2",
+            "poc_weight": "21220",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 54,
+        "voting_power": "7624",
+        "weight": "21220"
+      },
+      {
+        "confirmation_weight": "1850",
+        "member_address": "gonka1vjz8csqsr0ph0lv0yylc4auypnzrld7y6l2feu",
+        "ml_nodes": [
+          {
+            "node_id": "U9",
+            "poc_weight": "5149",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 0,
+        "voting_power": "1850",
+        "weight": "5149"
+      },
+      {
+        "confirmation_weight": "242",
+        "member_address": "gonka1w29nvdy6caqtrw30whz9h6ghl0xszwh3egndah",
+        "ml_nodes": [
+          {
+            "node_id": "node1",
+            "poc_weight": "676",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 100,
+        "voting_power": "242",
+        "weight": "676"
+      },
+      {
+        "confirmation_weight": "9398",
+        "member_address": "gonka1wkgawwdzj623ss8eywayzdj6qcgr2llygactje",
+        "ml_nodes": [
+          {
+            "node_id": "node204",
+            "poc_weight": "4414",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node214",
+            "poc_weight": "4413",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node224",
+            "poc_weight": "4290",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node234",
+            "poc_weight": "4363",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node244",
+            "poc_weight": "4339",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node254",
+            "poc_weight": "4339",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 0,
+        "voting_power": "9398",
+        "weight": "26158"
+      },
+      {
+        "confirmation_weight": "8315",
+        "member_address": "gonka1wvv656pt2d8x2khcvytqeessck5uzjnxzsa8f6",
+        "ml_nodes": [
+          {
+            "node_id": "island",
+            "poc_weight": "7748",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "rif",
+            "poc_weight": "7748",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "sines-3-fire",
+            "poc_weight": "7647",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 100,
+        "voting_power": "8315",
+        "weight": "23143"
+      },
+      {
+        "confirmation_weight": "766",
+        "member_address": "gonka1x7zh2277spp7jfqjhv0g5mnezg290xdr4kpfnk",
+        "ml_nodes": [
+          {
+            "node_id": "node1",
+            "poc_weight": "2132",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 100,
+        "voting_power": "766",
+        "weight": "2132"
+      },
+      {
+        "confirmation_weight": "13200",
+        "member_address": "gonka1xwkesaxvdadh9wt9yyladu0r260s7whklcktds",
+        "ml_nodes": [
+          {
+            "node_id": "node801",
+            "poc_weight": "4186",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node811",
+            "poc_weight": "4014",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node821",
+            "poc_weight": "4064",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node841",
+            "poc_weight": "4039",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node851",
+            "poc_weight": "4087",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node861",
+            "poc_weight": "4038",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node871",
+            "poc_weight": "4112",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node881",
+            "poc_weight": "4087",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "node891",
+            "poc_weight": "4112",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 76,
+        "voting_power": "13200",
+        "weight": "36739"
+      },
+      {
+        "confirmation_weight": "7941",
+        "member_address": "gonka1ym3np7guxart483yfdxnlztuazx22cjt0e4a2p",
+        "ml_nodes": [
+          {
+            "node_id": "A1",
+            "poc_weight": "7495",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "U11",
+            "poc_weight": "5031",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "U18",
+            "poc_weight": "2540",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "U5v1",
+            "poc_weight": "2134",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          },
+          {
+            "node_id": "U8",
+            "poc_weight": "4903",
+            "throughput": "0",
+            "timeslot_allocation": [
+              true,
+              false
+            ]
+          }
+        ],
+        "reputation": 100,
+        "voting_power": "7941",
+        "weight": "22103"
+      }
+    ]
+  }
+}

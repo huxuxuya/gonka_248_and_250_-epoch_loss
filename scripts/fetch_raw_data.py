@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import sys
+import re
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -11,6 +12,12 @@ from src.api_client import ApiClient, fetch_paginated_endpoint, save_json_payloa
 from src.constants import CACHE_INDEX_PATH, DEFAULT_SETTINGS_PATH, RAW_DATA_DIR
 from src.io_utils import build_file_record, dump_json, load_settings, update_cache_index, utc_now_iso
 from src.models import EpochMetadata
+
+
+def slugify(value: str) -> str:
+    value = value.strip()
+    value = re.sub(r"[^A-Za-z0-9._-]+", "_", value)
+    return value.strip("_") or "model"
 
 
 def parse_args() -> argparse.Namespace:
@@ -72,6 +79,19 @@ def main() -> int:
                 f"/chain-api/productscience/inference/inference/excluded_participants/{epoch}"
             ),
         }
+
+        subgroup_models = (
+            raw_files[f"epoch_group_data_{epoch}.json"]
+            .get("epoch_group_data", {})
+            .get("sub_group_models", [])
+        )
+        for model_id in subgroup_models:
+            subgroup_payload = client.get_json(
+                f"/chain-api/productscience/inference/inference/epoch_group_data/{epoch}",
+                params={"model_id": model_id},
+            )
+            subgroup_filename = f"epoch_group_data_{epoch}__{slugify(model_id)}.json"
+            raw_files[subgroup_filename] = subgroup_payload
 
         confirmation_ok, confirmation_payload = client.fetch_optional_json(
             f"/chain-api/productscience/inference/inference/confirmation_poc_events/{epoch}"

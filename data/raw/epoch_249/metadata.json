@@ -1,0 +1,82 @@
+{
+  "endpoints": [
+    {
+      "file": "params.json",
+      "status": "ok"
+    },
+    {
+      "file": "epoch_group_data_full.json",
+      "status": "ok"
+    },
+    {
+      "file": "epoch_group_data_249.json",
+      "status": "ok"
+    },
+    {
+      "file": "epoch_performance_summary_249.json",
+      "status": "ok"
+    },
+    {
+      "file": "excluded_participants_249.json",
+      "status": "ok"
+    },
+    {
+      "file": "epoch_group_data_249__Qwen_Qwen3-235B-A22B-Instruct-2507-FP8.json",
+      "status": "ok"
+    },
+    {
+      "file": "epoch_group_data_249__moonshotai_Kimi-K2.6.json",
+      "status": "ok"
+    },
+    {
+      "file": "confirmation_poc_events_249.json",
+      "status": "ok"
+    }
+  ],
+  "epoch": 249,
+  "fetched_at_utc": "2026-05-15T10:12:11+00:00",
+  "files": {
+    "confirmation_poc_events_249.json": {
+      "path": "data/raw/epoch_249/confirmation_poc_events_249.json",
+      "sha256": "0843cce80b7b246adb0614bfed97097a0c3800331e1167ee93c238a670f2bc0c",
+      "size_bytes": 891
+    },
+    "epoch_group_data_249.json": {
+      "path": "data/raw/epoch_249/epoch_group_data_249.json",
+      "sha256": "915867cf677facc4c4fbf0e6c3079ef95c45840e464b2f392d25d5ccb832b56e",
+      "size_bytes": 36838
+    },
+    "epoch_group_data_249__Qwen_Qwen3-235B-A22B-Instruct-2507-FP8.json": {
+      "path": "data/raw/epoch_249/epoch_group_data_249__Qwen_Qwen3-235B-A22B-Instruct-2507-FP8.json",
+      "sha256": "57fe6a51b29fa9b52891de93c490cc1f8679fc71f0d47131546b902c5b902d92",
+      "size_bytes": 102865
+    },
+    "epoch_group_data_249__moonshotai_Kimi-K2.6.json": {
+      "path": "data/raw/epoch_249/epoch_group_data_249__moonshotai_Kimi-K2.6.json",
+      "sha256": "025307bc74fd1d78764d58f4a7e59090034f99c6d1d8facfa6a21ac860f113c3",
+      "size_bytes": 1331
+    },
+    "epoch_group_data_full.json": {
+      "path": "data/raw/epoch_249/epoch_group_data_full.json",
+      "sha256": "1a0573a48061cccf6eb7b83fb36bbc6e63cf490bf116208fab3ae4403820dda4",
+      "size_bytes": 35603497
+    },
+    "epoch_performance_summary_249.json": {
+      "path": "data/raw/epoch_249/epoch_performance_summary_249.json",
+      "sha256": "ff52bd683fbb6869a8f523629992c10a723b0c5aa9fe45996805fef3147d6737",
+      "size_bytes": 29431
+    },
+    "excluded_participants_249.json": {
+      "path": "data/raw/epoch_249/excluded_participants_249.json",
+      "sha256": "dd44166417043fd18ecbf6df20da66f68a9639d74f01e77591d023a927b488c9",
+      "size_bytes": 2685
+    },
+    "params.json": {
+      "path": "data/raw/epoch_249/params.json",
+      "sha256": "2433168168134978bd15822da9590ebdd37220bbc54bc4b5f097a957959f645c",
+      "size_bytes": 11171
+    }
+  },
+  "mode": "live",
+  "node_url": "http://node1.gonka.ai:8000"
+}

@@ -1,0 +1,73 @@
+{
+  "endpoints": [
+    {
+      "file": "params.json",
+      "status": "ok"
+    },
+    {
+      "file": "epoch_group_data_full.json",
+      "status": "ok"
+    },
+    {
+      "file": "epoch_group_data_247.json",
+      "status": "ok"
+    },
+    {
+      "file": "epoch_performance_summary_247.json",
+      "status": "ok"
+    },
+    {
+      "file": "excluded_participants_247.json",
+      "status": "ok"
+    },
+    {
+      "file": "epoch_group_data_247__Qwen_Qwen3-235B-A22B-Instruct-2507-FP8.json",
+      "status": "ok"
+    },
+    {
+      "file": "confirmation_poc_events_247.json",
+      "status": "ok"
+    }
+  ],
+  "epoch": 247,
+  "fetched_at_utc": "2026-05-15T10:12:11+00:00",
+  "files": {
+    "confirmation_poc_events_247.json": {
+      "path": "data/raw/epoch_247/confirmation_poc_events_247.json",
+      "sha256": "30a616433bdd661d4d32cfeedc9bae57e117ac31640de5b424924b7c48b464fe",
+      "size_bytes": 891
+    },
+    "epoch_group_data_247.json": {
+      "path": "data/raw/epoch_247/epoch_group_data_247.json",
+      "sha256": "9a732aeed3bf7181bcd31184cdbe0c679cf518ea0e5f28eac00a9fbc5f9849d9",
+      "size_bytes": 58085
+    },
+    "epoch_group_data_247__Qwen_Qwen3-235B-A22B-Instruct-2507-FP8.json": {
+      "path": "data/raw/epoch_247/epoch_group_data_247__Qwen_Qwen3-235B-A22B-Instruct-2507-FP8.json",
+      "sha256": "4f7d6d642492511bd4893fff84319fb0dc27bff64b3f1eed9a4c0bda9781ccfb",
+      "size_bytes": 139952
+    },
+    "epoch_group_data_full.json": {
+      "path": "data/raw/epoch_247/epoch_group_data_full.json",
+      "sha256": "1a0573a48061cccf6eb7b83fb36bbc6e63cf490bf116208fab3ae4403820dda4",
+      "size_bytes": 35603497
+    },
+    "epoch_performance_summary_247.json": {
+      "path": "data/raw/epoch_247/epoch_performance_summary_247.json",
+      "sha256": "2098c5455d7442a571696397274b6faa0d407beb96897f146319332cfa252e23",
+      "size_bytes": 42998
+    },
+    "excluded_participants_247.json": {
+      "path": "data/raw/epoch_247/excluded_participants_247.json",
+      "sha256": "97687adb9966039529c9bb8d42ead120a2cc48130a40b87060ad9805a165b82f",
+      "size_bytes": 4795
+    },
+    "params.json": {
+      "path": "data/raw/epoch_247/params.json",
+      "sha256": "2433168168134978bd15822da9590ebdd37220bbc54bc4b5f097a957959f645c",
+      "size_bytes": 11171
+    }
+  },
+  "mode": "live",
+  "node_url": "http://node1.gonka.ai:8000"
+}

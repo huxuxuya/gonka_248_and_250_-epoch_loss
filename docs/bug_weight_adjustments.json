@@ -1,0 +1,632 @@
+[
+  {
+    "address": "gonka1043d00lu0v3fz53cut34twtcanalqg9u8vehp2",
+    "adjusted_weight_delta": 1311,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=node1; pw_baseline=2046; chain_bug_weight=floor(0.3593*2046)=735; weight_delta=1311",
+    "epoch": 249,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka10mmdjau4dnj8krs7sh7t7635ttnmq9u3vqgz09",
+    "adjusted_weight_delta": 1992,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=node7; pw_baseline=3108; chain_bug_weight=floor(0.3593*3108)=1116; weight_delta=1992",
+    "epoch": 249,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka12pcu9mcrpa4w4sjd9y3dsksnvu495ss6f9r4ra",
+    "adjusted_weight_delta": 1540,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=node2; pw_baseline=2403; chain_bug_weight=floor(0.3593*2403)=863; weight_delta=1540",
+    "epoch": 249,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka145666cll76ptcyy9ceymtalr8gnvv73ne99p32",
+    "adjusted_weight_delta": 1498,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=inference-prod; pw_baseline=2337; chain_bug_weight=floor(0.3593*2337)=839; weight_delta=1498",
+    "epoch": 249,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka14tqh62mangwzrma2lgg2dm375rcjzn2ydy8ttm",
+    "adjusted_weight_delta": 1284,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=252-5; pw_baseline=2004; chain_bug_weight=floor(0.3593*2004)=720; weight_delta=1284",
+    "epoch": 249,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka168rtjfkszuhcggg4dfyse4yh7xn9zwfglnkns2",
+    "adjusted_weight_delta": 288,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=mlnode-001; pw_baseline=448; chain_bug_weight=floor(0.3593*448)=160; weight_delta=288",
+    "epoch": 249,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka16k03ze5ynkprsd4n6e5uzhthvu9jjk553rauqy",
+    "adjusted_weight_delta": 1721,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=node1; pw_baseline=2685; chain_bug_weight=floor(0.3593*2685)=964; weight_delta=1721",
+    "epoch": 249,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka16q0zaetd6hq6d8zj48ur0v967xrrwh566kcazc",
+    "adjusted_weight_delta": 996,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=ml-node-c087b09b; pw_baseline=1553; chain_bug_weight=floor(0.3593*1553)=557; weight_delta=996",
+    "epoch": 249,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka17pw6099q758qwzewtrqmqpf5c2lrhr97fwqexu",
+    "adjusted_weight_delta": 288,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=france-rtx-2; pw_baseline=449; chain_bug_weight=floor(0.3593*449)=161; weight_delta=288",
+    "epoch": 249,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka187tn9y92ur6tu0zf69u94hwl0q77m47y0k36hv",
+    "adjusted_weight_delta": 1363,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=ice-1; pw_baseline=2127; chain_bug_weight=floor(0.3593*2127)=764; weight_delta=1363",
+    "epoch": 249,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka188c86f9mrlt4nlcg89f82nnfm9jzq9gtjafj50",
+    "adjusted_weight_delta": 2491,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=node5; pw_baseline=3887; chain_bug_weight=floor(0.3593*3887)=1396; weight_delta=2491",
+    "epoch": 249,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1ccdm8j6sjyhq4qask049dwgaczs7f3pxte6zmp",
+    "adjusted_weight_delta": 1363,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=main; pw_baseline=2126; chain_bug_weight=floor(0.3593*2126)=763; weight_delta=1363",
+    "epoch": 249,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1d694r00czmq75txghwjcuk07lxvc8d4ekgsha0",
+    "adjusted_weight_delta": 292,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=mlnode-060; pw_baseline=455; chain_bug_weight=floor(0.3593*455)=163; weight_delta=292",
+    "epoch": 249,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1d7p03cu2y2yt3vytq9wlfm6tlz0lfhlgv9h82p",
+    "adjusted_weight_delta": 402,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=node1; pw_baseline=627; chain_bug_weight=floor(0.3593*627)=225; weight_delta=402",
+    "epoch": 249,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1dpt9zx2dqcky6yjjwrd8xz2w7lq6vffy9mhvgs",
+    "adjusted_weight_delta": 1634,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=worker_gpu_alpha; pw_baseline=2549; chain_bug_weight=floor(0.3593*2549)=915; weight_delta=1634",
+    "epoch": 249,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1famtxh54kad6ylwtm60j6d7h6unpc08d4vdqnk",
+    "adjusted_weight_delta": 1926,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=I19; pw_baseline=3006; chain_bug_weight=floor(0.3593*3006)=1080; weight_delta=1926",
+    "epoch": 249,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1ge9amk4ymld27d35akj3ky9uph4gyz6rdpepjj",
+    "adjusted_weight_delta": 1571,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=EdgeTPU-3; pw_baseline=2452; chain_bug_weight=floor(0.3593*2452)=881; weight_delta=1571",
+    "epoch": 249,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1h3s37p0l23mg6ak9h9nmayh6r9f2vm6umj3qet",
+    "adjusted_weight_delta": 1791,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=node; pw_baseline=2794; chain_bug_weight=floor(0.3593*2794)=1003; weight_delta=1791",
+    "epoch": 249,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1jltjehxsnum94nt8c00ts7khmpy4lafv6gryzk",
+    "adjusted_weight_delta": 1103,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=U7; pw_baseline=1720; chain_bug_weight=floor(0.3593*1720)=617; weight_delta=1103",
+    "epoch": 249,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1llgg3kvg9sc6xz09jtkcrucrppxgn78xe4xlv0",
+    "adjusted_weight_delta": 1532,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=inference; pw_baseline=2391; chain_bug_weight=floor(0.3593*2391)=859; weight_delta=1532",
+    "epoch": 249,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1lswsj2x7u4606wqpunmm07skgf76r3dyz4v0d8",
+    "adjusted_weight_delta": 1621,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=nv-compute-east; pw_baseline=2529; chain_bug_weight=floor(0.3593*2529)=908; weight_delta=1621",
+    "epoch": 249,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1p2lhgng7tcqju7emk989s5fpdr7k2c3ek6h26m",
+    "adjusted_weight_delta": 402,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=node2; pw_baseline=627; chain_bug_weight=floor(0.3593*627)=225; weight_delta=402",
+    "epoch": 249,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1p60lruhxmwcsa9taa28cp4k4f6kv2kvyu5h5ep",
+    "adjusted_weight_delta": 675,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=inference-prod; pw_baseline=1053; chain_bug_weight=floor(0.3593*1053)=378; weight_delta=675",
+    "epoch": 249,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1pllyukkeymx3hfd9mts3pryr9y6efs9eshty87",
+    "adjusted_weight_delta": 1362,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=malay-an-3; pw_baseline=2125; chain_bug_weight=floor(0.3593*2125)=763; weight_delta=1362",
+    "epoch": 249,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1q5xt54wncgzk7dxv9x64uln68455g83wu9tugg",
+    "adjusted_weight_delta": 1798,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=x104; pw_baseline=2805; chain_bug_weight=floor(0.3593*2805)=1007; weight_delta=1798",
+    "epoch": 249,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1r5hdy9q5v783ef7td98k4c68cxl6a58h5sytfq",
+    "adjusted_weight_delta": 4100,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=node2; pw_baseline=6399; chain_bug_weight=floor(0.3593*6399)=2299; weight_delta=4100",
+    "epoch": 249,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1slndy4rsmld579628302rj5gz8z9qf4v6ppmc4",
+    "adjusted_weight_delta": 1388,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=host01; pw_baseline=2166; chain_bug_weight=floor(0.3593*2166)=778; weight_delta=1388",
+    "epoch": 249,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1u9a7r4w76gult5n9ysadnual9fghkc6yda60wj",
+    "adjusted_weight_delta": 969,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=node1; pw_baseline=1511; chain_bug_weight=floor(0.3593*1511)=542; weight_delta=969",
+    "epoch": 249,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1umvyh0rz5fdmk9qhxurshhchennajced6f4s89",
+    "adjusted_weight_delta": 1239,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=node-6; pw_baseline=1933; chain_bug_weight=floor(0.3593*1933)=694; weight_delta=1239",
+    "epoch": 249,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1wthc28t25pg63hzvl07rl8e8r6km6hesl6jhsz",
+    "adjusted_weight_delta": 290,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=rtx-test-1; pw_baseline=452; chain_bug_weight=floor(0.3593*452)=162; weight_delta=290",
+    "epoch": 249,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1y2a9p56kv044327uycmqdexl7zs82fs5ryv5le",
+    "adjusted_weight_delta": 637,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=node-235b; pw_baseline=994; chain_bug_weight=floor(0.3593*994)=357; weight_delta=637",
+    "epoch": 249,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1zktn8j65wlys8a8e38hqhf4y3x6m4x04zskkrx",
+    "adjusted_weight_delta": 235,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=node_ovh; pw_baseline=366; chain_bug_weight=floor(0.3593*366)=131; weight_delta=235",
+    "epoch": 249,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1zpw8tml8xl4fm6zm8zpf2u4pq4tehmd9e2vgq7",
+    "adjusted_weight_delta": 1669,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=rock; pw_baseline=2604; chain_bug_weight=floor(0.3593*2604)=935; weight_delta=1669",
+    "epoch": 249,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1zsvl7ujlc8z3a35v2q6e3nml7ftyk23v76jqgl",
+    "adjusted_weight_delta": 1769,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=node-1; pw_baseline=2760; chain_bug_weight=floor(0.3593*2760)=991; weight_delta=1769",
+    "epoch": 249,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka12pcu9mcrpa4w4sjd9y3dsksnvu495ss6f9r4ra",
+    "adjusted_weight_delta": 1540,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=node2; pw_baseline=2403; chain_bug_weight=floor(0.3593*2403)=863; weight_delta=1540",
+    "epoch": 250,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka14tqh62mangwzrma2lgg2dm375rcjzn2ydy8ttm",
+    "adjusted_weight_delta": 1284,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=252-5; pw_baseline=2004; chain_bug_weight=floor(0.3593*2004)=720; weight_delta=1284",
+    "epoch": 250,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka168rtjfkszuhcggg4dfyse4yh7xn9zwfglnkns2",
+    "adjusted_weight_delta": 288,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=mlnode-001; pw_baseline=448; chain_bug_weight=floor(0.3593*448)=160; weight_delta=288",
+    "epoch": 250,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka16k03ze5ynkprsd4n6e5uzhthvu9jjk553rauqy",
+    "adjusted_weight_delta": 1721,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=node1; pw_baseline=2685; chain_bug_weight=floor(0.3593*2685)=964; weight_delta=1721",
+    "epoch": 250,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka187tn9y92ur6tu0zf69u94hwl0q77m47y0k36hv",
+    "adjusted_weight_delta": 1363,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=ice-1; pw_baseline=2127; chain_bug_weight=floor(0.3593*2127)=764; weight_delta=1363",
+    "epoch": 250,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1d694r00czmq75txghwjcuk07lxvc8d4ekgsha0",
+    "adjusted_weight_delta": 292,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=mlnode-060; pw_baseline=455; chain_bug_weight=floor(0.3593*455)=163; weight_delta=292",
+    "epoch": 250,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1h3s37p0l23mg6ak9h9nmayh6r9f2vm6umj3qet",
+    "adjusted_weight_delta": 1791,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=node; pw_baseline=2794; chain_bug_weight=floor(0.3593*2794)=1003; weight_delta=1791",
+    "epoch": 250,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1jltjehxsnum94nt8c00ts7khmpy4lafv6gryzk",
+    "adjusted_weight_delta": 1103,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=U7; pw_baseline=1720; chain_bug_weight=floor(0.3593*1720)=617; weight_delta=1103",
+    "epoch": 250,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1pllyukkeymx3hfd9mts3pryr9y6efs9eshty87",
+    "adjusted_weight_delta": 1362,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=malay-an-3; pw_baseline=2125; chain_bug_weight=floor(0.3593*2125)=763; weight_delta=1362",
+    "epoch": 250,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1q5xt54wncgzk7dxv9x64uln68455g83wu9tugg",
+    "adjusted_weight_delta": 1798,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=x104; pw_baseline=2805; chain_bug_weight=floor(0.3593*2805)=1007; weight_delta=1798",
+    "epoch": 250,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1slndy4rsmld579628302rj5gz8z9qf4v6ppmc4",
+    "adjusted_weight_delta": 1388,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=host01; pw_baseline=2166; chain_bug_weight=floor(0.3593*2166)=778; weight_delta=1388",
+    "epoch": 250,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1u9a7r4w76gult5n9ysadnual9fghkc6yda60wj",
+    "adjusted_weight_delta": 969,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=node1; pw_baseline=1511; chain_bug_weight=floor(0.3593*1511)=542; weight_delta=969",
+    "epoch": 250,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1zktn8j65wlys8a8e38hqhf4y3x6m4x04zskkrx",
+    "adjusted_weight_delta": 235,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=node_ovh; pw_baseline=366; chain_bug_weight=floor(0.3593*366)=131; weight_delta=235",
+    "epoch": 250,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1zpw8tml8xl4fm6zm8zpf2u4pq4tehmd9e2vgq7",
+    "adjusted_weight_delta": 1669,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=rock; pw_baseline=2604; chain_bug_weight=floor(0.3593*2604)=935; weight_delta=1669",
+    "epoch": 250,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1zsvl7ujlc8z3a35v2q6e3nml7ftyk23v76jqgl",
+    "adjusted_weight_delta": 1769,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=node-1; pw_baseline=2760; chain_bug_weight=floor(0.3593*2760)=991; weight_delta=1769",
+    "epoch": 250,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka14tqh62mangwzrma2lgg2dm375rcjzn2ydy8ttm",
+    "adjusted_weight_delta": 1284,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=252-5; pw_baseline=2004; chain_bug_weight=floor(0.3593*2004)=720; weight_delta=1284",
+    "epoch": 251,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka168rtjfkszuhcggg4dfyse4yh7xn9zwfglnkns2",
+    "adjusted_weight_delta": 288,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=mlnode-001; pw_baseline=448; chain_bug_weight=floor(0.3593*448)=160; weight_delta=288",
+    "epoch": 251,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka187tn9y92ur6tu0zf69u94hwl0q77m47y0k36hv",
+    "adjusted_weight_delta": 1363,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=ice-1; pw_baseline=2127; chain_bug_weight=floor(0.3593*2127)=764; weight_delta=1363",
+    "epoch": 251,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1d694r00czmq75txghwjcuk07lxvc8d4ekgsha0",
+    "adjusted_weight_delta": 292,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=mlnode-060; pw_baseline=455; chain_bug_weight=floor(0.3593*455)=163; weight_delta=292",
+    "epoch": 251,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1jltjehxsnum94nt8c00ts7khmpy4lafv6gryzk",
+    "adjusted_weight_delta": 1103,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=U7; pw_baseline=1720; chain_bug_weight=floor(0.3593*1720)=617; weight_delta=1103",
+    "epoch": 251,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1pllyukkeymx3hfd9mts3pryr9y6efs9eshty87",
+    "adjusted_weight_delta": 1362,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=malay-an-3; pw_baseline=2125; chain_bug_weight=floor(0.3593*2125)=763; weight_delta=1362",
+    "epoch": 251,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1slndy4rsmld579628302rj5gz8z9qf4v6ppmc4",
+    "adjusted_weight_delta": 1388,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=host01; pw_baseline=2166; chain_bug_weight=floor(0.3593*2166)=778; weight_delta=1388",
+    "epoch": 251,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1u9a7r4w76gult5n9ysadnual9fghkc6yda60wj",
+    "adjusted_weight_delta": 969,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=node1; pw_baseline=1511; chain_bug_weight=floor(0.3593*1511)=542; weight_delta=969",
+    "epoch": 251,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1zktn8j65wlys8a8e38hqhf4y3x6m4x04zskkrx",
+    "adjusted_weight_delta": 235,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=node_ovh; pw_baseline=366; chain_bug_weight=floor(0.3593*366)=131; weight_delta=235",
+    "epoch": 251,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1zsvl7ujlc8z3a35v2q6e3nml7ftyk23v76jqgl",
+    "adjusted_weight_delta": 1769,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=node-1; pw_baseline=2760; chain_bug_weight=floor(0.3593*2760)=991; weight_delta=1769",
+    "epoch": 251,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1jltjehxsnum94nt8c00ts7khmpy4lafv6gryzk",
+    "adjusted_weight_delta": 1103,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=U7; pw_baseline=1720; chain_bug_weight=floor(0.3593*1720)=617; weight_delta=1103",
+    "epoch": 252,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1u9a7r4w76gult5n9ysadnual9fghkc6yda60wj",
+    "adjusted_weight_delta": 969,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=node1; pw_baseline=1511; chain_bug_weight=floor(0.3593*1511)=542; weight_delta=969",
+    "epoch": 252,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1zsvl7ujlc8z3a35v2q6e3nml7ftyk23v76jqgl",
+    "adjusted_weight_delta": 1769,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=node-1; pw_baseline=2760; chain_bug_weight=floor(0.3593*2760)=991; weight_delta=1769",
+    "epoch": 252,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  },
+  {
+    "address": "gonka1zsvl7ujlc8z3a35v2q6e3nml7ftyk23v76jqgl",
+    "adjusted_weight_delta": 1769,
+    "details": "0.35x stuck weight fix: adjusted_weight = current_effective_weight + sum(pw_baseline - floor(weight_scale_factor * pw_baseline)). node=node-1; pw_baseline=2760; chain_bug_weight=floor(0.3593*2760)=991; weight_delta=1769",
+    "epoch": 253,
+    "reason": "corrected stuck 0.35x preserver weight bug",
+    "source": "GRC-e247-preserver-audit:stuck-0.35x",
+    "source_data_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/output/issue2_per_node.csv",
+    "source_url": "https://github.com/gonkalabs/GRC-e247-preserver-audit/blob/1b8a26704dcddea0de2f55cabf48fee3d9b100d4/RESTITUTION_REPORT.md"
+  }
+]

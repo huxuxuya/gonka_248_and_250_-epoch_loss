@@ -1,0 +1,384 @@
+{
+  "params": {
+    "bandwidth_limits_params": {
+      "estimated_limits_per_block_kb": "53760",
+      "invalidations_limit": "500",
+      "invalidations_limit_curve": "250",
+      "invalidations_sample_period": "120",
+      "kb_per_input_token": {
+        "exponent": -4,
+        "value": "23"
+      },
+      "kb_per_output_token": {
+        "exponent": -2,
+        "value": "64"
+      },
+      "max_inferences_per_block": "1000",
+      "minimum_concurrent_invalidations": 1
+    },
+    "bitcoin_reward_params": {
+      "decay_rate": {
+        "exponent": -6,
+        "value": "-475"
+      },
+      "full_coverage_bonus_factor": {
+        "exponent": -1,
+        "value": "12"
+      },
+      "genesis_epoch": "1",
+      "initial_epoch_reward": "323000000000000",
+      "partial_coverage_bonus_factor": {
+        "exponent": -1,
+        "value": "1"
+      },
+      "use_bitcoin_rewards": true,
+      "utilization_bonus_factor": {
+        "exponent": -1,
+        "value": "5"
+      }
+    },
+    "collateral_params": {
+      "base_weight_ratio": {
+        "exponent": -1,
+        "value": "2"
+      },
+      "collateral_per_weight_unit": {
+        "exponent": -1,
+        "value": "42"
+      },
+      "downtime_missed_percentage_threshold": {
+        "exponent": -2,
+        "value": "5"
+      },
+      "grace_period_end_epoch": "180",
+      "slash_fraction_downtime": {
+        "exponent": -1,
+        "value": "1"
+      },
+      "slash_fraction_invalid": {
+        "exponent": -1,
+        "value": "2"
+      }
+    },
+    "confirmation_poc_params": {
+      "alpha_threshold": {
+        "exponent": -1,
+        "value": "5"
+      },
+      "expected_confirmations_per_epoch": "4",
+      "slash_fraction": {
+        "exponent": 0,
+        "value": "0"
+      },
+      "upgrade_protection_window": "500"
+    },
+    "delegation_params": {
+      "cap_factor": {
+        "exponent": -2,
+        "value": "75"
+      },
+      "delegation_share": {
+        "exponent": -2,
+        "value": "5"
+      },
+      "deploy_window": "500",
+      "initial_model_id": "Qwen/Qwen3-235B-A22B-Instruct-2507-FP8",
+      "max_model_voting_power_percentage": {
+        "exponent": -1,
+        "value": "3"
+      },
+      "no_participation_penalty": {
+        "exponent": -2,
+        "value": "15"
+      },
+      "refusal_penalty": {
+        "exponent": -1,
+        "value": "1"
+      },
+      "v_min": "3",
+      "w_threshold": {
+        "exponent": -1,
+        "value": "1"
+      }
+    },
+    "developer_access_params": {
+      "allowed_developer_addresses": [
+        "gonka10fynmy2npvdvew0vj2288gz8ljfvmjs35lat8n",
+        "gonka1v8gk5z7gcv72447yfcd2y8g78qk05yc4f3nk4w",
+        "gonka1gndhek2h2y5849wf6tmw6gnw9qn4vysgljed0u",
+        "gonka1z66ec2zedwpapp6jrj9raxgl93e5ec9z5my52h",
+        "gonka1jw6xg0wun3g8m2fjm8lula82dw5p6jl8yp28mn",
+        "gonka15sjedpgseutpnrjx2ge3mgau3s8ft5qzym9waa",
+        "gonka1l4a2wtls9rgd2mnnj6mheml5xlq3kknngj4p7h",
+        "gonka1f3yg5385n3f9pdw2g3dcjcnfqyej67hcu9vfet",
+        "gonka15g5pu70k7l6hvdt8xl80h4mxe332762csupaeg",
+        "gonka1uyqp5z3dveamfw4pmw7p7rfvwdvgzewnqrzhsu",
+        "gonka18lluv53n4h9z34qu20vxcvypgdkhsg6nn2cl2d",
+        "gonka1x7zh2277spp7jfqjhv0g5mnezg290xdr4kpfnk",
+        "gonka1ddswmmmn38esxegjf6qw36mt4aqyw6etvysy5x",
+        "gonka1kx9mca3xm8u8ypzfuhmxey66u0ufxhs7nm6wc5",
+        "gonka1dkl4mah5erqggvhqkpc8j3qs5tyuetgdy552cp",
+        "gonka1y2a9p56kv044327uycmqdexl7zs82fs5ryv5le",
+        "gonka1p0uanq0aay6n3l4gtnshg63cy6vx3zgvkyc5lc",
+        "gonka1khca2ht3m0nvpfghrxwgvnmj74t0sx6qzc2edd"
+      ],
+      "until_block_height": "2459367"
+    },
+    "devshard_escrow_params": {
+      "allowed_creator_addresses": [
+        "gonka10fynmy2npvdvew0vj2288gz8ljfvmjs35lat8n",
+        "gonka1uyqp5z3dveamfw4pmw7p7rfvwdvgzewnqrzhsu",
+        "gonka1sy7ug80wrnm6gk47creak0j5eagjpf7maqcqwk",
+        "gonka1w66aw6jayepglwgz66qtunetr5nyw9ls7evq5g",
+        "gonka1v8gk5z7gcv72447yfcd2y8g78qk05yc4f3nk4w",
+        "gonka1gndhek2h2y5849wf6tmw6gnw9qn4vysgljed0u",
+        "gonka1z66ec2zedwpapp6jrj9raxgl93e5ec9z5my52h",
+        "gonka1jw6xg0wun3g8m2fjm8lula82dw5p6jl8yp28mn",
+        "gonka15sjedpgseutpnrjx2ge3mgau3s8ft5qzym9waa",
+        "gonka1l4a2wtls9rgd2mnnj6mheml5xlq3kknngj4p7h",
+        "gonka1f3yg5385n3f9pdw2g3dcjcnfqyej67hcu9vfet",
+        "gonka15g5pu70k7l6hvdt8xl80h4mxe332762csupaeg",
+        "gonka1p0uanq0aay6n3l4gtnshg63cy6vx3zgvkyc5lc"
+      ],
+      "approved_versions": [
+        {
+          "binary": "https://github.com/gonka-ai/gonka/releases/download/release%2Fv0.2.12/devshardd.zip",
+          "name": "v1",
+          "sha256": "15f722444e6545bc787f1ef6d1011557d25a8b05cb9f6aaf1a514349d36d4715"
+        }
+      ],
+      "group_size": 16,
+      "max_amount": "100000000000",
+      "max_escrows_per_epoch": 100,
+      "min_amount": "50000000",
+      "token_price": "10"
+    },
+    "dynamic_pricing_params": {
+      "base_per_token_price": "100",
+      "grace_period_end_epoch": "90",
+      "grace_period_per_token_price": "100",
+      "min_per_token_price": "1",
+      "price_elasticity": {
+        "exponent": -2,
+        "value": "5"
+      },
+      "stability_zone_lower_bound": {
+        "exponent": -1,
+        "value": "4"
+      },
+      "stability_zone_upper_bound": {
+        "exponent": -1,
+        "value": "6"
+      },
+      "utilization_window_duration": "60"
+    },
+    "epoch_params": {
+      "confirmation_poc_safety_window": "500",
+      "default_unit_of_compute_price": "100",
+      "epoch_length": "15391",
+      "epoch_multiplier": "1",
+      "epoch_shift": "16980",
+      "inference_pruning_epoch_threshold": "2",
+      "inference_pruning_max": "5000",
+      "inference_validation_cutoff": "2",
+      "poc_exchange_duration": "0",
+      "poc_pruning_max": "1000",
+      "poc_slot_allocation": {
+        "exponent": -1,
+        "value": "1"
+      },
+      "poc_stage_duration": "35",
+      "poc_validation_delay": "5",
+      "poc_validation_duration": "240",
+      "set_new_validators_delay": "120"
+    },
+    "fee_params": {
+      "base_validation_gas": "500000",
+      "gas_per_poc_count": "100",
+      "min_gas_price_ngonka": "0"
+    },
+    "genesis_guardian_params": {
+      "guardian_addresses": [
+        "gonkavaloper1y2a9p56kv044327uycmqdexl7zs82fs5lyang5",
+        "gonkavaloper1dkl4mah5erqggvhqkpc8j3qs5tyuetgdc59d0v",
+        "gonkavaloper1kx9mca3xm8u8ypzfuhmxey66u0ufxhs70mtf0e"
+      ],
+      "network_maturity_min_height": "3000000",
+      "network_maturity_threshold": "15000000"
+    },
+    "participant_access_params": {
+      "blocked_participant_addresses": [
+        "gonka1blockedxxxxxxxxxxxxxxxxxxxxxx"
+      ],
+      "new_participant_registration_start_height": "2475000",
+      "participant_allowlist_until_block_height": "2475000",
+      "use_participant_allowlist": true
+    },
+    "poc_params": {
+      "confirmation_poc_v2_enabled": true,
+      "default_difficulty": 5,
+      "model_id": "",
+      "model_params": null,
+      "models": [
+        {
+          "model_id": "Qwen/Qwen3-235B-A22B-Instruct-2507-FP8",
+          "penalty_start_epoch": "0",
+          "seq_len": "1024",
+          "stat_test": {
+            "dist_threshold": {
+              "exponent": -1,
+              "value": "2"
+            },
+            "p_mismatch": {
+              "exponent": -1,
+              "value": "1"
+            },
+            "p_value_threshold": {
+              "exponent": -2,
+              "value": "5"
+            }
+          },
+          "weight_scale_factor": {
+            "exponent": -4,
+            "value": "3593"
+          }
+        },
+        {
+          "model_id": "moonshotai/Kimi-K2.6",
+          "penalty_start_epoch": "251",
+          "seq_len": "1024",
+          "stat_test": {
+            "dist_threshold": {
+              "exponent": -1,
+              "value": "4"
+            },
+            "p_mismatch": {
+              "exponent": -1,
+              "value": "1"
+            },
+            "p_value_threshold": {
+              "exponent": -2,
+              "value": "5"
+            }
+          },
+          "weight_scale_factor": {
+            "exponent": -16,
+            "value": "12620856201975851"
+          }
+        }
+      ],
+      "poc_data_pruning_epoch_threshold": "1",
+      "poc_normalization_enabled": true,
+      "poc_stronger_rng_enabled": false,
+      "poc_v2_enabled": true,
+      "seq_len": "0",
+      "stat_test": null,
+      "validation_sample_size": 200,
+      "validation_slots": 0,
+      "weight_scale_factor": null
+    },
+    "tokenomics_params": {
+      "current_subsidy_percentage": {
+        "exponent": -1,
+        "value": "9"
+      },
+      "reward_vesting_period": "180",
+      "subsidy_reduction_amount": {
+        "exponent": -1,
+        "value": "2"
+      },
+      "subsidy_reduction_interval": {
+        "exponent": -2,
+        "value": "5"
+      },
+      "work_vesting_period": "180"
+    },
+    "transfer_agent_access_params": {
+      "allowed_transfer_addresses": [
+        "gonka1y2a9p56kv044327uycmqdexl7zs82fs5ryv5le",
+        "gonka1dkl4mah5erqggvhqkpc8j3qs5tyuetgdy552cp",
+        "gonka1kx9mca3xm8u8ypzfuhmxey66u0ufxhs7nm6wc5",
+        "gonka1ddswmmmn38esxegjf6qw36mt4aqyw6etvysy5x",
+        "gonka10fynmy2npvdvew0vj2288gz8ljfvmjs35lat8n",
+        "gonka1v8gk5z7gcv72447yfcd2y8g78qk05yc4f3nk4w",
+        "gonka1gndhek2h2y5849wf6tmw6gnw9qn4vysgljed0u"
+      ]
+    },
+    "validation_params": {
+      "bad_participant_invalidation_rate": {
+        "exponent": -1,
+        "value": "1"
+      },
+      "binom_test_p0": {
+        "exponent": -1,
+        "value": "1"
+      },
+      "claim_validation_enabled": false,
+      "downtime_bad_percentage": {
+        "exponent": -2,
+        "value": "99"
+      },
+      "downtime_good_percentage": {
+        "exponent": -2,
+        "value": "98"
+      },
+      "downtime_h_threshold": {
+        "exponent": 2,
+        "value": "1"
+      },
+      "downtime_reputation_preserve": {
+        "exponent": 0,
+        "value": "0"
+      },
+      "epochs_to_max": "30",
+      "estimated_limits_per_block_kb": "0",
+      "expiration_blocks": "150",
+      "false_positive_rate": {
+        "exponent": -2,
+        "value": "5"
+      },
+      "full_validation_traffic_cutoff": "10000",
+      "invalid_reputation_preserve": {
+        "exponent": 0,
+        "value": "0"
+      },
+      "invalidation_h_threshold": {
+        "exponent": 0,
+        "value": "4"
+      },
+      "logprobs_mode": "processed_logprobs",
+      "max_validation_average": {
+        "exponent": 0,
+        "value": "1"
+      },
+      "min_ramp_up_measurements": 10,
+      "min_validation_average": {
+        "exponent": -2,
+        "value": "1"
+      },
+      "min_validation_halfway": {
+        "exponent": -2,
+        "value": "5"
+      },
+      "min_validation_traffic_cutoff": "100",
+      "miss_percentage_cutoff": {
+        "exponent": -2,
+        "value": "1"
+      },
+      "miss_requests_penalty": {
+        "exponent": 0,
+        "value": "1"
+      },
+      "pass_value": {
+        "exponent": -2,
+        "value": "99"
+      },
+      "quick_failure_threshold": {
+        "exponent": -6,
+        "value": "1"
+      },
+      "timestamp_advance": "30",
+      "timestamp_expiration": "300"
+    }
+  }
+}

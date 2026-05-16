@@ -23,6 +23,14 @@
     {
       "file": "params.json",
       "status": "ok"
+    },
+    {
+      "file": "epoch_group_data_250__Qwen_Qwen3-235B-A22B-Instruct-2507-FP8.json",
+      "status": "ok"
+    },
+    {
+      "file": "epoch_group_data_250__moonshotai_Kimi-K2.6.json",
+      "status": "ok"
     }
   ],
   "epoch": 250,
@@ -37,6 +45,16 @@
       "path": "data/raw/epoch_250/epoch_group_data_250.json",
       "sha256": "3793e2fd8473d303db1e699e7d3746060bf0a399ae149508fb8caba36218da6e",
       "size_bytes": 35893
+    },
+    "epoch_group_data_250__Qwen_Qwen3-235B-A22B-Instruct-2507-FP8.json": {
+      "path": "data/raw/epoch_250/epoch_group_data_250__Qwen_Qwen3-235B-A22B-Instruct-2507-FP8.json",
+      "sha256": "b88acfaef055426a3710502f750fdec50565725e81519c29bf0a7315aaf4a3a5",
+      "size_bytes": 54084
+    },
+    "epoch_group_data_250__moonshotai_Kimi-K2.6.json": {
+      "path": "data/raw/epoch_250/epoch_group_data_250__moonshotai_Kimi-K2.6.json",
+      "sha256": "dc6bba05d7b0278963e520aaf06282a22a4e78c72c2c66b9f0879173bbe90e53",
+      "size_bytes": 1023
     },
     "epoch_group_data_full.json": {
       "path": "data/raw/epoch_250/epoch_group_data_full.json",

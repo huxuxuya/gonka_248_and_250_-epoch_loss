@@ -23,6 +23,10 @@
     {
       "file": "params.json",
       "status": "ok"
+    },
+    {
+      "file": "epoch_group_data_248__Qwen_Qwen3-235B-A22B-Instruct-2507-FP8.json",
+      "status": "ok"
     }
   ],
   "epoch": 248,
@@ -37,6 +41,11 @@
       "path": "data/raw/epoch_248/epoch_group_data_248.json",
       "sha256": "d13ba6bca7134ccbc45c66673e8f0eb3c9e89485a30649599f601bf7a797e1e2",
       "size_bytes": 47646
+    },
+    "epoch_group_data_248__Qwen_Qwen3-235B-A22B-Instruct-2507-FP8.json": {
+      "path": "data/raw/epoch_248/epoch_group_data_248__Qwen_Qwen3-235B-A22B-Instruct-2507-FP8.json",
+      "sha256": "4add7ecd12ed697290d575da989b608704fa431e7872504e96be107ecc72e7c2",
+      "size_bytes": 68897
     },
     "epoch_group_data_full.json": {
       "path": "data/raw/epoch_248/epoch_group_data_full.json",

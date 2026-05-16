@@ -1,7 +1,14 @@
 {
   "epochs": [
+    247,
     248,
-    250
+    249,
+    250,
+    251,
+    252,
+    253,
+    254,
+    255
   ],
   "run_mode": "cache-only",
   "settings_path": "config/settings.yaml"

@@ -93,7 +93,7 @@ def update_cache_index(path: Path, metadata: EpochMetadata) -> None:
 def format_gnk(base_units: int | Decimal, precision: int) -> str:
     value = Decimal(base_units) / Decimal(BASE_UNITS_PER_GNK)
     quantum = Decimal("1").scaleb(-precision)
-    return str(value.quantize(quantum, rounding=ROUND_DOWN))
+    return format(value.quantize(quantum, rounding=ROUND_DOWN), "f")
 
 
 def _normalize(value: Any) -> Any:

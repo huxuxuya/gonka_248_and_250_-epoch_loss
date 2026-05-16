@@ -1,127 +1,132 @@
-# Gonka: Unreceived Reward For Epochs 248 And 250
+# Gonka reward compensation for epochs 247-255
 
-Этот репозиторий фиксирует расчет недополученной награды за epochs `248` и `250`.
+Этот репозиторий считает недополученную награду за epochs `247-255`.
+Разница между ожидаемой и фактически выданной наградой фиксируется как сумма, которая не дошла до участника и была отправлена в `gov` module.
 
-Под "недополученной наградой" здесь понимается разница между:
+## Что считается
 
-- ожидаемой наградой по расчету reward distribution
-- фактически `rewarded_coins`, отраженными в chain raw data
+Текущий replay разделяет две величины:
 
-Итоговая разница рассматривается как сумма, которая не была получена участниками и была отправлена в `gov` module.
+- `effective_weight = min(confirmation_weight, subgroup_voting_power)`
+- `actual chain reward = floor(effective_weight * fixed_epoch_reward / total_full_weight)`
+- `expected_reward_base_units = floor(expected_reward_weight * fixed_epoch_reward / total_full_weight)`
+- `compensation_base_units = max(0, expected_reward_base_units - actual_rewarded_coins)`
 
-Источник данных:
-
-- raw snapshots из chain API сохранены локально в `data/raw/epoch_248/` и `data/raw/epoch_250/`
-- итоговые расчеты сохранены в `outputs/`
-
-Формула расчета:
-
-`expected_reward_base_units = floor(effective_weight * fixed_epoch_reward / total_epoch_weight)`
-
-`unreceived_reward_base_units = max(0, expected_reward_base_units - actual_rewarded_coins)`
+Если `confirmation_weight = 0`, то `expected_reward_weight` берется как исходный `weight`. Иначе используется `pre_exclusion_effective_weight`.
+То есть компенсация считается по той выплате, которую chain посчитал бы участнику при том же confirmed weight, если бы вес не был занулен exclusion/downtime.
+`weight` и `effective_weight` остаются в CSV как диагностика: `weight` показывает полный denominator-вклад, `effective_weight` показывает фактический payout weight после занулений.
 
 `1 GNK = 1e9` base units.
 
-В таблицах ниже показаны только участники с положительной рассчитанной потерей.
+## Где лежат данные
 
-## Epoch 248
+- Raw cache: `data/raw/epoch_<N>`
+- Processed cache: `data/processed`
+- Final CSV: `outputs/epoch_<N>`, `outputs/combined`
+- Полный markdown-отчет с таблицами по участникам: `outputs/combined/REPORT.md`
 
-| address | unreceived_reward_gnk | loss_reason |
-| --- | ---: | --- |
-| gonka1umvyh0rz5fdmk9qhxurshhchennajced6f4s89 | 38635.393450804 | underpaid_vs_expected_reward |
-| gonka17gpuntq09zsaqtmpe544gc32tk4424dwv5t34f | 23456.534517645 | underpaid_vs_expected_reward |
-| gonka1hwvel7n3zuk6wruefuzc356l9myske9stckwnz | 16773.380705218 | underpaid_vs_expected_reward |
-| gonka1pllyukkeymx3hfd9mts3pryr9y6efs9eshty87 | 13913.658375295 | underpaid_vs_expected_reward |
-| gonka12pcu9mcrpa4w4sjd9y3dsksnvu495ss6f9r4ra | 13613.755252922 | underpaid_vs_expected_reward |
-| gonka1ym3np7guxart483yfdxnlztuazx22cjt0e4a2p | 13041.953627205 | underpaid_vs_expected_reward |
-| gonka168rtjfkszuhcggg4dfyse4yh7xn9zwfglnkns2 | 11640.262821457 | underpaid_vs_expected_reward |
-| gonka1uzk2scggfzghr9a5j92l00gzw4jx4adc66977y | 7499.583411321 | underpaid_vs_expected_reward |
-| gonka1zktn8j65wlys8a8e38hqhf4y3x6m4x04zskkrx | 5012.099745753 | underpaid_vs_expected_reward |
-| gonka1tlvg4kjx7ljd5thgd5fkgh39q6lu8cmxupktgg | 4785.035885253 | underpaid_vs_expected_reward |
-| gonka187tn9y92ur6tu0zf69u94hwl0q77m47y0k36hv | 3462.203461266 | underpaid_vs_expected_reward |
-| gonka1wthc28t25pg63hzvl07rl8e8r6km6hesl6jhsz | 2604.610676885 | underpaid_vs_expected_reward |
-| gonka15munkmx6x7k6rqqeexjet4556p7at39ks9qgr5 | 1979.361230602 | underpaid_vs_expected_reward |
-| gonka1lswsj2x7u4606wqpunmm07skgf76r3dyz4v0d8 | 1791.647658411 | underpaid_vs_expected_reward |
-| gonka1myu058axjs62mc3e7na9krwvqpfl9z3gtcw9es | 1424.408669684 | underpaid_vs_expected_reward |
-| gonka1tja3g2da45efhe2p83gk3whtussmgmtsdlgprt | 1374.244664994 | underpaid_vs_expected_reward |
-| gonka1r5hdy9q5v783ef7td98k4c68cxl6a58h5sytfq | 1033.122569920 | underpaid_vs_expected_reward |
-| gonka1u4zxypjgcr8khlzefwjr0vwdaj2uzruw2cehj3 | 862.224552997 | underpaid_vs_expected_reward |
-| gonka16k03ze5ynkprsd4n6e5uzhthvu9jjk553rauqy | 624.350364175 | underpaid_vs_expected_reward |
-| gonka10mmdjau4dnj8krs7sh7t7635ttnmq9u3vqgz09 | 615.567362106 | underpaid_vs_expected_reward |
-| gonka1l0qv64xdu3dk2zzm5vk97j0drcmkus95u50gqk | 614.183149784 | underpaid_vs_expected_reward |
-| gonka1zpw8tml8xl4fm6zm8zpf2u4pq4tehmd9e2vgq7 | 485.700907167 | underpaid_vs_expected_reward |
-| gonka1tmk2tzdneht6smu34pkmqdvu7p34qavvmwtwq2 | 340.330118679 | underpaid_vs_expected_reward |
-| gonka188c86f9mrlt4nlcg89f82nnfm9jzq9gtjafj50 | 310.319464971 | underpaid_vs_expected_reward |
-| gonka1y2a9p56kv044327uycmqdexl7zs82fs5ryv5le | 294.453367429 | underpaid_vs_expected_reward |
-| gonka125n6kr5gvdup0lndfkps7t6rd6592panhrg3np | 215.274096192 | underpaid_vs_expected_reward |
-| gonka1kx9mca3xm8u8ypzfuhmxey66u0ufxhs7nm6wc5 | 204.514462595 | underpaid_vs_expected_reward |
-| gonka1ujnc662v6g69jm6fgxnr79a2m7ehzeut059239 | 131.697631230 | underpaid_vs_expected_reward |
-| gonka1lr9mj6dgkv0h76c8y8w0l3esztyg9v2q8d6d8d | 125.660888375 | underpaid_vs_expected_reward |
-| gonka1slndy4rsmld579628302rj5gz8z9qf4v6ppmc4 | 117.467379572 | underpaid_vs_expected_reward |
-| gonka1ccdm8j6sjyhq4qask049dwgaczs7f3pxte6zmp | 89.403831163 | underpaid_vs_expected_reward |
-| gonka1043d00lu0v3fz53cut34twtcanalqg9u8vehp2 | 42.643045152 | underpaid_vs_expected_reward |
-| gonka1x7zh2277spp7jfqjhv0g5mnezg290xdr4kpfnk | 32.244004681 | underpaid_vs_expected_reward |
-| gonka1d7p03cu2y2yt3vytq9wlfm6tlz0lfhlgv9h82p | 16.587283793 | underpaid_vs_expected_reward |
-| gonka1p60lruhxmwcsa9taa28cp4k4f6kv2kvyu5h5ep | 7.921416734 | underpaid_vs_expected_reward |
-| gonka1p2lhgng7tcqju7emk989s5fpdr7k2c3ek6h26m | 5.804386124 | underpaid_vs_expected_reward |
-| gonka1uf5cg7ef0ns6877nl27y0s6rt06cdmn40k5a88 | 0.721186251 | underpaid_vs_expected_reward |
+## On-chain updates around epochs
 
-## Epoch 250
+| epoch | epoch block range | applied height | update | proposal |
+| --- | ---: | ---: | --- | --- |
+| 248 | `3828323-3844113` | `3834200` | Software upgrade `v0.2.12` | `#44`, `Upgrade Proposal: v0.2.12` |
+| 250 | `3859105-3874895` | - | No passed proposal update applied inside this epoch range | - |
 
-| address | unreceived_reward_gnk | loss_reason |
-| --- | ---: | --- |
-| gonka17gpuntq09zsaqtmpe544gc32tk4424dwv5t34f | 10405.651007890 | underpaid_vs_expected_reward |
-| gonka1famtxh54kad6ylwtm60j6d7h6unpc08d4vdqnk | 5985.572171061 | underpaid_vs_expected_reward |
-| gonka14ljarev2nlzu4ej50vx7ylj2rvg4n20fnq2ysc | 4014.579494817 | underpaid_vs_expected_reward |
-| gonka1tja3g2da45efhe2p83gk3whtussmgmtsdlgprt | 2827.217797774 | underpaid_vs_expected_reward |
-| gonka1pllyukkeymx3hfd9mts3pryr9y6efs9eshty87 | 2047.233290311 | underpaid_vs_expected_reward |
-| gonka187tn9y92ur6tu0zf69u94hwl0q77m47y0k36hv | 1672.001877718 | underpaid_vs_expected_reward |
-| gonka12pcu9mcrpa4w4sjd9y3dsksnvu495ss6f9r4ra | 1542.035953846 | underpaid_vs_expected_reward |
-| gonka1hwvel7n3zuk6wruefuzc356l9myske9stckwnz | 1359.555598432 | underpaid_vs_expected_reward |
-| gonka1wvv656pt2d8x2khcvytqeessck5uzjnxzsa8f6 | 1006.491455052 | underpaid_vs_expected_reward |
-| gonka1zsvl7ujlc8z3a35v2q6e3nml7ftyk23v76jqgl | 885.265631074 | underpaid_vs_expected_reward |
-| gonka17pw6099q758qwzewtrqmqpf5c2lrhr97fwqexu | 814.654259270 | underpaid_vs_expected_reward |
-| gonka1wthc28t25pg63hzvl07rl8e8r6km6hesl6jhsz | 800.827449490 | underpaid_vs_expected_reward |
-| gonka1qu9mna5xlvlnw9455ygtjq92wuzkzm237w8l08 | 558.240952171 | underpaid_vs_expected_reward |
-| gonka1zpw8tml8xl4fm6zm8zpf2u4pq4tehmd9e2vgq7 | 556.778074778 | underpaid_vs_expected_reward |
-| gonka1u4zxypjgcr8khlzefwjr0vwdaj2uzruw2cehj3 | 508.630420488 | underpaid_vs_expected_reward |
-| gonka1q5xt54wncgzk7dxv9x64uln68455g83wu9tugg | 401.010776815 | underpaid_vs_expected_reward |
-| gonka1rcpc45n6zch9qlkn4m3cwngekad89xu8mcr09v | 394.939993044 | underpaid_vs_expected_reward |
-| gonka16k03ze5ynkprsd4n6e5uzhthvu9jjk553rauqy | 384.259227082 | underpaid_vs_expected_reward |
-| gonka1zktn8j65wlys8a8e38hqhf4y3x6m4x04zskkrx | 320.991907654 | underpaid_vs_expected_reward |
-| gonka1ym3np7guxart483yfdxnlztuazx22cjt0e4a2p | 304.099569088 | underpaid_vs_expected_reward |
-| gonka1p2lhgng7tcqju7emk989s5fpdr7k2c3ek6h26m | 281.886506509 | underpaid_vs_expected_reward |
-| gonka1vcvn2p5gczr5pynqq0ca0933tdrf5w64sjgtdg | 225.113881111 | underpaid_vs_expected_reward |
-| gonka1u9a7r4w76gult5n9ysadnual9fghkc6yda60wj | 202.272181955 | underpaid_vs_expected_reward |
-| gonka1830lqug50lse998x2lakk4pj5ypfumz5pasz0y | 182.661027405 | underpaid_vs_expected_reward |
-| gonka1kx9mca3xm8u8ypzfuhmxey66u0ufxhs7nm6wc5 | 139.108408363 | underpaid_vs_expected_reward |
-| gonka1d7p03cu2y2yt3vytq9wlfm6tlz0lfhlgv9h82p | 109.224580669 | underpaid_vs_expected_reward |
-| gonka1amlmhjym02shahjv8ldmupg4cx0qc66q6f85rj | 99.075257098 | underpaid_vs_expected_reward |
-| gonka1fkrsesmn2hdj30fhwyam6h4f2e77un36xalhvl | 95.621708176 | underpaid_vs_expected_reward |
-| gonka1ujnc662v6g69jm6fgxnr79a2m7ehzeut059239 | 87.459326268 | underpaid_vs_expected_reward |
-| gonka1slndy4rsmld579628302rj5gz8z9qf4v6ppmc4 | 77.903152114 | underpaid_vs_expected_reward |
-| gonka1lr9mj6dgkv0h76c8y8w0l3esztyg9v2q8d6d8d | 77.101076575 | underpaid_vs_expected_reward |
-| gonka1vjz8csqsr0ph0lv0yylc4auypnzrld7y6l2feu | 63.446806435 | underpaid_vs_expected_reward |
-| gonka1ccdm8j6sjyhq4qask049dwgaczs7f3pxte6zmp | 36.210830730 | underpaid_vs_expected_reward |
-| gonka1qwfrtz9c7kcrfkrrlne2pkcye74mj6ce33xdkl | 36.084095791 | underpaid_vs_expected_reward |
-| gonka1x7zh2277spp7jfqjhv0g5mnezg290xdr4kpfnk | 36.047456738 | underpaid_vs_expected_reward |
-| gonka1gyk0aahvr3qeju4zx0nplfreej6cy4jjk8svc5 | 25.358764054 | underpaid_vs_expected_reward |
-| gonka1tmk2tzdneht6smu34pkmqdvu7p34qavvmwtwq2 | 17.695017982 | underpaid_vs_expected_reward |
-| gonka1tlvg4kjx7ljd5thgd5fkgh39q6lu8cmxupktgg | 1.655809871 | underpaid_vs_expected_reward |
+Notes:
 
-## Итоговые Артефакты
+- Proposal `#44` passed at height `3830442` and scheduled `v0.2.12` for height `3834200`, which is inside epoch `248`.
+- Proposal `#45` ended near epoch `250` at height `3858370`, but it was rejected and did not apply changes.
+- Proposal `#46` passed at height `3893763`, inside epoch `252`, and was a historical compensation payout for epochs `132-247`, not an epoch `250` protocol update.
+- Proposal `#48` passed at height `3919916`, inside epoch `253`, and lowered the direct participation threshold to `10%`; it was not applied during epoch `250`.
 
-- `outputs/epoch_248/compensation_248.csv`
-- `outputs/epoch_250/compensation_250.csv`
-- `outputs/combined/compensation_detailed.csv`
-- `outputs/combined/compensation_summary_by_epoch.csv`
-- `outputs/combined/compensation_summary_by_address.csv`
-- `outputs/combined/REPORT.md`
+## Итоги по эпохам
 
-## Замечание
+| epoch | total actual rewarded coins | total expected reward | total compensation |
+| --- | ---: | ---: | ---: |
+| 247 | 253848231982387 | 36014151534353 | 15021814821939 |
+| 248 | 129460782401156 | 247008523545220 | 117547741144064 |
+| 249 | 190086354894340 | 263159578158118 | 73073223263778 |
+| 250 | 252497917148785 | 282179535946778 | 29681618797993 |
+| 251 | 275283461938874 | 283000681043552 | 7717219104678 |
+| 252 | 273630912317725 | 281740285251423 | 8109372933698 |
+| 253 | 275402940510685 | 278207656634221 | 2804716123536 |
+| 254 | 219006319815693 | 229359036885622 | 10352717069929 |
+| 255 | 245807020349245 | 250076583451537 | 4269563102292 |
 
-Причина потери в текущем README выводится из расчетного результата:
+## Кто потерял награду
 
-- `underpaid_vs_expected_reward` означает, что рассчитанная ожидаемая награда выше фактически отраженной в `rewarded_coins`
+Полный participant-level список находится в `outputs/combined/compensation_detailed.csv` и `outputs/combined/REPORT.md`.
+В README оставлена компактная сводка по количеству строк с ненулевой потерей.
 
-Если нужно, следующим шагом могу заменить `loss_reason` на более детальную нормализованную причину из `exclusion_reason` и `notes`, где это различимо по raw данным.
+| epoch | rows with loss | total lost GNK |
+| --- | ---: | ---: |
+| 247 | 25 | 15021.814821939 |
+| 248 | 63 | 117547.741144064 |
+| 249 | 18 | 73073.223263778 |
+| 250 | 19 | 29681.618797993 |
+| 251 | 23 | 7717.219104678 |
+| 252 | 32 | 8109.372933698 |
+| 253 | 28 | 2804.716123536 |
+| 254 | 51 | 10352.717069929 |
+| 255 | 29 | 4269.563102292 |
+
+## Формат итоговых файлов
+
+- `outputs/combined/compensation_detailed.csv` - строка на участника и epoch
+- `outputs/combined/compensation_summary_by_address.csv` - агрегация по адресу
+- `outputs/combined/compensation_summary_by_epoch.csv` - агрегация по epoch
+- `outputs/combined/REPORT.md` - человекочитаемый отчет
+- `docs/` - статическая таблица для GitHub Pages
+
+В `compensation_detailed.csv` важные колонки:
+
+- `address`
+- `epoch`
+- `weight`
+- `confirmation_weight`
+- `effective_weight`
+- `actual_reward_gnk`
+- `expected_reward_base_units`
+- `compensation_base_units`
+- `compensation_gnk`
+- `exclusion_reason`
+
+## Как запускать
+
+```bash
+python scripts/fetch_raw_data.py --epochs 247 248 249 250 251 252 253 254 255
+python scripts/calculate_compensation.py --epochs 247 248 249 250 251 252 253 254 255 --cache-only
+python scripts/build_reports.py
+python scripts/build_pages_data.py
+python scripts/validate_consistency.py
+```
+
+## GitHub Pages table
+
+Статическая страница лежит в `docs/index.html`. Для публикации в GitHub Pages включи Pages source: `Deploy from branch`, folder `/docs`.
+
+Функции таблицы:
+
+- Таблица сделана как pivot: строки - участники, колонки - epochs.
+- По умолчанию показываются только строки с потерей награды.
+- Можно включать/выключать отображение веса, lost reward, bug-adjusted расчета и внешних источников.
+- Ячейки lost reward подсвечиваются красным, bug-adjusted слой - синим, source слой - фиолетовым.
+- Если внешний source совпадает с baseline или bug-adjusted расчетом, match-cell подсвечивается зеленым.
+- По клику `open` показываются notes, bug details и source details.
+
+Данные для дополнительных слоев:
+
+- `docs/bug_weight_adjustments.json` - ручные исправления веса из-за бага. Для строки укажи `epoch`, `address`, `adjusted_weight`, `reason`, `details`.
+- `docs/source_overrides.json` - внешние расчеты компенсаций. Для строки укажи `epoch`, `address`, `source`, `source_compensation_gnk`, `status`, `details`.
+
+После изменения этих JSON запусти `python scripts/build_pages_data.py`, чтобы обновить `docs/data/compensation_rows.json`.
+
+## Округление
+
+Все денежные расчеты идут через `Decimal` и `floor`. Float для base units не используется.
+
+## Ограничения
+
+- Если raw cache неполный, replay упадет в validation.
+- `REPORT.md` содержит полный participant-level список и причины потерь.
+- Логика рассчитана под уже зафетченные `247-255` epoch cache snapshots.
