@@ -1,0 +1,17 @@
+Issue #1 restitution - epoch 247
+REST:
+FULL_RATE: 0.325973 GNK/weight
+
+#  address                                           weight  poc_weight    cw  inferences  missed  invalid   rewarded     expected    compensate
+------------------------------------------------------------------------------------------------------------------------------------------------
+1  gonka1hytku6t3cfd7wppyrjvu357jjqpsgsw6wcprcy        2540        2540     0         101       0        1       0.00       827.97        827.97
+2  gonka1elw9xd79mpsrt7jqwkweg6yv02nvda49xhcej2        2532        2532     0          87       0        0       0.00       825.36        825.36
+3  gonka188qynuf5zs5966vzlrf2q2tj7h7laa995vrxr3        2452        2452     0          97       0        0       0.00       799.29        799.29
+4  gonka1sa32xmpxvv7nepfc22004rgdl4ddjvne42guce        2352        2352     0         103       0        0       0.00       766.69        766.69
+5  gonka1vz2jg42w39l63dmvmjqdsnxx0ywnzt9nzypdy7        2297        2297     0          99       0        0       0.00       748.76        748.76
+6  gonka1yt2s5u5k06rm2au8dsqm4kzwmw7klqsrd6xd95        1503        1503     0          59       0        0       0.00       489.94        489.94
+7  gonka168yvlgt9jg86frg2z90cc8w4pz9hnd7f8lshux        1491        1491     0          63       2        0       0.00       486.03        486.03
+8  gonka1xwkesaxvdadh9wt9yyladu0r260s7whklcktds        1336        1336     0          40       0        0       0.00       435.50        435.50
+9  gonka1w29nvdy6caqtrw30whz9h6ghl0xszwh3egndah         243         243     0           5       0        0       0.00        79.21         79.21
+------------------------------------------------------------------------------------------------------------------------------------------------
+TOTAL                                                 16746       16746               654       2        1       0.00      5458.74       5458.74

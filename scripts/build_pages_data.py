@@ -153,12 +153,13 @@ def build_rows(
             source_weight = sum(parse_int(item.get("source_weight") or item.get("weight")) or 0 for item in source_items)
             source_weight_value = source_weight if source_weight else None
             source_weight_delta = (parse_int(raw["weight"]) or 0) - source_weight if source_weight else None
+            source_tolerance = source_match_tolerance(source_items)
             raw_reward_delta_after_sources = calculated_layers_total - source_total
-            reward_delta_after_sources = normalize_tiny_delta(raw_reward_delta_after_sources)
+            reward_delta_after_sources = normalize_tiny_delta(raw_reward_delta_after_sources, source_tolerance)
             remaining_after_sources = max(0, reward_delta_after_sources or 0)
             source_excess = max(0, -(reward_delta_after_sources or 0))
-            best_match = match_status(baseline_comp, bug_comp, source_total, comparable_calculated_total)
-            source_state = classify_source_state(comparable_calculated_total, source_total, bool(source_items))
+            best_match = match_status(baseline_comp, bug_comp, source_total, comparable_calculated_total, source_tolerance)
+            source_state = classify_source_state(comparable_calculated_total, source_total, bool(source_items), source_tolerance)
 
             rows.append(
                 {
@@ -303,14 +304,20 @@ def comparable_total_for_sources(
     return total
 
 
-def match_status(baseline: int, bug_comp: int | None, source_total: int, comparable_total: int) -> str:
+def match_status(
+    baseline: int,
+    bug_comp: int | None,
+    source_total: int,
+    comparable_total: int,
+    tolerance: int = SOURCE_MATCH_TOLERANCE_BASE_UNITS,
+) -> str:
     if source_total <= 0:
         return "no_source"
-    if same_base_units(source_total, comparable_total):
+    if same_base_units(source_total, comparable_total, tolerance):
         return "source_matches_calculated_layers"
-    if same_base_units(source_total, baseline):
+    if same_base_units(source_total, baseline, tolerance):
         return "source_matches_baseline"
-    if bug_comp is not None and same_base_units(source_total, bug_comp):
+    if bug_comp is not None and same_base_units(source_total, bug_comp, tolerance):
         return "source_matches_bug_adjusted"
     return "source_differs"
 
@@ -319,10 +326,23 @@ def same_base_units(left: int, right: int, tolerance: int = SOURCE_MATCH_TOLERAN
     return abs(left - right) <= tolerance
 
 
-def classify_source_state(baseline: int, source_total: int, has_source: bool) -> str:
+def source_match_tolerance(source_items: list[dict[str, Any]]) -> int:
+    tolerances = [
+        parse_int(item.get("source_match_tolerance_base_units")) or 0
+        for item in source_items
+    ]
+    return max([SOURCE_MATCH_TOLERANCE_BASE_UNITS, *tolerances])
+
+
+def classify_source_state(
+    baseline: int,
+    source_total: int,
+    has_source: bool,
+    tolerance: int = SOURCE_MATCH_TOLERANCE_BASE_UNITS,
+) -> str:
     if not has_source:
         return "no_source"
-    if same_base_units(baseline, source_total):
+    if same_base_units(baseline, source_total, tolerance):
         return "collapsed_to_zero"
     if baseline > source_total:
         return "remaining_after_source"

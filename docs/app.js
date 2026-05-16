@@ -266,6 +266,7 @@ function renderSourceLegend() {
     ["source-grc-e247-preserver-audit", "GRC-e247-preserver-audit", "source closed calculated loss"],
     ["source-grc-e254-api-issue", "GRC-e254-api-issue", "source closed calculated loss"],
     ["source-consensus-failure-restriction", "consensus_failure_restriction", "source closed calculated loss"],
+    ["source-segovchik-grc-case-1", "SegovChik-grc-case-1", "source closed calculated loss"],
     ["source-mixed", "multiple sources", "closed by more than one source"],
   ];
   const visibleItems = items.filter(([, source]) => source === "multiple sources" || sources.includes(source));
@@ -479,6 +480,7 @@ function sourceColorClass(sourceName) {
     "GRC-e247-preserver-audit": "source-grc-e247-preserver-audit",
     "GRC-e254-api-issue": "source-grc-e254-api-issue",
     "consensus_failure_restriction": "source-consensus-failure-restriction",
+    "SegovChik-grc-case-1": "source-segovchik-grc-case-1",
   }[sourceName] || "";
 }
 
