@@ -13,6 +13,10 @@
   --diff: #ffd6cf;
   --bug: #dceaff;
   --source: #e7f0dc;
+  --source-e247: #d8efe1;
+  --source-e254: #d9eafb;
+  --source-consensus: #efe4ff;
+  --source-mixed: #e6ead5;
   --shadow: 0 10px 28px rgba(23, 33, 27, 0.10);
 }
 
@@ -301,6 +305,34 @@ td.collapsed {
   font-weight: 800;
 }
 
+td.collapsed.source-grc-e247-preserver-audit,
+.legend-item.source-grc-e247-preserver-audit span {
+  background: var(--source-e247) !important;
+}
+
+td.collapsed.source-grc-e254-api-issue,
+.legend-item.source-grc-e254-api-issue span {
+  background: var(--source-e254) !important;
+}
+
+td.collapsed.source-consensus-failure-restriction,
+.legend-item.source-consensus-failure-restriction span {
+  background: var(--source-consensus) !important;
+}
+
+td.collapsed.source-mixed,
+.legend-item.source-mixed span {
+  background: var(--source-mixed) !important;
+}
+
+td.collapsed.source-grc-e247-preserver-audit,
+td.collapsed.source-grc-e254-api-issue,
+td.collapsed.source-consensus-failure-restriction,
+td.collapsed.source-mixed {
+  color: #173528;
+  box-shadow: inset 0 0 0 1px rgba(23, 53, 40, 0.10);
+}
+
 td.source-exceeds {
   background: var(--diff) !important;
   color: #7a2419;
@@ -339,6 +371,61 @@ td.problem-delta {
 .bottom-stats h2 {
   margin: 0 0 10px;
   font-size: 15px;
+}
+
+.bottom-stats h2 + h2 {
+  margin-top: 16px;
+}
+
+.source-legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.legend-item {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 2px 8px;
+  align-items: center;
+  min-width: 0;
+  padding: 8px 9px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255, 253, 248, 0.82);
+}
+
+.legend-item span {
+  grid-row: 1 / 3;
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba(23, 33, 27, 0.16);
+  border-radius: 7px;
+}
+
+.legend-item strong {
+  overflow: hidden;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.legend-item em {
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 11px;
+  font-style: normal;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.legend-remaining span {
+  background: var(--warn);
+}
+
+.legend-problem span {
+  background: #ff9f7a;
 }
 
 .bottom-stats .totals {

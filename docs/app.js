@@ -165,6 +165,7 @@ function render() {
 
   renderTotals(epochs);
   renderSummary(epochs);
+  renderSourceLegend();
   renderTable(epochs, activeMetrics());
 }
 
@@ -241,6 +242,10 @@ function renderEpochCell(row, key) {
   if (key === "reward_delta_after_sources_gnk" && !emptyNeutral) classes.push(rewardDeltaClass(row));
   if (key === "source_weight_delta" && !emptyNeutral) classes.push(sourceStateClass(row));
   if (key === "source_state" && !emptyNeutral) classes.push(sourceStateClass(row));
+  const collapsedSourceClass = collapsedSourceColorClass(row);
+  if (collapsedSourceClass && ["reward_delta_after_sources_gnk", "source_weight_delta", "source_state"].includes(key)) {
+    classes.push(collapsedSourceClass);
+  }
   if (key.startsWith("bug_") && row.bug_adjusted_weight !== null) classes.push("bug");
   if (key.startsWith("source_") && Number(row.source_compensation_base_units || 0) > 0) classes.push("source");
   if (key.startsWith("remaining_") && Number(row.remaining_after_sources_base_units || 0) > 0) classes.push("remaining");
@@ -251,6 +256,30 @@ function renderEpochCell(row, key) {
   }
   if (row.has_loss) classes.push("clickable");
   return `<td class="${classes.join(" ")}" data-row-key="${escapeHtml(row.address)}|${row.epoch}" title="${escapeHtml(String(value))}">${escapeHtml(displayValue)}</td>`;
+}
+
+function renderSourceLegend() {
+  const sources = [...new Set(
+    state.rawRows.flatMap((row) => (row.sources || []).map((source) => source.source).filter(Boolean))
+  )].sort();
+  const items = [
+    ["source-grc-e247-preserver-audit", "GRC-e247-preserver-audit", "source closed calculated loss"],
+    ["source-grc-e254-api-issue", "GRC-e254-api-issue", "source closed calculated loss"],
+    ["source-consensus-failure-restriction", "consensus_failure_restriction", "source closed calculated loss"],
+    ["source-mixed", "multiple sources", "closed by more than one source"],
+  ];
+  const visibleItems = items.filter(([, source]) => source === "multiple sources" || sources.includes(source));
+  document.getElementById("sourceLegend").innerHTML = [
+    ...visibleItems.map(([className, label, note]) => `
+      <div class="legend-item ${className}">
+        <span></span>
+        <strong>${escapeHtml(label)}</strong>
+        <em>${escapeHtml(note)}</em>
+      </div>
+    `),
+    `<div class="legend-item legend-remaining"><span></span><strong>remaining</strong><em>calculated loss is still not covered by sources</em></div>`,
+    `<div class="legend-item legend-problem"><span></span><strong>problem delta</strong><em>calculated loss is non-zero after source layer</em></div>`,
+  ].join("");
 }
 
 function formatEmptyNeutralCell(key) {
@@ -435,6 +464,22 @@ function sourceStateClass(row) {
     remaining_after_source: "remaining",
     source_exceeds_calculated: "source-exceeds",
   }[row.source_state] || "";
+}
+
+function collapsedSourceColorClass(row) {
+  if (row.source_state !== "collapsed_to_zero") return "";
+  if (Number(row.source_compensation_base_units || 0) <= 0) return "";
+  const sourceNames = [...new Set((row.sources || []).map((source) => source.source).filter(Boolean))];
+  if (sourceNames.length > 1) return "source-mixed";
+  return sourceColorClass(sourceNames[0]);
+}
+
+function sourceColorClass(sourceName) {
+  return {
+    "GRC-e247-preserver-audit": "source-grc-e247-preserver-audit",
+    "GRC-e254-api-issue": "source-grc-e254-api-issue",
+    "consensus_failure_restriction": "source-consensus-failure-restriction",
+  }[sourceName] || "";
 }
 
 function rewardDeltaClass(row) {
