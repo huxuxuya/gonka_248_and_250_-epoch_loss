@@ -1,6 +1,6 @@
 # Epoch 250 compensation payout
 
-This file is the payout list for epoch `250`. It is not used as an external compensation source for itself.
+This file is the source of truth for epoch `250` compensation payouts. The rows below are also exported as the `epoch-250-compensation-package` source layer for the GitHub Pages review table.
 
 `calculated compensation GNK` is the reward loss calculated from cached chain data. `already covered by external sources GNK` subtracts only independent external source calculations imported into `docs/source_overrides.json`. `payout to make GNK` is the remaining amount that should be paid from this package.
 
@@ -13,13 +13,13 @@ This file is the payout list for epoch `250`. It is not used as an external comp
 | bug adjustment compensation GNK | 6728.678966320 |
 | calculated compensation total GNK | 36889.261451234 |
 | already covered by external sources GNK | 25469.854153328 |
-| payout to make GNK | 11419.407298061 |
+| payout to make GNK | 11419.407297906 |
 
 ## Participant Payouts
 
 | address | loss reason | weight | expected GNK | actual GNK | calculated compensation GNK | already covered by external sources GNK | external source | payout to make GNK |
 |---|---|---:|---:|---:|---:|---:|---|---:|
-| `gonka1wkgawwdzj623ss8eywayzdj6qcgr2llygactje` | failed_confirmation_poc | 8029 | 2908.925448021 | 0.000000000 | 2908.925448021 | 0.000000000 |  | 2908.925448021 |
+| `gonka1wkgawwdzj623ss8eywayzdj6qcgr2llygactje` | failed_confirmation_poc | 8029 | 2908.925448021 | 0.000000000 | 2908.925448021 | 0.000000000 |  | 2908.925447866 |
 | `gonka1kx9mca3xm8u8ypzfuhmxey66u0ufxhs7nm6wc5` | missed_requests | 2167 | 763.733322260 | 0.000000000 | 763.733322260 | 0.000000000 |  | 763.733322260 |
 | `gonka1mdy7nlecw4xaqdxmeh3qlqzakg9ftge9szfqgg` | failed_confirmation_poc | 2014 | 729.676902766 | 0.000000000 | 729.676902766 | 0.000000000 |  | 729.676902766 |
 | `gonka12tfc6ccmadjqv6yaa3axxsuhy6zv6tupu78p8u` | failed_confirmation_poc | 2004 | 726.053879416 | 0.000000000 | 726.053879416 | 0.000000000 |  | 726.053879416 |

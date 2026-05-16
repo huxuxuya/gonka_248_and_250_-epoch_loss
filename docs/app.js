@@ -269,6 +269,8 @@ function renderSourceLegend() {
     ["source-grc-e254-api-issue", "GRC-e254-api-issue", "source closed calculated loss"],
     ["source-consensus-failure-restriction", "consensus_failure_restriction", "source closed calculated loss"],
     ["source-segovchik-grc-case-1", "SegovChik-grc-case-1", "source closed calculated loss"],
+    ["source-epoch-248-compensation-package", "epoch-248-compensation-package", "README payout source"],
+    ["source-epoch-250-compensation-package", "epoch-250-compensation-package", "README payout source"],
     ["source-mixed", "multiple sources", "closed by more than one source"],
   ];
   const visibleItems = items.filter(([, source]) => source === "multiple sources" || state.sourceNames.includes(source));
@@ -485,6 +487,9 @@ function sourceAdjustedRow(row) {
 
 function comparableCalculatedForActiveSources(row, sources, sourceTotal) {
   if (!sources.length) return Number(row.compensation_base_units || 0);
+  if (sources.some((source) => isFullLayerSource(source.source))) {
+    return Number(row.calculated_layers_base_units || 0);
+  }
   const bugSourceTotal = sources
     .filter((source) => source.source === "GRC-e247-preserver-audit")
     .reduce((sum, source) => sum + Number(source.source_compensation_base_units || 0), 0);
@@ -605,7 +610,13 @@ function sourceColorClass(sourceName) {
     "GRC-e254-api-issue": "source-grc-e254-api-issue",
     "consensus_failure_restriction": "source-consensus-failure-restriction",
     "SegovChik-grc-case-1": "source-segovchik-grc-case-1",
+    "epoch-248-compensation-package": "source-epoch-248-compensation-package",
+    "epoch-250-compensation-package": "source-epoch-250-compensation-package",
   }[sourceName] || "";
+}
+
+function isFullLayerSource(sourceName) {
+  return sourceName === "epoch-248-compensation-package" || sourceName === "epoch-250-compensation-package";
 }
 
 function rewardDeltaClass(row) {

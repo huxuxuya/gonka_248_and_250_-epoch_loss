@@ -1,6 +1,6 @@
 # Epoch 248 compensation payout
 
-This file is the payout list for epoch `248`. It is not used as an external compensation source for itself.
+This file is the source of truth for epoch `248` compensation payouts. The rows below are also exported as the `epoch-248-compensation-package` source layer for the GitHub Pages review table.
 
 `calculated compensation GNK` is the reward loss calculated from cached chain data. `already covered by external sources GNK` subtracts only independent external source calculations imported into `docs/source_overrides.json`. `payout to make GNK` is the remaining amount that should be paid from this package.
 

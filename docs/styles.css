@@ -17,6 +17,8 @@
   --source-e254: #d9eafb;
   --source-consensus: #efe4ff;
   --source-segovchik: #ffe8c7;
+  --source-package-248: #cfeeea;
+  --source-package-250: #f4dfc8;
   --source-mixed: #e6ead5;
   --shadow: 0 10px 28px rgba(23, 33, 27, 0.10);
 }
@@ -326,6 +328,16 @@ td.collapsed.source-segovchik-grc-case-1,
   background: var(--source-segovchik) !important;
 }
 
+td.collapsed.source-epoch-248-compensation-package,
+.legend-item.source-epoch-248-compensation-package span {
+  background: var(--source-package-248) !important;
+}
+
+td.collapsed.source-epoch-250-compensation-package,
+.legend-item.source-epoch-250-compensation-package span {
+  background: var(--source-package-250) !important;
+}
+
 td.collapsed.source-mixed,
 .legend-item.source-mixed span {
   background: var(--source-mixed) !important;
@@ -335,6 +347,8 @@ td.collapsed.source-grc-e247-preserver-audit,
 td.collapsed.source-grc-e254-api-issue,
 td.collapsed.source-consensus-failure-restriction,
 td.collapsed.source-segovchik-grc-case-1,
+td.collapsed.source-epoch-248-compensation-package,
+td.collapsed.source-epoch-250-compensation-package,
 td.collapsed.source-mixed {
   color: #173528;
   box-shadow: inset 0 0 0 1px rgba(23, 53, 40, 0.10);

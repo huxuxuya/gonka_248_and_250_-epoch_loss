@@ -22,6 +22,10 @@ DATA_DIR = DOCS_DIR / "data"
 BUG_ADJUSTMENTS_PATH = DOCS_DIR / "bug_weight_adjustments.json"
 SOURCE_OVERRIDES_PATH = DOCS_DIR / "source_overrides.json"
 SOURCE_MATCH_TOLERANCE_BASE_UNITS = 2400
+FULL_LAYER_SOURCE_NAMES = {
+    "epoch-248-compensation-package",
+    "epoch-250-compensation-package",
+}
 
 
 def main() -> int:
@@ -149,6 +153,7 @@ def build_rows(
                 bug_source_total=bug_source_total,
                 has_non_bug_source=bool(non_bug_source_items),
                 has_source=bool(source_items),
+                has_full_layer_source=has_full_layer_source(source_items),
             )
             source_weight = sum(parse_int(item.get("source_weight") or item.get("weight")) or 0 for item in source_items)
             source_weight_value = source_weight if source_weight else None
@@ -293,15 +298,22 @@ def comparable_total_for_sources(
     bug_source_total: int,
     has_non_bug_source: bool,
     has_source: bool,
+    has_full_layer_source: bool = False,
 ) -> int:
     if not has_source:
         return baseline_comp
+    if has_full_layer_source:
+        return baseline_comp + (bug_comp or 0)
     total = 0
     if has_non_bug_source:
         total += baseline_comp
     if bug_source_total:
         total += bug_comp or 0
     return total
+
+
+def has_full_layer_source(source_items: list[dict[str, Any]]) -> bool:
+    return any(item.get("source") in FULL_LAYER_SOURCE_NAMES for item in source_items)
 
 
 def match_status(
