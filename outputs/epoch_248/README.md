@@ -15,6 +15,32 @@ This file is the source of truth for epoch `248` compensation payouts. The rows 
 | already covered by external sources GNK | 0.000000000 |
 | payout to make GNK | 118204.036062177 |
 
+## Reproduce This Report
+
+Run from the repository root:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+
+python3 scripts/validate_consistency.py --epochs 248
+python3 scripts/calculate_compensation.py --epochs 248 --cache-only
+python3 scripts/build_compensation_readmes.py --epochs 248
+python3 scripts/import_source_epoch_compensation_package.py --epochs 248
+python3 scripts/build_compensation_readmes.py --epochs 248
+python3 scripts/build_pages_data.py
+python3 scripts/validate_consistency.py --epochs 248
+```
+
+The second `build_compensation_readmes.py` run is intentional. It keeps this README as the payout source of truth while the same payout rows are also exported into the dashboard as the `epoch-248-compensation-package` source layer.
+
+Expected total for this file:
+
+```text
+epoch 248 payout to make: 118204.036062177 GNK
+```
+
 ## Participant Payouts
 
 | address | loss reason | weight | expected GNK | actual GNK | calculated compensation GNK | already covered by external sources GNK | external source | payout to make GNK |
