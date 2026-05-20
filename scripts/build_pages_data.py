@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import csv
 import json
+import re
 import sys
 from decimal import Decimal, ROUND_FLOOR
 from pathlib import Path
@@ -120,6 +121,7 @@ def build_rows(
             baseline_comp = parse_int(raw["compensation_base_units"])
             full_weight = parse_int(raw["weight"]) or 0
             effective_weight = parse_int(raw["effective_weight"]) or 0
+            notes = raw.get("notes", "")
 
             if adjusted_weight is None and adjusted_weight_delta:
                 adjusted_weight = full_weight + adjusted_weight_delta
@@ -161,10 +163,15 @@ def build_rows(
             source_tolerance = source_match_tolerance(source_items)
             raw_reward_delta_after_sources = calculated_layers_total - source_total
             reward_delta_after_sources = normalize_tiny_delta(raw_reward_delta_after_sources, source_tolerance)
+            full_loss_weight = (effective_weight if effective_weight > 0 else full_weight) + adjusted_weight_delta
+            full_lost_reward = floor_reward(full_loss_weight, fixed_reward, total_weight)
+            full_lost_delta_after_sources = normalize_tiny_delta(full_lost_reward - actual_reward - source_total, source_tolerance)
+            bug_base_weight = first_int_from_items(bug_items, "pw_baseline")
+            bug_chain_weight = first_int_from_items(bug_items, "chain_bug_weight")
             remaining_after_sources = max(0, reward_delta_after_sources or 0)
             source_excess = max(0, -(reward_delta_after_sources or 0))
             best_match = match_status(baseline_comp, bug_comp, source_total, comparable_calculated_total, source_tolerance)
-            source_state = classify_source_state(comparable_calculated_total, source_total, bool(source_items), source_tolerance)
+            source_state = classify_source_state(calculated_layers_total, source_total, bool(source_items), source_tolerance)
 
             rows.append(
                 {
@@ -182,9 +189,11 @@ def build_rows(
                     "compensation_gnk": normalize_gnk(raw["compensation_gnk"]),
                     "fixed_epoch_reward": fixed_reward,
                     "total_epoch_weight": total_weight,
-                    "notes": raw.get("notes", ""),
+                    "notes": notes,
                     "has_loss": baseline_comp > 0 or (bug_comp or 0) > 0 or source_total > 0,
                     "bug_weight_delta": adjusted_weight_delta if adjusted_weight_delta else None,
+                    "bug_base_weight": bug_base_weight,
+                    "bug_chain_weight": bug_chain_weight,
                     "bug_adjusted_weight": adjusted_weight,
                     "bug_expected_reward_base_units": bug_expected,
                     "bug_expected_reward_gnk": format_gnk(bug_expected) if bug_expected is not None else "",
@@ -198,12 +207,17 @@ def build_rows(
                     "source_weight_delta": source_weight_delta,
                     "calculated_layers_base_units": calculated_layers_total,
                     "calculated_layers_gnk": format_gnk(calculated_layers_total),
+                    "full_lost_reward_base_units": full_lost_reward,
+                    "full_lost_reward_gnk": format_gnk(full_lost_reward),
+                    "full_loss_weight": full_loss_weight,
                     "source_comparable_calculated_base_units": comparable_calculated_total,
                     "source_comparable_calculated_gnk": format_gnk(comparable_calculated_total) if source_items else "",
                     "source_compensation_base_units": source_total,
                     "source_compensation_gnk": format_gnk(source_total) if source_total else "",
                     "reward_delta_after_sources_base_units": reward_delta_after_sources,
                     "reward_delta_after_sources_gnk": format_gnk(reward_delta_after_sources) if reward_delta_after_sources is not None else "",
+                    "full_lost_delta_after_sources_base_units": full_lost_delta_after_sources,
+                    "full_lost_delta_after_sources_gnk": format_gnk(full_lost_delta_after_sources) if full_lost_delta_after_sources is not None else "",
                     "remaining_after_sources_base_units": remaining_after_sources,
                     "remaining_after_sources_gnk": format_gnk(remaining_after_sources) if remaining_after_sources else "",
                     "source_excess_base_units": source_excess,
@@ -290,6 +304,19 @@ def format_gnk(base_units: int | None) -> str:
 
 def normalize_gnk(value: str) -> str:
     return format_gnk(int((Decimal(value) * Decimal(BASE_UNITS_PER_GNK)).to_integral_value(rounding=ROUND_FLOOR)))
+
+
+def first_int_from_items(items: list[dict[str, Any]], key: str) -> int | None:
+    for item in items:
+        for field in ("details", "reason"):
+            value = str(item.get(field) or "")
+            match = re.search(rf"{re.escape(key)}=(\d+)", value)
+            if match:
+                return int(match.group(1))
+            match = re.search(rf"{re.escape(key)}=floor\([^)]*\)=(\d+)", value)
+            if match:
+                return int(match.group(1))
+    return None
 
 
 def comparable_total_for_sources(

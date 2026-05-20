@@ -7,6 +7,7 @@ const state = {
   showAllRows: false,
   showWeights: false,
   showRewards: true,
+  showFullLoss: false,
   showBug: false,
   showSources: true,
   sourceNames: [],
@@ -63,6 +64,10 @@ document.getElementById("showWeights").addEventListener("change", (event) => {
 });
 document.getElementById("showRewards").addEventListener("change", (event) => {
   state.showRewards = event.target.checked;
+  render();
+});
+document.getElementById("showFullLoss").addEventListener("change", (event) => {
+  state.showFullLoss = event.target.checked;
   render();
 });
 document.getElementById("showBug").addEventListener("change", (event) => {
@@ -129,6 +134,9 @@ function activeMetrics() {
   if (state.showRewards) {
     metrics.push(["reward_delta_after_sources_gnk", "Reward Δ"]);
     metrics.push(["source_weight_delta", "Weight Δ"]);
+  }
+  if (state.showFullLoss) {
+    metrics.push(["full_lost_delta_after_sources_gnk", "Full loss Δ"]);
   }
   if (state.showWeights) {
     metrics.push(["actual_reward_gnk", "Actual"]);
@@ -244,11 +252,11 @@ function renderEpochCell(row, key) {
   const displayValue = emptyNeutral ? formatEmptyNeutralCell(key) : formatCellValue(key, value);
   const classes = [];
   if (key === "compensation_gnk" && Number(row.compensation_base_units) > 0) classes.push("loss-strong");
-  if (key === "reward_delta_after_sources_gnk" && !emptyNeutral) classes.push(rewardDeltaClass(row));
+  if (["reward_delta_after_sources_gnk", "full_lost_delta_after_sources_gnk"].includes(key) && !emptyNeutral) classes.push(rewardDeltaClass(row));
   if (key === "source_weight_delta" && !emptyNeutral) classes.push(sourceStateClass(row));
   if (key === "source_state" && !emptyNeutral) classes.push(sourceStateClass(row));
   const collapsedSourceClass = collapsedSourceColorClass(row);
-  if (collapsedSourceClass && ["reward_delta_after_sources_gnk", "source_weight_delta", "source_state"].includes(key)) {
+  if (collapsedSourceClass && ["reward_delta_after_sources_gnk", "full_lost_delta_after_sources_gnk", "source_weight_delta", "source_state"].includes(key)) {
     classes.push(collapsedSourceClass);
   }
   if (key.startsWith("bug_") && row.bug_adjusted_weight !== null) classes.push("bug");
@@ -309,7 +317,7 @@ function renderSourceLegend() {
 }
 
 function formatEmptyNeutralCell(key) {
-  if (["reward_delta_after_sources_gnk", "source_weight_delta", "source_state"].includes(key)) {
+  if (["reward_delta_after_sources_gnk", "full_lost_delta_after_sources_gnk", "source_weight_delta", "source_state"].includes(key)) {
     return "";
   }
   return formatCellValue(key, "");
@@ -367,6 +375,7 @@ function renderWhatHappened(row) {
       ${kv("Source status", statusLabel(row.source_state))}
       ${kv("Match", matchLabel(row.match_status))}
       ${kv("Final Reward Δ", `${formatGnkValue(row.reward_delta_after_sources_gnk)} GNK`, rewardDeltaClass(row))}
+      ${kv("Full loss Δ", `${formatGnkValue(row.full_lost_delta_after_sources_gnk)} GNK`, rewardDeltaClass(row))}
       ${kv("Calculated before sources", `${formatGnkValue(row.calculated_layers_gnk)} GNK`)}
       ${kv("Source total", `${formatGnkValue(row.source_compensation_gnk)} GNK`)}
     </div>
@@ -379,7 +388,10 @@ function renderWeightsSummary(row) {
       ${kv("Chain weight", row.weight)}
       ${kv("Confirmation weight", row.confirmation_weight)}
       ${kv("Effective weight", row.effective_weight)}
+      ${kv("0.35 base weight", row.bug_base_weight ?? "0")}
+      ${kv("0.35 chain bug weight", row.bug_chain_weight ?? "0")}
       ${kv("0.35 weight delta", row.bug_weight_delta ?? "0")}
+      ${kv("Full loss weight", row.full_loss_weight ?? row.effective_weight)}
       ${kv("Weight with 0.35 fix", row.bug_adjusted_weight ?? row.effective_weight)}
       ${kv("Source weight", row.source_weight ?? "0")}
     </div>
@@ -394,7 +406,9 @@ function renderRewardsSummary(row) {
       ${kv("Baseline lost", `${formatGnkValue(row.compensation_gnk)} GNK`)}
       ${kv("Expected with 0.35 fix", `${formatGnkValue(row.bug_expected_reward_gnk || row.expected_reward_gnk)} GNK`)}
       ${kv("0.35 reward delta", `${formatGnkValue(row.bug_reward_delta_gnk || row.bug_compensation_gnk)} GNK`)}
+      ${kv("Full loss reward", `${formatGnkValue(row.full_lost_reward_gnk)} GNK`)}
       ${kv("Final Reward Δ", `${formatGnkValue(row.reward_delta_after_sources_gnk)} GNK`, rewardDeltaClass(row))}
+      ${kv("Full loss Δ", `${formatGnkValue(row.full_lost_delta_after_sources_gnk)} GNK`, rewardDeltaClass(row))}
     </div>
   `);
 }
@@ -462,6 +476,10 @@ function sourceAdjustedRow(row) {
   const tolerance = sourceMatchTolerance(sources);
   const rawDelta = Number(row.calculated_layers_base_units || 0) - sourceTotal;
   const rewardDelta = normalizeTinyDelta(rawDelta, tolerance);
+  const fullLossRawDelta = Number(row.full_lost_reward_base_units || row.calculated_layers_base_units || 0)
+    - Number(row.actual_reward_base_units || 0)
+    - sourceTotal;
+  const fullLossDelta = normalizeTinyDelta(fullLossRawDelta, tolerance);
   const remaining = Math.max(0, rewardDelta);
   const sourceExcess = Math.max(0, -rewardDelta);
 
@@ -476,11 +494,13 @@ function sourceAdjustedRow(row) {
     source_compensation_gnk: sourceTotal ? formatBaseUnitsAsGnk(sourceTotal) : "",
     reward_delta_after_sources_base_units: rewardDelta,
     reward_delta_after_sources_gnk: formatBaseUnitsAsGnk(rewardDelta),
+    full_lost_delta_after_sources_base_units: fullLossDelta,
+    full_lost_delta_after_sources_gnk: formatBaseUnitsAsGnk(fullLossDelta),
     remaining_after_sources_base_units: remaining,
     remaining_after_sources_gnk: remaining ? formatBaseUnitsAsGnk(remaining) : "",
     source_excess_base_units: sourceExcess,
     source_excess_gnk: sourceExcess ? formatBaseUnitsAsGnk(sourceExcess) : "",
-    source_state: classifyActiveSourceState(comparableCalculated, sourceTotal, sources.length > 0, tolerance),
+    source_state: classifyActiveSourceState(Number(row.calculated_layers_base_units || 0), sourceTotal, sources.length > 0, tolerance),
     match_status: activeMatchStatus(row, sourceTotal, comparableCalculated, tolerance),
   };
 }
