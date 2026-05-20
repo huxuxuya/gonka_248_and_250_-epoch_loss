@@ -814,6 +814,17 @@
     "status": "external_proposed"
   },
   {
+    "address": "gonka1043d00lu0v3fz53cut34twtcanalqg9u8vehp2",
+    "details": "Supplemental payout from outputs/grc_e247_preserver_audit_remaining. This source covers rows where GRC-e247-preserver-audit exists but FINAL REWARD DELTA remained positive after all imported sources.",
+    "epoch": 249,
+    "source": "grc-e247-preserver-audit-remaining",
+    "source_compensation_base_units": 285130114238,
+    "source_compensation_gnk": "285.130114238",
+    "source_match_tolerance_base_units": 2400,
+    "source_url": "https://github.com/huxuxuya/gonka_248_and_250_-epoch_loss/blob/main/outputs/grc_e247_preserver_audit_remaining/README.md",
+    "status": "package_payout"
+  },
+  {
     "address": "gonka10mmdjau4dnj8krs7sh7t7635ttnmq9u3vqgz09",
     "details": "Stuck 0.35x preserver audit restitution. Per-epoch loss imported from output/issue2_per_node.csv. node=node7; pw_baseline=3108; stuck_epochs=249; denominator=root_total_weight",
     "epoch": 249,
@@ -862,6 +873,17 @@
     "source_weight": 2337,
     "source_weight_basis": "sum of affected node pw_baseline from audit, not full participant epoch weight",
     "status": "external_proposed"
+  },
+  {
+    "address": "gonka145666cll76ptcyy9ceymtalr8gnvv73ne99p32",
+    "details": "Supplemental payout from outputs/grc_e247_preserver_audit_remaining. This source covers rows where GRC-e247-preserver-audit exists but FINAL REWARD DELTA remained positive after all imported sources.",
+    "epoch": 249,
+    "source": "grc-e247-preserver-audit-remaining",
+    "source_compensation_base_units": 325475055573,
+    "source_compensation_gnk": "325.475055573",
+    "source_match_tolerance_base_units": 2400,
+    "source_url": "https://github.com/huxuxuya/gonka_248_and_250_-epoch_loss/blob/main/outputs/grc_e247_preserver_audit_remaining/README.md",
+    "status": "package_payout"
   },
   {
     "address": "gonka14tqh62mangwzrma2lgg2dm375rcjzn2ydy8ttm",
@@ -914,6 +936,17 @@
     "source_weight": 1553,
     "source_weight_basis": "sum of affected node pw_baseline from audit, not full participant epoch weight",
     "status": "external_proposed"
+  },
+  {
+    "address": "gonka16q0zaetd6hq6d8zj48ur0v967xrrwh566kcazc",
+    "details": "Supplemental payout from outputs/grc_e247_preserver_audit_remaining. This source covers rows where GRC-e247-preserver-audit exists but FINAL REWARD DELTA remained positive after all imported sources.",
+    "epoch": 249,
+    "source": "grc-e247-preserver-audit-remaining",
+    "source_compensation_base_units": 216078195417,
+    "source_compensation_gnk": "216.078195417",
+    "source_match_tolerance_base_units": 2400,
+    "source_url": "https://github.com/huxuxuya/gonka_248_and_250_-epoch_loss/blob/main/outputs/grc_e247_preserver_audit_remaining/README.md",
+    "status": "package_payout"
   },
   {
     "address": "gonka17pw6099q758qwzewtrqmqpf5c2lrhr97fwqexu",
@@ -1018,6 +1051,17 @@
     "status": "external_proposed"
   },
   {
+    "address": "gonka1dpt9zx2dqcky6yjjwrd8xz2w7lq6vffy9mhvgs",
+    "details": "Supplemental payout from outputs/grc_e247_preserver_audit_remaining. This source covers rows where GRC-e247-preserver-audit exists but FINAL REWARD DELTA remained positive after all imported sources.",
+    "epoch": 249,
+    "source": "grc-e247-preserver-audit-remaining",
+    "source_compensation_base_units": 354957897318,
+    "source_compensation_gnk": "354.957897318",
+    "source_match_tolerance_base_units": 2400,
+    "source_url": "https://github.com/huxuxuya/gonka_248_and_250_-epoch_loss/blob/main/outputs/grc_e247_preserver_audit_remaining/README.md",
+    "status": "package_payout"
+  },
+  {
     "address": "gonka1dzdmx5ljrwkelrmgd7suv2q43epn293qacpgqn",
     "details": "Consensus failure restriction package. exclusion_reason=consecutive_failures; confirmation_weight=15229; effective_weight=15229; expected=5907.818380621 GNK; actual=0 GNK; comment=compensated",
     "epoch": 249,
@@ -1053,6 +1097,17 @@
     "source_weight": 2452,
     "source_weight_basis": "sum of affected node pw_baseline from audit, not full participant epoch weight",
     "status": "external_proposed"
+  },
+  {
+    "address": "gonka1ge9amk4ymld27d35akj3ky9uph4gyz6rdpepjj",
+    "details": "Supplemental payout from outputs/grc_e247_preserver_audit_remaining. This source covers rows where GRC-e247-preserver-audit exists but FINAL REWARD DELTA remained positive after all imported sources.",
+    "epoch": 249,
+    "source": "grc-e247-preserver-audit-remaining",
+    "source_compensation_base_units": 341768204959,
+    "source_compensation_gnk": "341.768204959",
+    "source_match_tolerance_base_units": 2400,
+    "source_url": "https://github.com/huxuxuya/gonka_248_and_250_-epoch_loss/blob/main/outputs/grc_e247_preserver_audit_remaining/README.md",
+    "status": "package_payout"
   },
   {
     "address": "gonka1h3s37p0l23mg6ak9h9nmayh6r9f2vm6umj3qet",
@@ -1094,6 +1149,17 @@
     "status": "external_proposed"
   },
   {
+    "address": "gonka1llgg3kvg9sc6xz09jtkcrucrppxgn78xe4xlv0",
+    "details": "Supplemental payout from outputs/grc_e247_preserver_audit_remaining. This source covers rows where GRC-e247-preserver-audit exists but FINAL REWARD DELTA remained positive after all imported sources.",
+    "epoch": 249,
+    "source": "grc-e247-preserver-audit-remaining",
+    "source_compensation_base_units": 333233698137,
+    "source_compensation_gnk": "333.233698137",
+    "source_match_tolerance_base_units": 2400,
+    "source_url": "https://github.com/huxuxuya/gonka_248_and_250_-epoch_loss/blob/main/outputs/grc_e247_preserver_audit_remaining/README.md",
+    "status": "package_payout"
+  },
+  {
     "address": "gonka1lswsj2x7u4606wqpunmm07skgf76r3dyz4v0d8",
     "details": "Stuck 0.35x preserver audit restitution. Per-epoch loss imported from output/issue2_per_node.csv. node=nv-compute-east; pw_baseline=2529; stuck_epochs=249; denominator=root_total_weight",
     "epoch": 249,
@@ -1105,6 +1171,17 @@
     "source_weight": 2529,
     "source_weight_basis": "sum of affected node pw_baseline from audit, not full participant epoch weight",
     "status": "external_proposed"
+  },
+  {
+    "address": "gonka1lswsj2x7u4606wqpunmm07skgf76r3dyz4v0d8",
+    "details": "Supplemental payout from outputs/grc_e247_preserver_audit_remaining. This source covers rows where GRC-e247-preserver-audit exists but FINAL REWARD DELTA remained positive after all imported sources.",
+    "epoch": 249,
+    "source": "grc-e247-preserver-audit-remaining",
+    "source_compensation_base_units": 352242372421,
+    "source_compensation_gnk": "352.242372421",
+    "source_match_tolerance_base_units": 2400,
+    "source_url": "https://github.com/huxuxuya/gonka_248_and_250_-epoch_loss/blob/main/outputs/grc_e247_preserver_audit_remaining/README.md",
+    "status": "package_payout"
   },
   {
     "address": "gonka1p2lhgng7tcqju7emk989s5fpdr7k2c3ek6h26m",
@@ -1131,6 +1208,17 @@
     "source_weight": 1053,
     "source_weight_basis": "sum of affected node pw_baseline from audit, not full participant epoch weight",
     "status": "external_proposed"
+  },
+  {
+    "address": "gonka1p60lruhxmwcsa9taa28cp4k4f6kv2kvyu5h5ep",
+    "details": "Supplemental payout from outputs/grc_e247_preserver_audit_remaining. This source covers rows where GRC-e247-preserver-audit exists but FINAL REWARD DELTA remained positive after all imported sources.",
+    "epoch": 249,
+    "source": "grc-e247-preserver-audit-remaining",
+    "source_compensation_base_units": 146638344465,
+    "source_compensation_gnk": "146.638344465",
+    "source_match_tolerance_base_units": 2400,
+    "source_url": "https://github.com/huxuxuya/gonka_248_and_250_-epoch_loss/blob/main/outputs/grc_e247_preserver_audit_remaining/README.md",
+    "status": "package_payout"
   },
   {
     "address": "gonka1pllyukkeymx3hfd9mts3pryr9y6efs9eshty87",
@@ -1172,6 +1260,17 @@
     "status": "external_proposed"
   },
   {
+    "address": "gonka1r5hdy9q5v783ef7td98k4c68cxl6a58h5sytfq",
+    "details": "Supplemental payout from outputs/grc_e247_preserver_audit_remaining. This source covers rows where GRC-e247-preserver-audit exists but FINAL REWARD DELTA remained positive after all imported sources.",
+    "epoch": 249,
+    "source": "grc-e247-preserver-audit-remaining",
+    "source_compensation_base_units": 891855962771,
+    "source_compensation_gnk": "891.855962771",
+    "source_match_tolerance_base_units": 2400,
+    "source_url": "https://github.com/huxuxuya/gonka_248_and_250_-epoch_loss/blob/main/outputs/grc_e247_preserver_audit_remaining/README.md",
+    "status": "package_payout"
+  },
+  {
     "address": "gonka1slndy4rsmld579628302rj5gz8z9qf4v6ppmc4",
     "details": "Stuck 0.35x preserver audit restitution. Per-epoch loss imported from output/issue2_per_node.csv. node=host01; pw_baseline=2166; stuck_epochs=249,250,251; denominator=root_total_weight",
     "epoch": 249,
@@ -1209,6 +1308,17 @@
     "source_weight": 1933,
     "source_weight_basis": "sum of affected node pw_baseline from audit, not full participant epoch weight",
     "status": "external_proposed"
+  },
+  {
+    "address": "gonka1umvyh0rz5fdmk9qhxurshhchennajced6f4s89",
+    "details": "Supplemental payout from outputs/grc_e247_preserver_audit_remaining. This source covers rows where GRC-e247-preserver-audit exists but FINAL REWARD DELTA remained positive after all imported sources.",
+    "epoch": 249,
+    "source": "grc-e247-preserver-audit-remaining",
+    "source_compensation_base_units": 19372942551045,
+    "source_compensation_gnk": "19372.942551045",
+    "source_match_tolerance_base_units": 2400,
+    "source_url": "https://github.com/huxuxuya/gonka_248_and_250_-epoch_loss/blob/main/outputs/grc_e247_preserver_audit_remaining/README.md",
+    "status": "package_payout"
   },
   {
     "address": "gonka1wthc28t25pg63hzvl07rl8e8r6km6hesl6jhsz",
@@ -1717,6 +1827,17 @@
     "status": "external_proposed"
   },
   {
+    "address": "gonka168rtjfkszuhcggg4dfyse4yh7xn9zwfglnkns2",
+    "details": "Supplemental payout from outputs/grc_e247_preserver_audit_remaining. This source covers rows where GRC-e247-preserver-audit exists but FINAL REWARD DELTA remained positive after all imported sources.",
+    "epoch": 251,
+    "source": "grc-e247-preserver-audit-remaining",
+    "source_compensation_base_units": 119261335214,
+    "source_compensation_gnk": "119.261335214",
+    "source_match_tolerance_base_units": 2400,
+    "source_url": "https://github.com/huxuxuya/gonka_248_and_250_-epoch_loss/blob/main/outputs/grc_e247_preserver_audit_remaining/README.md",
+    "status": "package_payout"
+  },
+  {
     "address": "gonka187tn9y92ur6tu0zf69u94hwl0q77m47y0k36hv",
     "details": "Stuck 0.35x preserver audit restitution. Per-epoch loss imported from output/issue2_per_node.csv. node=ice-1; pw_baseline=2127; stuck_epochs=249,250,251; denominator=root_total_weight",
     "epoch": 251,
@@ -1741,6 +1862,17 @@
     "source_weight": 455,
     "source_weight_basis": "sum of affected node pw_baseline from audit, not full participant epoch weight",
     "status": "external_proposed"
+  },
+  {
+    "address": "gonka1d694r00czmq75txghwjcuk07lxvc8d4ekgsha0",
+    "details": "Supplemental payout from outputs/grc_e247_preserver_audit_remaining. This source covers rows where GRC-e247-preserver-audit exists but FINAL REWARD DELTA remained positive after all imported sources.",
+    "epoch": 251,
+    "source": "grc-e247-preserver-audit-remaining",
+    "source_compensation_base_units": 1443264298735,
+    "source_compensation_gnk": "1443.264298735",
+    "source_match_tolerance_base_units": 2400,
+    "source_url": "https://github.com/huxuxuya/gonka_248_and_250_-epoch_loss/blob/main/outputs/grc_e247_preserver_audit_remaining/README.md",
+    "status": "package_payout"
   },
   {
     "address": "gonka1jltjehxsnum94nt8c00ts7khmpy4lafv6gryzk",
@@ -1795,6 +1927,17 @@
     "status": "external_proposed"
   },
   {
+    "address": "gonka1u9a7r4w76gult5n9ysadnual9fghkc6yda60wj",
+    "details": "Supplemental payout from outputs/grc_e247_preserver_audit_remaining. This source covers rows where GRC-e247-preserver-audit exists but FINAL REWARD DELTA remained positive after all imported sources.",
+    "epoch": 251,
+    "source": "grc-e247-preserver-audit-remaining",
+    "source_compensation_base_units": 219117436863,
+    "source_compensation_gnk": "219.117436863",
+    "source_match_tolerance_base_units": 2400,
+    "source_url": "https://github.com/huxuxuya/gonka_248_and_250_-epoch_loss/blob/main/outputs/grc_e247_preserver_audit_remaining/README.md",
+    "status": "package_payout"
+  },
+  {
     "address": "gonka1zktn8j65wlys8a8e38hqhf4y3x6m4x04zskkrx",
     "details": "Stuck 0.35x preserver audit restitution. Per-epoch loss imported from output/issue2_per_node.csv. node=node_ovh; pw_baseline=366; stuck_epochs=249,250,251; denominator=root_total_weight",
     "epoch": 251,
@@ -1845,6 +1988,17 @@
     "source_weight": 1511,
     "source_weight_basis": "sum of affected node pw_baseline from audit, not full participant epoch weight",
     "status": "external_proposed"
+  },
+  {
+    "address": "gonka1u9a7r4w76gult5n9ysadnual9fghkc6yda60wj",
+    "details": "Supplemental payout from outputs/grc_e247_preserver_audit_remaining. This source covers rows where GRC-e247-preserver-audit exists but FINAL REWARD DELTA remained positive after all imported sources.",
+    "epoch": 252,
+    "source": "grc-e247-preserver-audit-remaining",
+    "source_compensation_base_units": 195821116068,
+    "source_compensation_gnk": "195.821116068",
+    "source_match_tolerance_base_units": 2400,
+    "source_url": "https://github.com/huxuxuya/gonka_248_and_250_-epoch_loss/blob/main/outputs/grc_e247_preserver_audit_remaining/README.md",
+    "status": "package_payout"
   },
   {
     "address": "gonka1zsvl7ujlc8z3a35v2q6e3nml7ftyk23v76jqgl",

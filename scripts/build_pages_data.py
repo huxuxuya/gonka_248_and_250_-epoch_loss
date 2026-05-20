@@ -26,6 +26,7 @@ SOURCE_MATCH_TOLERANCE_BASE_UNITS = 2400
 FULL_LAYER_SOURCE_NAMES = {
     "epoch-248-compensation-package",
     "epoch-250-compensation-package",
+    "grc-e247-preserver-audit-remaining",
 }
 
 

@@ -8,6 +8,7 @@ The package is reproducible: raw chain snapshots are stored under `data/raw`, ca
 
 - [Epoch 248 payout list](outputs/epoch_248/README.md) - participant table with the amount to pay for epoch 248.
 - [Epoch 250 payout list](outputs/epoch_250/README.md) - participant table with the amount to pay for epoch 250.
+- [GRC-e247 preserver audit remaining compensation](outputs/grc_e247_preserver_audit_remaining/README.md) - supplemental rows where the GRC-e247 audit source exists but `FINAL REWARD DELTA` is still non-zero.
 - [GitHub Pages review table](docs/index.html) - interactive view with source toggles and detailed per-cell cards.
 
 The epoch README files are payout documents and source-of-truth inputs for the package source layers. They are imported into the review table as `epoch-248-compensation-package` and `epoch-250-compensation-package`, but they are not subtracted from themselves when these README payout totals are built.
@@ -37,6 +38,8 @@ External source rows live in `docs/source_overrides.json` and are included in `d
 
 Package payout sources are generated from the epoch README payout lists after independent external sources are subtracted. They let the GitHub Pages table show the final package compensation as a source layer without changing the README payout totals.
 
+The GRC-e247 remaining-delta package is also imported as `grc-e247-preserver-audit-remaining`. It closes the residual `FINAL REWARD DELTA` for rows that already had `GRC-e247-preserver-audit` but were not fully covered by that original source.
+
 Current sources used by the review table include:
 
 - `GRC-e247-preserver-audit`
@@ -50,6 +53,7 @@ Current sources used by the review table include:
 
 - `outputs/epoch_248/README.md` - participant-level epoch 248 payout table and package source of truth.
 - `outputs/epoch_250/README.md` - participant-level epoch 250 payout table and package source of truth.
+- `outputs/grc_e247_preserver_audit_remaining/README.md` - supplemental remaining-delta payout table for GRC-e247 preserver audit rows.
 - `outputs/combined/compensation_detailed.csv` - detailed calculated rows for all cached epochs.
 - `docs/index.html` - GitHub Pages review table.
 - `docs/source_overrides.json` - imported independent source rows plus package payout source rows.
@@ -62,6 +66,9 @@ python3 scripts/calculate_compensation.py --epochs 247 248 249 250 251 252 253 2
 python3 scripts/build_reports.py
 python3 scripts/build_compensation_readmes.py --epochs 248 250
 python3 scripts/import_source_epoch_compensation_package.py --epochs 248 250
+python3 scripts/build_pages_data.py
+python3 scripts/build_grc_e247_remaining_package.py
+python3 scripts/import_source_grc_e247_remaining_package.py
 python3 scripts/build_pages_data.py
 python3 scripts/validate_consistency.py --epochs 247 248 249 250 251 252 253 254 255
 ```

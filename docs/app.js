@@ -259,6 +259,7 @@ function renderEpochCell(row, key) {
   if (collapsedSourceClass && ["reward_delta_after_sources_gnk", "full_lost_delta_after_sources_gnk", "source_weight_delta", "source_state"].includes(key)) {
     classes.push(collapsedSourceClass);
   }
+  const sourceStripeStyleValue = sourceStripeStyle(row, key);
   if (key.startsWith("bug_") && row.bug_adjusted_weight !== null) classes.push("bug");
   if (key.startsWith("source_") && Number(row.source_compensation_base_units || 0) > 0) classes.push("source");
   if (key.startsWith("remaining_") && Number(row.remaining_after_sources_base_units || 0) > 0) classes.push("remaining");
@@ -268,7 +269,8 @@ function renderEpochCell(row, key) {
     if (row.match_status === "source_differs") classes.push("diff");
   }
   if (row.has_loss) classes.push("clickable");
-  return `<td class="${classes.join(" ")}" data-row-key="${escapeHtml(row.address)}|${row.epoch}" title="${escapeHtml(String(value))}">${escapeHtml(displayValue)}</td>`;
+  const styleAttribute = sourceStripeStyleValue ? ` style="${escapeAttribute(sourceStripeStyleValue)}"` : "";
+  return `<td class="${classes.join(" ")}" data-row-key="${escapeHtml(row.address)}|${row.epoch}" title="${escapeHtml(String(value))}"${styleAttribute}>${escapeHtml(displayValue)}</td>`;
 }
 
 function renderSourceLegend() {
@@ -279,6 +281,7 @@ function renderSourceLegend() {
     ["source-segovchik-grc-case-1", "SegovChik-grc-case-1", "source closed calculated loss"],
     ["source-epoch-248-compensation-package", "epoch-248-compensation-package", "README payout source"],
     ["source-epoch-250-compensation-package", "epoch-250-compensation-package", "README payout source"],
+    ["source-grc-e247-preserver-audit-remaining", "grc-e247-preserver-audit-remaining", "remaining GRC-e247 delta payout source"],
     ["source-mixed", "multiple sources", "closed by more than one source"],
   ];
   const visibleItems = items.filter(([, source]) => source === "multiple sources" || state.sourceNames.includes(source));
@@ -624,6 +627,21 @@ function collapsedSourceColorClass(row) {
   return sourceColorClass(sourceNames[0]);
 }
 
+function sourceStripeStyle(row, key) {
+  if (!["reward_delta_after_sources_gnk", "full_lost_delta_after_sources_gnk", "source_weight_delta", "source_state"].includes(key)) return "";
+  if (row.source_state !== "collapsed_to_zero") return "";
+  if (Number(row.source_compensation_base_units || 0) <= 0) return "";
+  const colors = [...new Set((row.sources || []).map((source) => sourceColorValue(source.source)).filter(Boolean))];
+  if (colors.length < 2) return "";
+  const step = 100 / colors.length;
+  const stops = colors.flatMap((color, index) => {
+    const start = (index * step).toFixed(2);
+    const end = ((index + 1) * step).toFixed(2);
+    return [`${color} ${start}%`, `${color} ${end}%`];
+  });
+  return `background: linear-gradient(135deg, ${stops.join(", ")}) !important`;
+}
+
 function sourceColorClass(sourceName) {
   return {
     "GRC-e247-preserver-audit": "source-grc-e247-preserver-audit",
@@ -632,11 +650,24 @@ function sourceColorClass(sourceName) {
     "SegovChik-grc-case-1": "source-segovchik-grc-case-1",
     "epoch-248-compensation-package": "source-epoch-248-compensation-package",
     "epoch-250-compensation-package": "source-epoch-250-compensation-package",
+    "grc-e247-preserver-audit-remaining": "source-grc-e247-preserver-audit-remaining",
+  }[sourceName] || "";
+}
+
+function sourceColorValue(sourceName) {
+  return {
+    "GRC-e247-preserver-audit": "#d8efe1",
+    "GRC-e254-api-issue": "#d9eafb",
+    "consensus_failure_restriction": "#efe4ff",
+    "SegovChik-grc-case-1": "#ffe8c7",
+    "epoch-248-compensation-package": "#cfeeea",
+    "epoch-250-compensation-package": "#f4dfc8",
+    "grc-e247-preserver-audit-remaining": "#b7e3ef",
   }[sourceName] || "";
 }
 
 function isFullLayerSource(sourceName) {
-  return sourceName === "epoch-248-compensation-package" || sourceName === "epoch-250-compensation-package";
+  return sourceName === "epoch-248-compensation-package" || sourceName === "epoch-250-compensation-package" || sourceName === "grc-e247-preserver-audit-remaining";
 }
 
 function rewardDeltaClass(row) {
