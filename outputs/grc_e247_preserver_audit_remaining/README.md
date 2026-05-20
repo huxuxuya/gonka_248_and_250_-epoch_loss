@@ -22,16 +22,65 @@ Source document: [GRC-e247-preserver-audit](https://github.com/gonkalabs/GRC-e24
 | 251 | 3 | 1781.643070812 |
 | 252 | 1 | 195.821116068 |
 
+## Calculation Algorithm
+
+This report is a second-layer payout on top of the original `GRC-e247-preserver-audit` source.
+
+In simple terms:
+
+1. Rebuild the dashboard calculation from cached chain data and all imported sources, but remove this report's own source layer: `grc-e247-preserver-audit-remaining`.
+2. Keep only rows where the participant already has `GRC-e247-preserver-audit`.
+3. Keep only rows where the remaining `FINAL REWARD DELTA` is still positive.
+4. Pay exactly that remaining positive delta.
+
+The base reward loss is calculated by the repository chain-style logic:
+
+```text
+expected_reward = floor(expected_reward_weight * fixed_epoch_reward / total_epoch_weight)
+base_loss = max(0, expected_reward - actual_rewarded_coins)
+calculated_compensation = base_loss + adjustment_layers
+```
+
+For this report the payout is:
+
+```text
+payout_to_make = max(0, calculated_compensation - all_imported_sources_except_this_package)
+```
+
+`all_imported_sources_except_this_package` includes the original `GRC-e247-preserver-audit` rows and any other independent source rows already imported into `docs/source_overrides.json`. It deliberately excludes `grc-e247-preserver-audit-remaining` so the report can be rebuilt after it has been imported into the dashboard.
+
+All money is calculated in base units and only formatted to GNK at the end:
+
+```text
+1 GNK = 1_000_000_000 base units
+```
+
 ## Reproduce This Report
 
 Run from the repository root:
 
 ```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+
+python3 scripts/validate_consistency.py --epochs 249 251 252
 python3 scripts/build_pages_data.py
 python3 scripts/build_grc_e247_remaining_package.py
+python3 scripts/import_source_grc_e247_remaining_package.py
+python3 scripts/build_pages_data.py
+python3 scripts/validate_consistency.py --epochs 249 251 252
 ```
 
-The script reads `docs/data/compensation_rows.json`, filters rows where:
+The first `build_pages_data.py` run makes sure the local dashboard data exists. `build_grc_e247_remaining_package.py` then rebuilds rows while excluding its own package source, writes this README and CSV, and `import_source_grc_e247_remaining_package.py` imports the payout rows back into the dashboard as `grc-e247-preserver-audit-remaining`.
+
+Expected total for this file:
+
+```text
+GRC-e247 remaining payout to make: 24597.786583224 GNK
+```
+
+The report filter is:
 
 ```text
 source == GRC-e247-preserver-audit
