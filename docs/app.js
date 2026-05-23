@@ -12,6 +12,7 @@ const state = {
   showSources: true,
   sourceNames: [],
   enabledSources: new Set(),
+  audit: null,
 };
 
 const format = new Intl.NumberFormat("en-US", { maximumFractionDigits: 9 });
@@ -23,8 +24,11 @@ loadData().then(({ rows, summary }) => {
   state.sourceNames = [...new Set(rows.flatMap((row) => (row.sources || []).map((source) => source.source).filter(Boolean)))].sort();
   state.enabledSources = new Set(state.sourceNames);
   state.participants = pivotRows(rows);
+  state.audit = window.__GONKA_SHARD_AUDIT_DATA__ || null;
   hydrateFilters();
+  hydrateAuditFilters();
   render();
+  renderAudit();
 }).catch((error) => {
   document.getElementById("tableBody").innerHTML = `
     <tr>
@@ -79,6 +83,13 @@ document.getElementById("showSources").addEventListener("change", (event) => {
   render();
 });
 document.getElementById("exportSources").addEventListener("click", showSourceExport);
+document.getElementById("auditSearchInput").addEventListener("input", renderAudit);
+document.getElementById("auditEpochFilter").addEventListener("change", renderAudit);
+document.getElementById("auditNodeFilter").addEventListener("change", renderAudit);
+document.getElementById("auditClassFilter").addEventListener("change", renderAudit);
+document.querySelectorAll("[data-view]").forEach((button) => {
+  button.addEventListener("click", () => switchView(button.dataset.view));
+});
 
 function pivotRows(rows) {
   const byAddress = new Map();
@@ -122,6 +133,31 @@ function hydrateFilters() {
   for (const reason of reasons) {
     reasonFilter.append(new Option(reason, reason));
   }
+}
+
+function hydrateAuditFilters() {
+  if (!state.audit) return;
+  const epochFilter = document.getElementById("auditEpochFilter");
+  const nodeFilter = document.getElementById("auditNodeFilter");
+  const classFilter = document.getElementById("auditClassFilter");
+  for (const epoch of state.audit.epochs || []) {
+    epochFilter.append(new Option(`Epoch ${epoch}`, String(epoch)));
+  }
+  for (const node of state.audit.nodes || []) {
+    nodeFilter.append(new Option(shortNode(node), node));
+  }
+  const classes = [...new Set((state.audit.participant_rows || []).map((row) => row.classification).filter(Boolean))].sort();
+  for (const classification of classes) {
+    classFilter.append(new Option(classificationLabel(classification), classification));
+  }
+}
+
+function switchView(view) {
+  document.getElementById("compensationView").classList.toggle("hidden-view", view !== "compensation");
+  document.getElementById("auditView").classList.toggle("hidden-view", view !== "audit");
+  document.querySelectorAll("[data-view]").forEach((button) => {
+    button.classList.toggle("active", button.dataset.view === view);
+  });
 }
 
 function selectedEpochs() {
@@ -180,6 +216,526 @@ function render() {
   renderSummary(epochs);
   renderSourceLegend();
   renderTable(epochs, activeMetrics());
+}
+
+function renderAudit() {
+  if (!state.audit) {
+    document.getElementById("auditMetrics").innerHTML = metric("Audit data", "not loaded");
+    return;
+  }
+  renderAuditMetrics();
+  renderAuditEpochSummary();
+  renderAuditOutcomes();
+  renderAuditDowntime();
+  renderAuditExclusions();
+  renderAuditAnomalies();
+  renderAuditGaps();
+  renderAuditRescales();
+  renderAuditConsensus();
+  renderAuditSignatures();
+}
+
+function auditFilteredRows(rows, options = {}) {
+  const search = document.getElementById("auditSearchInput").value.trim().toLowerCase();
+  const epoch = document.getElementById("auditEpochFilter").value;
+  const node = document.getElementById("auditNodeFilter").value;
+  const classification = document.getElementById("auditClassFilter").value;
+  return rows.filter((row) => {
+    if (epoch !== "all" && String(row.epoch) !== epoch) return false;
+    if (node !== "all" && row.node !== node) return false;
+    if (options.classification !== false && classification !== "all" && row.classification !== classification) return false;
+    if (!search) return true;
+    return Object.values(row).join(" ").toLowerCase().includes(search);
+  });
+}
+
+function renderAuditMetrics() {
+  const summary = state.audit.summary || {};
+  const preserved = state.audit.preserved || {};
+  const signatureTotals = summary.signature_totals || {};
+  const performanceRows = (state.audit.participant_rows || []).filter((row) => row.has_performance_summary === "True");
+  const downtimeRows = performanceRows.filter((row) => row.classification === "explained_by_downtime_test");
+  const exclusionRows = performanceRows.filter((row) => String(row.classification || "").startsWith("explained_by_exclusion:"));
+  const missingPerformance = (state.audit.participant_rows || []).filter((row) => row.classification === "missing_performance_summary");
+  document.getElementById("auditMetrics").innerHTML = [
+    metric("Run", state.audit.run_id || ""),
+    metric("Preserved", `${preserved.ok || 0}/${preserved.files || 0}`),
+    metric("Consensus", `${summary.consensus_ok || 0}/${summary.consensus_total || 0}`),
+    metric("Signatures", `${signatureTotals.nonempty || 0}/${signatureTotals.signatures || 0}`),
+    metric("Downtime", downtimeRows.length),
+    metric("Exclusions", exclusionRows.length),
+    metric("Gaps", summary.anomalies || 0),
+    metric("Missing perf", missingPerformance.length),
+    metric("Latest", Object.entries(state.audit.latest_by_node || {}).map(([node, epoch]) => `${shortNode(node)} ${epoch ?? "n/a"}`).join(" · ")),
+  ].join("");
+}
+
+function renderAuditEpochSummary() {
+  const sourceRows = auditFilteredRows(state.audit.participant_rows || [])
+    .filter((row) => row.node && row.has_performance_summary === "True");
+  const rowsByEpoch = new Map();
+  for (const row of sourceRows) {
+    const epoch = String(row.epoch);
+    if (!rowsByEpoch.has(epoch)) {
+      rowsByEpoch.set(epoch, {
+        epoch,
+        participants: 0,
+        zero_reward: 0,
+        downtime: 0,
+        exclusions: 0,
+        gaps: 0,
+        missed: 0,
+        total: 0,
+        reward_gap_base_units: 0,
+      });
+    }
+    const item = rowsByEpoch.get(epoch);
+    item.participants += 1;
+    item.zero_reward += Number(row.rewarded_coins || 0) === 0 ? 1 : 0;
+    item.downtime += row.classification === "explained_by_downtime_test" ? 1 : 0;
+    item.exclusions += String(row.classification || "").startsWith("explained_by_exclusion:") ? 1 : 0;
+    item.gaps += row.classification === "settlement_anomaly" ? 1 : 0;
+    item.missed += Number(row.missed_requests || 0);
+    item.total += Number(row.total_requests || 0);
+    item.reward_gap_base_units += Number(row.reward_gap_base_units || 0);
+  }
+  const rows = [...rowsByEpoch.values()]
+    .map((row) => ({ ...row, miss_rate_summary: { missed: row.missed, total: row.total } }))
+    .sort((a, b) => Number(b.epoch) - Number(a.epoch));
+  document.getElementById("auditEpochSummaryCount").textContent = `${rows.length} epochs`;
+  renderSimpleTable("auditEpochSummaryTable", rows, [
+    ["epoch", "Epoch"],
+    ["participants", "Participants"],
+    ["zero_reward", "Zero reward"],
+    ["downtime", "Downtime"],
+    ["exclusions", "Exclusions"],
+    ["gaps", "Gaps"],
+    ["miss_rate_summary", "Miss rate"],
+    ["reward_gap_base_units", "Total gap"],
+  ], (row) => {
+    document.getElementById("auditEpochFilter").value = String(row.epoch);
+    renderAudit();
+  });
+}
+
+function renderAuditOutcomes() {
+  const rows = auditFilteredRows(state.audit.participant_rows || [])
+    .filter((row) => row.has_performance_summary === "True")
+    .filter((row) => row.classification && row.classification !== "no_reward_gap")
+    .sort((a, b) =>
+      Number(b.epoch) - Number(a.epoch)
+      || outcomeSeverity(b.classification) - outcomeSeverity(a.classification)
+      || Number(b.missed_requests || 0) - Number(a.missed_requests || 0)
+      || a.address.localeCompare(b.address)
+    );
+  document.getElementById("auditOutcomeCount").textContent = `${rows.length} rows`;
+  renderSimpleTable("auditOutcomeTable", rows, [
+    ["epoch", "Epoch"],
+    ["address", "Address"],
+    ["node", "Node"],
+    ["classification", "Classification"],
+    ["signed_models", "Models"],
+    ["inference_count", "Inf"],
+    ["missed_requests", "Miss"],
+    ["miss_rate", "Miss rate"],
+    ["p_value", "p-value"],
+    ["rewarded_coins", "Rewarded"],
+    ["reward_gap_base_units", "Gap"],
+  ], showAuditDetails);
+}
+
+function renderAuditDowntime() {
+  const rows = auditFilteredRows(state.audit.participant_rows || [])
+    .filter((row) => row.has_performance_summary === "True")
+    .filter((row) => row.classification === "explained_by_downtime_test")
+    .map((row) => ({
+      ...row,
+      success_total: `${row.inference_count}/${row.total_requests}`,
+      miss_total: `${row.missed_requests}/${row.total_requests}`,
+      downtime_reason: downtimeReason(row),
+    }))
+    .sort((a, b) =>
+      Number(b.epoch) - Number(a.epoch)
+      || Number(b.missed_requests || 0) - Number(a.missed_requests || 0)
+      || Number(b.miss_rate || 0) - Number(a.miss_rate || 0)
+      || a.address.localeCompare(b.address)
+    );
+  document.getElementById("auditDowntimeCount").textContent = `${rows.length} rows`;
+  renderSimpleTable("auditDowntimeTable", rows, [
+    ["epoch", "Epoch"],
+    ["address", "Address"],
+    ["node", "Node"],
+    ["signed_models", "Models"],
+    ["success_total", "Success/total"],
+    ["miss_total", "Miss/total"],
+    ["miss_rate", "Miss rate"],
+    ["p_value", "p-value"],
+    ["passes_downtime_test", "Passed"],
+    ["rewarded_coins", "Rewarded"],
+    ["downtime_reason", "Why downtime"],
+  ], showAuditDetails);
+}
+
+function renderAuditExclusions() {
+  const rows = auditFilteredRows(state.audit.participant_rows || [])
+    .filter((row) => row.has_performance_summary === "True")
+    .filter((row) => String(row.classification || "").startsWith("explained_by_exclusion:"))
+    .map((row) => ({
+      ...row,
+      exclusion_label: row.exclusion_reason || row.classification.replace("explained_by_exclusion:", ""),
+      work_summary: `${row.inference_count} inf / ${row.missed_requests} miss`,
+      exclusion_explanation: exclusionExplanation(row),
+    }))
+    .sort((a, b) =>
+      Number(b.epoch) - Number(a.epoch)
+      || String(a.exclusion_label).localeCompare(String(b.exclusion_label))
+      || Number(b.reward_gap_base_units || 0) - Number(a.reward_gap_base_units || 0)
+      || a.address.localeCompare(b.address)
+    );
+  document.getElementById("auditExclusionCount").textContent = `${rows.length} rows`;
+  renderSimpleTable("auditExclusionTable", rows, [
+    ["epoch", "Epoch"],
+    ["address", "Address"],
+    ["node", "Node"],
+    ["exclusion_label", "Reason"],
+    ["exclusion_block_height", "Block"],
+    ["signed_models", "Models"],
+    ["work_summary", "Work"],
+    ["miss_rate", "Miss rate"],
+    ["rewarded_coins", "Rewarded"],
+    ["reward_gap_base_units", "Gap"],
+    ["exclusion_explanation", "Why excluded"],
+  ], showAuditDetails);
+}
+
+function downtimeReason(row) {
+  const misses = Number(row.missed_requests || 0);
+  const total = Number(row.total_requests || 0);
+  const pValue = Number(row.p_value || 0);
+  const missRate = total ? misses / total : 0;
+  return `miss ${(missRate * 100).toFixed(2)}%; p=${pValue.toExponential(2)} < 0.05`;
+}
+
+function exclusionExplanation(row) {
+  const reason = row.exclusion_reason || row.classification.replace("explained_by_exclusion:", "");
+  if (reason === "failed_confirmation_poc") {
+    return `failed confirmation PoC at block ${row.exclusion_block_height || "n/a"}`;
+  }
+  if (reason === "statistical_invalidations") {
+    return `statistical invalidations at block ${row.exclusion_block_height || "n/a"}`;
+  }
+  return `${reason || "excluded"} at block ${row.exclusion_block_height || "n/a"}`;
+}
+
+function classificationLabel(classification) {
+  if (classification === "no_reward_gap") return "OK / no gap";
+  if (classification === "explained_by_downtime_test") return "Downtime test failed";
+  if (classification === "settlement_anomaly") return "Unexplained settlement gap";
+  if (classification === "missing_performance_summary") return "Missing performance summary";
+  if (String(classification || "").startsWith("explained_by_exclusion:")) {
+    return `Excluded: ${classification.replace("explained_by_exclusion:", "")}`;
+  }
+  return classification || "";
+}
+
+function outcomeSeverity(classification) {
+  if (classification === "explained_by_downtime_test") return 4;
+  if (String(classification || "").startsWith("explained_by_exclusion:")) return 3;
+  if (classification === "settlement_anomaly") return 2;
+  return 1;
+}
+
+function renderAuditAnomalies() {
+  const rows = auditFilteredRows(state.audit.anomalies || []);
+  const matrix = buildAuditAnomalyMatrix(rows);
+  document.getElementById("auditAnomalyCount").textContent = `${rows.length} cells · ${matrix.length} addresses`;
+  renderAuditAnomalyMatrix(matrix);
+}
+
+function renderAuditGaps() {
+  const rows = auditFilteredRows(state.audit.anomalies || [])
+    .map((row) => ({
+      ...row,
+      gap_formula: gapFormula(row),
+      gap_reason: gapReason(row),
+      proof_summary: proofSummary(row),
+    }))
+    .sort((a, b) =>
+      Number(b.reward_gap_base_units || 0) - Number(a.reward_gap_base_units || 0)
+      || Number(b.epoch) - Number(a.epoch)
+      || a.address.localeCompare(b.address)
+    );
+  document.getElementById("auditGapCount").textContent = `${rows.length} rows`;
+  renderSimpleTable("auditGapTable", rows, [
+    ["epoch", "Epoch"],
+    ["address", "Address"],
+    ["node", "Node"],
+    ["proof_summary", "Proof"],
+    ["expected_weight", "Expected weight"],
+    ["expected_reward_base_units", "Expected"],
+    ["rewarded_coins", "Rewarded"],
+    ["reward_gap_base_units", "Gap"],
+    ["miss_rate", "Miss rate"],
+    ["passes_downtime_test", "Downtime passed"],
+    ["exclusion_reason", "Exclusion"],
+    ["gap_formula", "Formula"],
+    ["gap_reason", "Why gap"],
+  ], showAuditDetails);
+}
+
+function renderAuditRescales() {
+  const rows = auditFilteredRows(state.audit.participant_rows || [], { classification: false })
+    .filter((row) => row.expected_weight_reason === "chain_rescaled_confirmation_by_parent_weight")
+    .map((row) => ({
+      ...row,
+      old_expected_weight: row.confirmation_weight,
+      rescale: `${row.confirmation_weight} * ${row.weight} / ${row.model_coefficient_weight}`,
+      rescaled_delta: Number(row.confirmation_weight || 0) - Number(row.expected_weight || 0),
+      reward_match: Number(row.reward_gap_base_units || 0) === 0 ? "matches chain" : "still differs",
+    }))
+    .sort((a, b) =>
+      Number(b.rescaled_delta || 0) - Number(a.rescaled_delta || 0)
+      || Number(b.epoch) - Number(a.epoch)
+      || a.address.localeCompare(b.address)
+    );
+  document.getElementById("auditRescaleCount").textContent = `${rows.length} rows`;
+  renderSimpleTable("auditRescaleTable", rows, [
+    ["epoch", "Epoch"],
+    ["address", "Address"],
+    ["node", "Node"],
+    ["validation_models", "Models"],
+    ["weight", "Parent weight"],
+    ["confirmation_weight", "Old expected"],
+    ["model_raw_weight", "Raw MLNode weight"],
+    ["model_coefficient_weight", "Coeff weight"],
+    ["expected_weight", "Chain expected"],
+    ["rescaled_delta", "Weight delta"],
+    ["rewarded_coins", "Rewarded"],
+    ["expected_reward_base_units", "Expected"],
+    ["reward_match", "Result"],
+    ["rescale", "Formula"],
+  ], showAuditDetails);
+}
+
+function buildAuditAnomalyMatrix(rows) {
+  const byAddress = new Map();
+  for (const row of rows) {
+    if (!byAddress.has(row.address)) {
+      byAddress.set(row.address, {
+        address: row.address,
+        node: row.node,
+        totalGap: 0,
+        epochs: new Map(),
+        models: new Set(),
+      });
+    }
+    const item = byAddress.get(row.address);
+    item.totalGap += Number(row.reward_gap_base_units || 0);
+    item.epochs.set(String(row.epoch), row);
+    for (const model of String(row.signed_models || "").split(";").filter(Boolean)) {
+      item.models.add(model);
+    }
+  }
+  return [...byAddress.values()].sort((a, b) => b.totalGap - a.totalGap || a.address.localeCompare(b.address));
+}
+
+function gapFormula(row) {
+  return `max(0, expected ${formatBaseUnitsAsGnk(row.expected_reward_base_units)} - rewarded ${formatBaseUnitsAsGnk(row.rewarded_coins)})`;
+}
+
+function gapReason(row) {
+  if (row.classification !== "settlement_anomaly") return classificationLabel(row.classification);
+  return "expected reward is higher than rewarded_coins, with proof present and no downtime/exclusion explanation";
+}
+
+function proofSummary(row) {
+  const proof = [];
+  if (row.signed_base === "True" || row.signed_base === true) proof.push("base");
+  const models = shortModelList(String(row.signed_models || "").split(";").filter(Boolean));
+  if (models) proof.push(models);
+  return proof.join(" + ") || "none";
+}
+
+function renderAuditAnomalyMatrix(matrix) {
+  const epochs = (state.audit.epochs || []).map(String);
+  const table = document.getElementById("auditAnomalyTable");
+  table.querySelector("thead").innerHTML = `
+    <tr>
+      <th class="sticky-col">Address</th>
+      <th>Node</th>
+      <th>Models</th>
+      <th>Total gap</th>
+      ${epochs.map((epoch) => `<th>Epoch ${escapeHtml(epoch)}</th>`).join("")}
+    </tr>
+  `;
+  table.querySelector("tbody").innerHTML = matrix.map((item, index) => `
+    <tr>
+      <td class="sticky-col"><button class="link" data-audit-address="${index}">${escapeHtml(item.address)}</button></td>
+      <td>${escapeHtml(shortNode(item.node))}</td>
+      <td title="${escapeAttribute([...item.models].join("; "))}">${escapeHtml(shortModelList([...item.models]))}</td>
+      <td class="problem-delta">${escapeHtml(formatBaseUnitsAsGnk(item.totalGap))} GNK</td>
+      ${epochs.map((epoch) => renderAuditEpochCell(item.epochs.get(epoch), index, epoch)).join("")}
+    </tr>
+  `).join("");
+  table.querySelectorAll("[data-audit-cell]").forEach((cell) => {
+    cell.addEventListener("click", () => {
+      const [rowIndex, epoch] = cell.dataset.auditCell.split("|");
+      showAuditDetails(matrix[Number(rowIndex)].epochs.get(epoch));
+    });
+  });
+  table.querySelectorAll("[data-audit-address]").forEach((button) => {
+    button.addEventListener("click", () => showAuditAddressDetails(matrix[Number(button.dataset.auditAddress)]));
+  });
+}
+
+function renderAuditEpochCell(row, index, epoch) {
+  if (!row) return "<td></td>";
+  const gap = `${formatBaseUnitsAsGnk(row.reward_gap_base_units)} GNK`;
+  const missed = `${row.missed_requests}/${row.total_requests}`;
+  return `
+    <td class="audit-anomaly clickable" data-audit-cell="${index}|${escapeAttribute(epoch)}" title="${escapeAttribute(`${gap}; miss ${missed}; p=${row.p_value}`)}">
+      <strong>${escapeHtml(gap)}</strong>
+      <em>miss ${escapeHtml(row.miss_rate)}</em>
+    </td>
+  `;
+}
+
+function showAuditAddressDetails(item) {
+  const rows = [...item.epochs.values()].sort((a, b) => Number(a.epoch) - Number(b.epoch));
+  document.getElementById("detailContent").innerHTML = `
+    <h2>${escapeHtml(item.address)}</h2>
+    <section class="verdict-card verdict-positive">
+      <div>
+        <span class="section-kicker">Audit anomalies</span>
+        <strong>${formatBaseUnitsAsGnk(item.totalGap)} GNK</strong>
+        <em>Total visible reward gap</em>
+      </div>
+      <div class="verdict-meta">
+        ${pill(`${rows.length} epochs`, "remaining")}
+        ${pill(shortNode(item.node), "neutral-pill")}
+      </div>
+    </section>
+    ${section("Epochs", `
+      <div class="detail-grid">
+        ${rows.map((row) => `
+          <button class="detail-item audit-detail-button" type="button" data-audit-detail-epoch="${escapeAttribute(row.epoch)}">
+            <span>Epoch ${escapeHtml(row.epoch)}</span>
+            <strong>${formatBaseUnitsAsGnk(row.reward_gap_base_units)} GNK</strong>
+          </button>
+        `).join("")}
+      </div>
+    `)}
+  `;
+  document.getElementById("detailDialog").showModal();
+  document.querySelectorAll("[data-audit-detail-epoch]").forEach((button) => {
+    button.addEventListener("click", () => {
+      showAuditDetails(item.epochs.get(button.dataset.auditDetailEpoch));
+    });
+  });
+}
+
+function renderAuditConsensus() {
+  const rows = auditFilteredRows(state.audit.consensus || [], { classification: false });
+  renderSimpleTable("auditConsensusTable", rows, [
+    ["epoch", "Epoch"],
+    ["label", "Endpoint"],
+    ["model_id", "Model"],
+    ["ok_count", "OK"],
+    ["hash_count", "Hashes"],
+    ["consensus", "Consensus"],
+  ]);
+}
+
+function renderAuditSignatures() {
+  const rows = auditFilteredRows(state.audit.signatures || [], { classification: false });
+  renderSimpleTable("auditSignatureTable", rows, [
+    ["epoch", "Epoch"],
+    ["node", "Node"],
+    ["model_id", "Model"],
+    ["signature_count", "Sigs"],
+    ["nonempty_signature_count", "Nonempty"],
+    ["validation_weights_count", "Weights"],
+    ["number_of_requests", "Requests"],
+  ]);
+}
+
+function renderSimpleTable(tableId, rows, columns, onClick) {
+  const table = document.getElementById(tableId);
+  table.querySelector("thead").innerHTML = `
+    <tr>${columns.map(([, label]) => `<th>${escapeHtml(label)}</th>`).join("")}</tr>
+  `;
+  table.querySelector("tbody").innerHTML = rows.map((row, index) => `
+    <tr class="${auditRowClass(row)}" ${onClick ? `data-audit-row="${index}"` : ""}>
+      ${columns.map(([key]) => `<td title="${escapeAttribute(formatAuditCell(key, row[key]))}">${escapeHtml(formatAuditCell(key, row[key]))}</td>`).join("")}
+    </tr>
+  `).join("");
+  if (onClick) {
+    table.querySelectorAll("[data-audit-row]").forEach((rowElement) => {
+      rowElement.addEventListener("click", () => onClick(rows[Number(rowElement.dataset.auditRow)]));
+    });
+  }
+}
+
+function showAuditDetails(row) {
+  document.getElementById("detailContent").innerHTML = `
+    <h2>${escapeHtml(row.address)}</h2>
+    <section class="verdict-card verdict-positive">
+      <div>
+        <span class="section-kicker">Epoch ${escapeHtml(row.epoch)}</span>
+        <strong>${formatBaseUnitsAsGnk(row.reward_gap_base_units)} GNK</strong>
+        <em>Reward gap with signed proof data</em>
+      </div>
+      <div class="verdict-meta">
+        ${pill(row.classification || "unknown", "remaining")}
+        ${pill(shortNode(row.node), "neutral-pill")}
+      </div>
+    </section>
+    ${section("Proof", `
+      <div class="kv-grid">
+        ${kv("Signed base", row.signed_base)}
+        ${kv("Signed models", row.signed_models || "none")}
+        ${kv("Validation models", row.validation_models || "none")}
+        ${kv("Weight", row.weight)}
+        ${kv("Confirmation weight", row.confirmation_weight)}
+        ${kv("Subgroup voting power", row.subgroup_voting_power)}
+        ${kv("Raw MLNode weight", row.model_raw_weight || "n/a")}
+        ${kv("Coeff weight", row.model_coefficient_weight || "n/a")}
+        ${kv("Expected weight", row.expected_weight || "n/a")}
+        ${kv("Expected rule", row.expected_weight_reason || "n/a")}
+      </div>
+    `)}
+    ${section("Why it is listed", `
+      <div class="kv-grid">
+        ${kv("Proof exists", row.signed_base === "True" || row.signed_base === true || row.signed_models ? "yes" : "no")}
+        ${kv("Excluded", row.exclusion_reason || "no")}
+        ${kv("Downtime passed", row.passes_downtime_test)}
+        ${kv("Reason", row.expected_weight_reason === "chain_rescaled_confirmation_by_parent_weight" ? "confirmation was rescaled to parent weight scale" : "expected reward is higher than rewarded_coins")}
+        ${kv("Interpretation", Number(row.reward_gap_base_units || 0) === 0 ? "matches chain-style expected reward" : "technical mismatch, needs root-cause check")}
+        ${kv("Not caused by", "dashboard claim status alone")}
+      </div>
+    `)}
+    ${section("Performance", `
+      <div class="kv-grid">
+        ${kv("Inferences", row.inference_count)}
+        ${kv("Missed", row.missed_requests)}
+        ${kv("Miss rate", row.miss_rate)}
+        ${kv("p-value", row.p_value)}
+        ${kv("Downtime test", row.passes_downtime_test)}
+        ${kv("Claimed", row.claimed)}
+      </div>
+    `)}
+    ${section("Reward", `
+      <div class="kv-grid">
+        ${kv("Expected", `${formatBaseUnitsAsGnk(row.expected_reward_base_units)} GNK`)}
+        ${kv("Rewarded", `${formatBaseUnitsAsGnk(row.rewarded_coins)} GNK`)}
+        ${kv("Gap", `${formatBaseUnitsAsGnk(row.reward_gap_base_units)} GNK`, "problem-delta")}
+        ${kv("Earned", `${formatBaseUnitsAsGnk(row.earned_coins)} GNK`)}
+        ${kv("Burned", `${formatBaseUnitsAsGnk(row.burned_coins)} GNK`)}
+        ${kv("Exclusion", row.exclusion_reason || "none")}
+      </div>
+    `)}
+  `;
+  document.getElementById("detailDialog").showModal();
 }
 
 function renderTotals(epochs) {
@@ -608,6 +1164,47 @@ function formatCellValue(key, value) {
     });
   }
   return String(value);
+}
+
+function formatAuditCell(key, value) {
+  if (value === null || value === undefined || value === "") return "";
+  if (key === "node") return shortNode(value);
+  if (key === "classification") return classificationLabel(value);
+  if (key === "signed_models") return shortModelList(String(value).split(";").filter(Boolean));
+  if (key === "miss_rate_summary") {
+    const rate = value.total ? value.missed / value.total : 0;
+    return `${(rate * 100).toFixed(2)}% (${value.missed}/${value.total})`;
+  }
+  if (key === "miss_rate") return `${(Number(value || 0) * 100).toFixed(2)}%`;
+  if (key === "p_value") return Number(value || 0).toExponential(3);
+  if (["rewarded_coins", "expected_reward_base_units", "reward_gap_base_units"].includes(key)) {
+    return `${formatBaseUnitsAsGnk(value)} GNK`;
+  }
+  if (key === "model_id" && !value) return "base";
+  if (String(value).length > 64) return `${String(value).slice(0, 61)}...`;
+  return String(value);
+}
+
+function auditRowClass(row) {
+  if (row.classification === "settlement_anomaly") return "audit-anomaly";
+  if (row.classification === "explained_by_downtime_test") return "audit-warning";
+  if (String(row.classification || "").startsWith("explained_by_exclusion:")) return "audit-warning";
+  if (row.classification === "missing_performance_summary") return "audit-warning";
+  if (row.consensus === "False") return "audit-warning";
+  if (row.consensus === "True") return "audit-ok";
+  return "";
+}
+
+function shortNode(value) {
+  return String(value || "")
+    .replace("http://", "")
+    .replace("https://", "")
+    .replace(":8000", "");
+}
+
+function shortModelList(models) {
+  if (!models.length) return "";
+  return models.map((model) => model.split("/").pop().replace("-Instruct-2507-FP8", "")).join(", ");
 }
 
 function sourceStateClass(row) {

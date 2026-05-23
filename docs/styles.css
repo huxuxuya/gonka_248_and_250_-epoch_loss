@@ -40,6 +40,10 @@ body {
 }
 
 .topbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: center;
   padding: 12px 18px 10px;
   border-bottom: 1px solid var(--line);
   background: rgba(255, 253, 248, 0.86);
@@ -47,6 +51,34 @@ body {
   position: sticky;
   top: 0;
   z-index: 10;
+}
+
+.view-tabs {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.tab-button {
+  border: 1px solid #b9af9f;
+  border-radius: 10px;
+  background: #f4efe3;
+  color: #26332b;
+  cursor: pointer;
+  padding: 7px 10px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.tab-button.active {
+  background: #26332b;
+  color: #fffdf8;
+}
+
+.hidden-view {
+  display: none;
 }
 
 .kicker {
@@ -414,6 +446,9 @@ td.problem-delta {
 }
 
 .small-action {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
   border: 1px solid #b9af9f;
   border-radius: 10px;
   background: #f4efe3;
@@ -421,6 +456,162 @@ td.problem-delta {
   cursor: pointer;
   padding: 6px 10px;
   font: inherit;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.audit-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255, 253, 248, 0.78);
+}
+
+.audit-header h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.audit-actions {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.audit-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.audit-controls {
+  grid-template-columns: minmax(260px, 1.5fr) 120px minmax(190px, 0.9fr) minmax(180px, 0.9fr);
+}
+
+.audit-section {
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255, 253, 248, 0.72);
+}
+
+.audit-explainer {
+  margin-bottom: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #f4efe3;
+  color: #3d453f;
+}
+
+.audit-explainer h2 {
+  margin: 0 0 5px;
+  font-size: 14px;
+}
+
+.audit-explainer p {
+  margin: 0;
+  line-height: 1.45;
+}
+
+.audit-note {
+  margin: -4px 0 10px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.audit-explainer code {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 12px;
+}
+
+.audit-section h2 {
+  margin: 0 0 10px;
+  font-size: 15px;
+}
+
+.audit-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 12px;
+}
+
+.audit-table-wrap {
+  max-height: 460px;
+  border-radius: 12px;
+}
+
+.audit-table-wrap.compact {
+  max-height: 360px;
+}
+
+.audit-table {
+  width: 100%;
+  min-width: 920px;
+}
+
+.audit-table th,
+.audit-table td {
+  max-width: 180px;
+}
+
+.audit-table tbody tr {
+  cursor: default;
+}
+
+.audit-table tbody tr[data-audit-row] {
+  cursor: pointer;
+}
+
+.audit-anomaly td {
+  background: var(--loss);
+}
+
+td.audit-anomaly {
+  background: var(--loss) !important;
+  color: #3b160d;
+  font-weight: 800;
+}
+
+td.audit-anomaly strong,
+td.audit-anomaly em {
+  display: block;
+}
+
+td.audit-anomaly em {
+  margin-top: 2px;
+  color: #7a4b35;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.audit-detail-button {
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+}
+
+.audit-warning td {
+  background: var(--warn);
+}
+
+.audit-ok td {
+  background: var(--ok);
+}
+
+.muted-count {
+  color: var(--muted);
   font-size: 12px;
   font-weight: 800;
 }
@@ -858,8 +1049,16 @@ dialog::backdrop {
     grid-template-columns: repeat(3, minmax(100px, 1fr));
   }
 
+  .audit-metrics {
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+  }
+
   .controls {
     grid-template-columns: minmax(220px, 1fr) 120px minmax(160px, 1fr);
+  }
+
+  .audit-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -872,8 +1071,18 @@ dialog::backdrop {
 
   .totals,
   .controls,
-  .summary {
+  .summary,
+  .audit-metrics {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .audit-header,
+  .topbar {
+    display: block;
+  }
+
+  .view-tabs {
+    margin-top: 10px;
   }
 
   .search {

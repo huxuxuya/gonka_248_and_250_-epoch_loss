@@ -1,0 +1,6 @@
+{
+  "endpoint": "/chain-api/productscience/inference/inference/epoch_group_data/269",
+  "error": "failed to fetch http://node3.gonka.ai:8000/chain-api/productscience/inference/inference/epoch_group_data/269: <urlopen error [Errno 61] Connection refused>",
+  "fetched_at_utc": "2026-05-23T19:58:45+00:00",
+  "node": "http://node3.gonka.ai:8000"
+}

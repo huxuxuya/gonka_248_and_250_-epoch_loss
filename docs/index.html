@@ -13,9 +13,14 @@
         <h1>Calculated vs Source Compensation</h1>
         <p class="subtitle">Main view: calculated reward minus source reward, calculated weight minus source weight.</p>
       </div>
+      <nav class="view-tabs" aria-label="Dashboard views">
+        <button class="tab-button active" type="button" data-view="compensation">Compensation</button>
+        <button class="tab-button" type="button" data-view="audit">Shard proof audit</button>
+      </nav>
     </header>
 
     <main>
+      <section id="compensationView">
       <section class="controls" aria-label="Table controls">
         <label class="search">
           <span>Search</span>
@@ -84,6 +89,190 @@
         <div class="totals" id="totals"></div>
         <div class="summary" id="summary"></div>
       </section>
+      </section>
+
+      <section id="auditView" class="hidden-view" aria-label="Shard proof audit">
+        <section class="audit-header">
+          <div>
+            <p class="kicker">Epochs 269-272</p>
+            <h2>Shard Proof Audit</h2>
+            <p class="subtitle">Signed group/subgroup proof data, node consensus, miss rate, and settlement anomaly rows.</p>
+          </div>
+          <div class="audit-actions">
+            <a class="small-action" href="../outputs/shard_proof_audit/20260523T195713Z/INCIDENT_REPORT_E272.md">Incident 272</a>
+            <a class="small-action" href="audit_report.md">Open report</a>
+          </div>
+        </section>
+
+        <section class="audit-metrics" id="auditMetrics" aria-label="Audit summary"></section>
+
+        <section class="audit-explainer">
+          <h2>Why rows appear here</h2>
+          <p>
+            An anomaly means the participant has signed proof data and validation/performance evidence,
+            is not explained by exclusion or downtime, but <code>rewarded_coins</code> is lower than the audit expected reward.
+            It is a technical mismatch to investigate, not a final payout verdict.
+          </p>
+          <p>
+            Rows explained by downtime or explicit exclusion are included in the audit data but are not shown in the
+            settlement anomaly matrix. For epoch 272, the affected chat addresses are downtime-test failures, so the
+            incident report and participant proof table are the source for that case.
+          </p>
+        </section>
+
+        <section class="controls audit-controls" aria-label="Audit controls">
+          <label class="search">
+            <span>Search</span>
+            <input id="auditSearchInput" type="search" placeholder="address, node, classification, model">
+          </label>
+          <label>
+            <span>Epoch</span>
+            <select id="auditEpochFilter">
+              <option value="all">All epochs</option>
+            </select>
+          </label>
+          <label>
+            <span>Node</span>
+            <select id="auditNodeFilter">
+              <option value="all">All nodes</option>
+            </select>
+          </label>
+          <label>
+            <span>Classification</span>
+            <select id="auditClassFilter">
+              <option value="all">All classes</option>
+            </select>
+          </label>
+        </section>
+
+        <section class="audit-section">
+          <div class="section-row">
+            <h2>Epoch Health</h2>
+            <span id="auditEpochSummaryCount" class="muted-count"></span>
+          </div>
+          <div class="table-wrap audit-table-wrap compact">
+            <table class="audit-table" id="auditEpochSummaryTable">
+              <thead></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="audit-section">
+          <div class="section-row">
+            <h2>Problem Outcomes</h2>
+            <span id="auditOutcomeCount" class="muted-count"></span>
+          </div>
+          <div class="table-wrap audit-table-wrap compact">
+            <table class="audit-table" id="auditOutcomeTable">
+              <thead></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="audit-section">
+          <div class="section-row">
+            <h2>Downtime Breakdown</h2>
+            <span id="auditDowntimeCount" class="muted-count"></span>
+          </div>
+          <p class="audit-note">
+            Downtime here means the participant failed the statistical missed-request test. It can happen even when
+            some inference work was completed.
+          </p>
+          <div class="table-wrap audit-table-wrap compact">
+            <table class="audit-table" id="auditDowntimeTable">
+              <thead></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="audit-section">
+          <div class="section-row">
+            <h2>Exclusion Breakdown</h2>
+            <span id="auditExclusionCount" class="muted-count"></span>
+          </div>
+          <p class="audit-note">
+            Exclusion means the chain/API explicitly lists the participant as removed from reward distribution for a
+            recorded reason, such as failed confirmation PoC or statistical invalidations.
+          </p>
+          <div class="table-wrap audit-table-wrap compact">
+            <table class="audit-table" id="auditExclusionTable">
+              <thead></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="audit-section">
+          <div class="section-row">
+            <h2>Unexplained Settlement Gaps</h2>
+            <span id="auditAnomalyCount" class="muted-count"></span>
+          </div>
+          <p class="audit-note">
+            Gaps are audit-calculated differences between expected reward and <code>rewarded_coins</code>. They are not
+            direct chain fields and need root-cause review.
+          </p>
+          <div class="table-wrap audit-table-wrap">
+            <table class="audit-table" id="auditAnomalyTable">
+              <thead></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="audit-section">
+          <div class="section-row">
+            <h2>Gap Breakdown</h2>
+            <span id="auditGapCount" class="muted-count"></span>
+          </div>
+          <div class="table-wrap audit-table-wrap compact">
+            <table class="audit-table" id="auditGapTable">
+              <thead></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="audit-section">
+          <div class="section-row">
+            <h2>Expected Weight Rescale</h2>
+            <span id="auditRescaleCount" class="muted-count"></span>
+          </div>
+          <p class="audit-note">
+            Chain settlement rescales confirmation weight when model raw MLNode weight is larger than parent epoch
+            weight. This table shows why old expected values could be higher than actual <code>rewarded_coins</code>.
+          </p>
+          <div class="table-wrap audit-table-wrap compact">
+            <table class="audit-table" id="auditRescaleTable">
+              <thead></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="audit-grid">
+          <section class="audit-section">
+            <h2>Node Consensus</h2>
+            <div class="table-wrap audit-table-wrap compact">
+              <table class="audit-table" id="auditConsensusTable">
+                <thead></thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </section>
+          <section class="audit-section">
+            <h2>Signature Coverage</h2>
+            <div class="table-wrap audit-table-wrap compact">
+              <table class="audit-table" id="auditSignatureTable">
+                <thead></thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </section>
+        </section>
+      </section>
     </main>
 
     <dialog id="detailDialog">
@@ -105,6 +294,7 @@
     </dialog>
 
     <script src="data.js"></script>
+    <script src="audit_data.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

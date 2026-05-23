@@ -1,0 +1,6 @@
+{
+  "endpoint": "/chain-api/productscience/inference/inference/epoch_performance_summary/271",
+  "error": "failed to fetch http://node2.gonka.ai:8000/chain-api/productscience/inference/inference/epoch_performance_summary/271: HTTP Error 500: Internal Server Error",
+  "fetched_at_utc": "2026-05-23T19:58:24+00:00",
+  "node": "http://node2.gonka.ai:8000"
+}

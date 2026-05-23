@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "address": "gonka1zktn8j65wlys8a8e38hqhf4y3x6m4x04zskkrx",
+      "epoch_index": "270",
+      "exclusion_block_height": "4173242",
+      "reason": "failed_confirmation_poc"
+    },
+    {
+      "address": "gonka1xwkesaxvdadh9wt9yyladu0r260s7whklcktds",
+      "epoch_index": "270",
+      "exclusion_block_height": "4173242",
+      "reason": "failed_confirmation_poc"
+    },
+    {
+      "address": "gonka125n6kr5gvdup0lndfkps7t6rd6592panhrg3np",
+      "epoch_index": "270",
+      "exclusion_block_height": "4168878",
+      "reason": "failed_confirmation_poc"
+    },
+    {
+      "address": "gonka1mmlyd5xxu5l68yx8wzclrkxkxvm88mhq5tp5s0",
+      "epoch_index": "270",
+      "exclusion_block_height": "4173242",
+      "reason": "failed_confirmation_poc"
+    }
+  ]
+}

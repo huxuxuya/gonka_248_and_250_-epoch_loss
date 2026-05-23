@@ -1,0 +1,6 @@
+{
+  "endpoint": "/chain-api/productscience/inference/inference/confirmation_poc_events/272",
+  "error": "failed to fetch http://node3.gonka.ai:8000/chain-api/productscience/inference/inference/confirmation_poc_events/272: <urlopen error [Errno 61] Connection refused>",
+  "fetched_at_utc": "2026-05-23T19:59:21+00:00",
+  "node": "http://node3.gonka.ai:8000"
+}

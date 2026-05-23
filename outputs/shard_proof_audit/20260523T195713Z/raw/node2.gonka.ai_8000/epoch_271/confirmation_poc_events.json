@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "epoch_index": "271",
+      "event_sequence": "0",
+      "generation_start_height": "4184388",
+      "phase": "CONFIRMATION_POC_COMPLETED",
+      "poc_seed_block_hash": "4cf46daef72e47d9518cb7b681862b6b07598678a82642eace576556814d69f2",
+      "trigger_height": "4184386"
+    },
+    {
+      "epoch_index": "271",
+      "event_sequence": "1",
+      "generation_start_height": "4185818",
+      "phase": "CONFIRMATION_POC_COMPLETED",
+      "poc_seed_block_hash": "68f1dd885bb91a93f0fa8d105fa707ec3713a7396bcb4ccc7a186b4ce853af86",
+      "trigger_height": "4185816"
+    },
+    {
+      "epoch_index": "271",
+      "event_sequence": "2",
+      "generation_start_height": "4186815",
+      "phase": "CONFIRMATION_POC_COMPLETED",
+      "poc_seed_block_hash": "97df25adb4f271c5e85fba7564aada053eba952e65bf2d528db6a5033755adad",
+      "trigger_height": "4186813"
+    },
+    {
+      "epoch_index": "271",
+      "event_sequence": "3",
+      "generation_start_height": "4190340",
+      "phase": "CONFIRMATION_POC_COMPLETED",
+      "poc_seed_block_hash": "8fa7e060eef3281b60bf0351973e4374ef37857c3ac72207744f121242f7f0ae",
+      "trigger_height": "4190338"
+    },
+    {
+      "epoch_index": "271",
+      "event_sequence": "4",
+      "generation_start_height": "4191448",
+      "phase": "CONFIRMATION_POC_COMPLETED",
+      "poc_seed_block_hash": "0f5344304f2783124f5e16faae937180395308c21107eb626d9c892b9b1a650b",
+      "trigger_height": "4191446"
+    },
+    {
+      "epoch_index": "271",
+      "event_sequence": "5",
+      "generation_start_height": "4193855",
+      "phase": "CONFIRMATION_POC_COMPLETED",
+      "poc_seed_block_hash": "f845d99dfdb5aacd509de98427f95ffab8cb499da60013aa4005ac151e6cbad6",
+      "trigger_height": "4193853"
+    },
+    {
+      "epoch_index": "271",
+      "event_sequence": "6",
+      "generation_start_height": "4194325",
+      "phase": "CONFIRMATION_POC_COMPLETED",
+      "poc_seed_block_hash": "d0db59116925b244d4aeb8e3490a242b20636b696c68adb38ea543fe827690e4",
+      "trigger_height": "4194323"
+    }
+  ]
+}
